@@ -46,7 +46,7 @@ def main():
             "text": frame.Phrase.iloc[train_idx].astype(str).tolist(),
             "label": y[train_idx].astype(int).tolist(),
         })
-        model = SetFitModel.from_pretrained(args.model)
+        model = SetFitModel.from_pretrained(args.model, device=args.device)
         train_args = TrainingArguments(
             batch_size=args.batch_size,
             num_epochs=1,

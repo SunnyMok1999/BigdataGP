@@ -1,0 +1,49 @@
+name: Tune sentiment-RoBERTa SVM kernels
+on:
+  push:
+    branches: [experiment/target-macro-f1-050]
+    paths:
+      - ".github/workflows/sentiment_roberta_kernel.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  kernels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install sklearn
+        run: python -m pip install numpy pandas scipy scikit-learn
+      - name: Reuse prior training-only RoBERTa features (no repeated model download)
+        uses: actions/download-artifact@v4
+        with:
+          name: amazon-roberta-sentiment-transfer-cv
+          run-id: 42236520330
+          github-token: ${{ github.token }}
+          path: .
+      - name: Assert feature and source row metadata exist
+        run: |
+          test -f experiments/features/amazon_roberta5_hidden_train.npy
+          test -f experiments/features/amazon_roberta5_hidden_train_rows.csv
+      - name: Nested CV extra SVM kernels
+        env:
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          python experiments/strong_sentiment_cv.py \
+            --sentiment-embeddings experiments/features/amazon_roberta5_hidden_train.npy \
+            --candidates sent_hidden_linear sent_hidden_poly sent_hidden_scaled_svm \
+            --output experiments/results/amazon_roberta5_kernel_search
+      - name: Save cross-validated outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: amazon-roberta-kernel-search-cv
+          path: experiments/results/amazon_roberta5_kernel_search/
+          if-no-files-found: warn

@@ -30,7 +30,8 @@ ROOT = Path(__file__).resolve().parents[1]
 F = ROOT / "experiments/features"
 ALL = ["bge_lr", "bge_svm", "bge_linear", "bge_multiview_lr",
        "transfer_direct", "transfer_only_lr", "bge_transfer_lr", "bge_transfer_svm",
-       "sent_hidden_lr", "sent_hidden_svm", "bge_hidden_lr", "bge_hidden_svm"]
+       "sent_hidden_lr", "sent_hidden_svm", "bge_hidden_lr", "bge_hidden_svm",
+       "sent_hidden_linear", "sent_hidden_poly", "sent_hidden_scaled_svm"]
 
 
 class BlockScaler(BaseEstimator, TransformerMixin):
@@ -155,6 +156,24 @@ def candidate_spec(name: str, bge: np.ndarray, multi: np.ndarray | None,
         else:
             estimator=Pipeline([("clf",clf)])
             grid=search_grid
+    elif name in ("sent_hidden_linear", "sent_hidden_poly", "sent_hidden_scaled_svm"):
+        if hidden is None:
+            raise ValueError("Missing external sentiment-tuned hidden features")
+        X = hidden
+        if name == "sent_hidden_linear":
+            estimator = Pipeline([("clf",SVC(kernel="linear"))])
+            grid = {"clf__C":[.001,.01,.1,1.,10.,100.],
+                    "clf__class_weight":[None,"balanced"]}
+        elif name == "sent_hidden_poly":
+            estimator = Pipeline([("clf",SVC(kernel="poly",degree=2,coef0=1))])
+            grid = {"clf__C":[.1,1.,10.,100.],
+                    "clf__gamma":[.1,.5,1.,2.],
+                    "clf__class_weight":[None,"balanced"]}
+        else:
+            estimator = Pipeline([("scale",StandardScaler()),("clf",SVC(kernel="rbf"))])
+            grid = {"clf__C":[.1,1.,10.,100.],
+                    "clf__gamma":["scale",.0001,.001,.01],
+                    "clf__class_weight":[None,"balanced"]}
     else:
         raise ValueError(f"Unknown candidate {name}")
     return X, estimator, grid

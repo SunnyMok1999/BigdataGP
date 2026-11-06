@@ -90,7 +90,7 @@ def encode(texts,args):
     return np.concatenate(vectors)
 
 
-def cv(args,Xext,yext,Xlocal,ylocal,out,metadata):
+def cv(args,Xext,yext,Xlocal,ylocal,out,metadata,train_frame):
     outer=list(StratifiedKFold(5,shuffle=True,random_state=42).split(Xlocal,ylocal))
     pred=np.full(len(ylocal),-1,dtype=int)
     fold_records=[]
@@ -136,14 +136,13 @@ def cv(args,Xext,yext,Xlocal,ylocal,out,metadata):
             "folds":fold_records,"external_audit":metadata,
             "warning":"This is extra supervised SST5 training data. Course may prohibit external data. Do not describe as 511-label-only result."}
     (out/"report.json").write_text(json.dumps(scores,indent=2))
-    pd.DataFrame({"PhraseId":train.PhraseId,"Sentiment":ylocal,
+    pd.DataFrame({"PhraseId":train_frame.PhraseId,"Sentiment":ylocal,
                   "prediction_augmented":pred,"prediction_external_only":direct}).to_csv(out/"oof_predictions.csv",index=False)
     print("TOTAL extra-data nested OOF macroF1",round(scores["external_plus_local_cv_macro_f1"],4),
           "accuracy",round(scores["external_plus_local_cv_accuracy"],4),flush=True)
 
 
 def main():
-    global train
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--train",default=str(ROOT/"train.csv"))
     p.add_argument("--test-text",default=str(ROOT/"test.csv"))
@@ -167,7 +166,7 @@ def main():
     Xext=encode(texts,args)
     np.save(out/"external_embeddings.npy",Xext)
     np.save(out/"external_labels.npy",labels)
-    cv(args,Xext,labels,Xlocal,ylocal,out,audit)
+    cv(args,Xext,labels,Xlocal,ylocal,out,audit,train)
 
 
 if __name__=="__main__":

@@ -90,3 +90,37 @@ def test_review_export_requires_verified_correct_labels(tmp_path):
     pairs.to_csv(tmp_path/"pairs.csv",index=False)
     with pytest.raises(ValueError,match="mismatch"):
         export_approved(tmp_path/"aug.csv",tmp_path/"pairs.csv",tmp_path/"out",tmp_path/"train.csv")
+
+
+def test_hybrid_acquisition_has_no_unlabeled_truth_access():
+    rng = np.random.default_rng(91)
+    p = np.array([[.49, .47, .02, .01, .01],
+                  [.01, .02, .47, .48, .02],
+                  [.02, .02, .02, .47, .47],
+                  [.9, .025, .025, .025, .025]])
+    x = np.eye(9)
+    pool = np.arange(4)
+    labeled = np.arange(4, 9)
+    known_labels = np.arange(5)
+    for policy in ("hybrid", "balanced_hybrid"):
+        picked = query_batch(p, x, pool, labeled, 2, policy,
+                             rng, labeled_labels=known_labels)
+        assert len(picked) == 2 and len(set(picked)) == 2
+        assert set(picked).issubset(set(pool))
+
+
+def test_balanced_hybrid_rejects_missing_training_labels():
+    p = np.tile(np.array([[.2, .2, .2, .2, .2]]), (3, 1))
+    with pytest.raises(ValueError, match="requires verified labels"):
+        query_batch(p, np.eye(6), [0, 1, 2], [3, 4, 5],
+                    2, "balanced_hybrid", np.random.default_rng(0))
+
+
+def test_custom_adjacent_margins_have_finite_gradients():
+    y = torch.tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])
+    z = torch.randn(10, 16, requires_grad=True)
+    for margins in ((.12, .10, .10, .12), (.32, .24, .24, .32)):
+        value = adjacent_triplet_margin(z, y, boundary_margins=margins)
+        assert torch.isfinite(value)
+        value.backward(retain_graph=True)
+    assert torch.isfinite(z.grad).all()

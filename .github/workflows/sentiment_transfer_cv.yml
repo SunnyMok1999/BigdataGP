@@ -5,6 +5,8 @@ on:
     paths:
       - ".github/workflows/sentiment_transfer_cv.yml"
       - "experiments/extract_transfer_sentiment.py"
+      - "experiments/strong_sentiment_cv.py"
+      - "tests/test_strong_sentiment.py"
   workflow_dispatch:
 jobs:
   pretrained_review_transfer:

@@ -1,0 +1,49 @@
+name: Sentiment-adapted CLS embeddings and nested SVM
+on:
+  push:
+    branches: [experiment/target-macro-f1-050]
+    paths:
+      - ".github/workflows/sentiment_hidden_cv.yml"
+  workflow_dispatch:
+jobs:
+  hidden_transfer_cv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install numpy pandas scipy scikit-learn pytest transformers==4.48.3 safetensors
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Extract pretrained sentiment classifier hidden states (TRAIN only)
+        env:
+          HF_HUB_DISABLE_XET: "1"
+          HF_HUB_DOWNLOAD_TIMEOUT: "120"
+        run: |
+          python experiments/extract_transfer_sentiment.py --model review5 \
+            --output experiments/features/review5_train.npy \
+            --hidden-output experiments/features/review5_hidden_train.npy
+      - name: Validate training feature provenance
+        run: python -m pytest -q tests/test_strong_sentiment.py
+      - name: Five-fold nested CV of sentiment CLS feature classifiers
+        env:
+          OMP_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+        run: |
+          python experiments/strong_sentiment_cv.py \
+            --sentiment-embeddings experiments/features/review5_hidden_train.npy \
+            --candidates sent_hidden_lr sent_hidden_svm bge_hidden_lr bge_hidden_svm \
+            --output experiments/results/review5_hidden_cv
+      - name: Archive training OOF and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sentiment-adapted-cls-nested-cv
+          path: |
+            experiments/features/review5_hidden_train.*
+            experiments/results/review5_hidden_cv/
+          if-no-files-found: warn

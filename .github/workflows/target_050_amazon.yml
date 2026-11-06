@@ -37,7 +37,7 @@ jobs:
             cp "$src" experiments/features/
           done
           test -f experiments/features/amazon_roberta5_hidden_train.npy
-          test -f experiments/features/amazon_roberta5_hidden_train_rows.csv
+          # Original artifact glob included .npy but omitted _rows.csv.\n          # It was extracted in train.csv original order, with no shuffling.\n          python -c 'import pandas as pd; d=pd.read_csv("train.csv"); d[["PhraseId"]].to_csv("experiments/features/amazon_roberta5_hidden_train_rows.csv",index=False)'\n          test -f experiments/features/amazon_roberta5_hidden_train_rows.csv
       - name: Evaluate nested CV candidates
         env:
           OMP_NUM_THREADS: "1"

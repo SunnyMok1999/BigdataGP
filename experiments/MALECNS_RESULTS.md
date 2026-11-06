@@ -76,3 +76,51 @@ and confusion matrices.
    controlled trainable parameter counts. Consider small training-fold-only
    tuning/nested CV if pursuing an actual performance improvement.
 5. Keep `test.csv` completely held out until one method is locked.
+
+
+## C. Vanilla RNN and LSTM versus MaleCNS (new)
+
+Identical 5-fold stratified partitions (seed 42), fixed **12 epochs** per fold,
+training seeds **42, 123, 2026**, hash-tokenized raw text (48D learned
+embeddings), hidden size **80**, final-plus-mean-state pooled classification,
+class-weighted CE and AdamW. All methods are unidirectional. The measured
+graph is rerun in the same workflow to verify the comparison.
+
+**Mean of the three complete 511-review training OOF scores:**
+
+| Architecture | Mean OOF accuracy | Mean OOF Macro-F1 | Stored parameter count |
+|---|---:|---:|---:|
+| 80-neuron MaleCNS sparse RNN | 0.2446 | 0.2175 | 404,789 (includes masked zeros) |
+| Standard dense tanh RNN (80 hidden) | 0.2290 | 0.2090 | 404,789 |
+| Standard LSTM (80 hidden) | 0.2479 | 0.2187 | 435,989 |
+
+**Per-seed OOF Macro-F1:**
+
+| Seed | MaleCNS | Dense RNN | LSTM |
+|---:|---:|---:|---:|
+| 42 | 0.2002 | 0.2001 | 0.2121 |
+| 123 | 0.2367 | 0.2131 | 0.2078 |
+| 2026 | 0.2157 | 0.2138 | 0.2363 |
+
+Workflow: https://github.com/SunnyMok1999/BigdataGP/actions/runs/42202978266
+
+The workflow successfully passed **8 tests** covering graph invariants,
+padding, finite gradients, and held-out-label invariance; uploaded complete
+fold metrics, per-seed metrics, probabilities and configurations as the
+`rnn-lstm-malecns-training-only-comparison` artifact.
+
+The LSTM leads by just **+0.0012** Macro-F1 over MaleCNS when averaging
+three seeds; it is not an established improvement. The measured graph does
+slightly better than vanilla RNN on these runs, but different effective
+trainable recurrent connectivity and limited training data make attribution
+to biological topology unwarranted. The ordinary RNN and masked MaleCNS
+matrices have the same *allocated* number of weights; masked graph zeros
+receive zero gradients and are not functionally trainable. The gated
+LSTM is a different parameterization. No claim of parameter-matched
+inductive-bias advantage or statistical significance is justified.
+
+All three token-only models underperform the existing frozen BGE-small + LR
+train-only nested-CV reference (Macro-F1 0.4148), though that reference
+uses a different tuning protocol. The comparison reinforces that strong
+pretrained language representations matter more for this small dataset
+than adding recurrence from scratch.

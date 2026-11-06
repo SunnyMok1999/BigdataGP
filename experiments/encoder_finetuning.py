@@ -54,6 +54,18 @@ CONFIGS = {
                             teacher=.2, ordinal=.1, hard_negative=.1),
     "minilm_adjacent_v2": dict(model="minilm", last_layers=6, adjacent_cost=.15,
                                 adjacent_triplet=.1, adjacent_prototype=.05),
+    # Controlled boundary-loss ablations, evaluated on identical outer folds.
+    "minilm_adjacent_light": dict(model="minilm", last_layers=6, adjacent_cost=.05,
+        adjacent_triplet=.05, adjacent_prototype=.02,
+        boundary_margins=(.12, .10, .10, .12), prototype_margin=.18),
+    "minilm_adjacent_strong": dict(model="minilm", last_layers=6, adjacent_cost=.30,
+        adjacent_triplet=.20, adjacent_prototype=.10,
+        boundary_margins=(.32, .24, .24, .32), prototype_margin=.45),
+    "minilm_adjacent_no_triplet": dict(model="minilm", last_layers=6,
+        adjacent_cost=.15, adjacent_prototype=.05),
+    # BGE-small is the stronger cached frozen encoder in the repo.
+    "bge_adjacent_v2": dict(model="bge_small", last_layers=12, adjacent_cost=.15,
+                            adjacent_triplet=.1, adjacent_prototype=.05),
     "bge_ce": dict(model="bge_small", last_layers=12),
 }
 LABELS = list(range(5))
@@ -198,11 +210,14 @@ def loss_parts(model, logits, embeddings, projected, labels, teacher_features, c
         loss = loss + cfg["adjacent_cost"] * adjacent
         parts["adjacent_cost"] = float(adjacent.detach())
     if cfg.get("adjacent_triplet", 0):
-        triplet = adjacent_triplet_margin(embeddings, labels)
+        triplet = adjacent_triplet_margin(
+            embeddings, labels,
+            boundary_margins=cfg.get("boundary_margins", (.22, .16, .16, .22)))
         loss = loss + cfg["adjacent_triplet"] * triplet
         parts["adjacent_triplet"] = float(triplet.detach())
     if cfg.get("adjacent_prototype", 0):
-        prototype = adjacent_prototype_margin(embeddings, labels)
+        prototype = adjacent_prototype_margin(
+            embeddings, labels, margin=cfg.get("prototype_margin", .30))
         loss = loss + cfg["adjacent_prototype"] * prototype
         parts["adjacent_prototype"] = float(prototype.detach())
     return loss, parts

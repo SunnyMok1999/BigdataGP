@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MODELS = {
     "review5": "nlptown/bert-base-multilingual-uncased-sentiment",
     "tweet3": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "yelp5": "AdhamEhab/fine-tuned-bert-yelp",
 }
 
 

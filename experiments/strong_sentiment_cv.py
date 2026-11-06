@@ -122,7 +122,7 @@ def candidate_spec(name: str, bge: np.ndarray, multi: np.ndarray | None,
         estimator = Pipeline([("blocks",BlockScaler(width=bge.shape[1])),
                               ("clf",LogisticRegression(max_iter=2500))])
         grid = {"blocks__extra_weight":[.25,.5,1.,2.,4.],
-                "clf__C":[.01,.1.,10.,100.],
+                "clf__C":[.01,.1,10.,100.],
                 "clf__class_weight":[None,"balanced"]}
     elif name == "bge_transfer_svm":
         if extra is None:

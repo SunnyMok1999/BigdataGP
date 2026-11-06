@@ -67,3 +67,21 @@ https://github.com/SunnyMok1999/BigdataGP/actions/runs/42241414807
    because it uses task-specific external labels.
 4. Freeze the final procedure before evaluating the held-out 341 rows.
    Do not optimize thresholds or model families against hidden test labels.
+
+## Fine-grained refinements (completed)
+
+All three further training-only nested-CV runs passed:
+
+| Amazon RoBERTa 768D classifier | OOF accuracy | OOF Macro-F1 |
+|---|---:|---:|
+| StandardScaler + RBF SVM (original best) | **0.5010** | **0.4971** |
+| StandardScaler + L2 + RBF SVM | 0.4892 | 0.4957 |
+| StandardScaler + finer C/gamma RBF SVM | 0.4873 | 0.4953 |
+| StandardScaler + alternative class weights | 0.4834 | 0.4933 |
+
+Evidence: https://github.com/SunnyMok1999/BigdataGP/actions/runs/42241891902
+
+**Final outcome in this search:** 50% training OOF accuracy achieved;
+Macro-F1 remains below 0.50. Repeated model-family comparison can overfit the
+shared outer folds, so these are exploratory results, not a guaranteed
+independent-test score. The 341-review test labels remain untouched.

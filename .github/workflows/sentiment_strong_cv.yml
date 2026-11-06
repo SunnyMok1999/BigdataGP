@@ -1,0 +1,37 @@
+name: Strong sentiment CV (cached pretrained features)
+on:
+  push:
+    branches: [experiment/target-macro-f1-050]
+    paths:
+      - "experiments/strong_sentiment_cv.py"
+      - "tests/test_strong_sentiment.py"
+      - ".github/workflows/sentiment_strong_cv.yml"
+  workflow_dispatch:
+jobs:
+  nested_cv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: python -m pip install numpy pandas scipy scikit-learn pytest
+      - name: Tests
+        run: python -m pytest -q tests/test_strong_sentiment.py
+      - name: Strong frozen embedding baselines (5x3 nested CV)
+        env:
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          python experiments/strong_sentiment_cv.py \
+            --candidates bge_lr bge_svm bge_linear bge_multiview_lr \
+            --output experiments/results/strong_base
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: strong-sentiment-cached-feature-cv
+          path: experiments/results/strong_base/
+          if-no-files-found: warn

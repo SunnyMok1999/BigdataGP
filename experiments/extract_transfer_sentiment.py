@@ -21,6 +21,7 @@ MODELS = {
     "review5": "nlptown/bert-base-multilingual-uncased-sentiment",
     "tweet3": "cardiffnlp/twitter-roberta-base-sentiment-latest",
     "yelp5": "AdhamEhab/fine-tuned-bert-yelp",
+    "amazon_roberta5": "Nav772/roberta-amazon-reviews-5star",
 }
 
 

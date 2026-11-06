@@ -1,0 +1,50 @@
+name: Train-only BGE plus product rating ensemble
+on:
+  push:
+    branches: [experiment/target-macro-f1-050]
+    paths:
+      - ".github/workflows/sentiment_blend5.yml"
+  workflow_dispatch:
+jobs:
+  blend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install numpy pandas scipy scikit-learn transformers==4.48.3 safetensors
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Extract product transfer features from training texts
+        env:
+          HF_HUB_DISABLE_XET: "1"
+          HF_HUB_DOWNLOAD_TIMEOUT: "120"
+        run: python experiments/extract_transfer_sentiment.py --model review5 --output experiments/features/review5_train.npy
+      - name: Nested CV choose fixed-probability mix per fold
+        env:
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          python experiments/blend_5star_cv.py \
+            --transfer experiments/features/review5_train.npy \
+            --output experiments/results/blend5_plain
+      - name: Nested CV choose mix and constrained class shift per fold
+        env:
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          python experiments/blend_5star_cv.py \
+            --transfer experiments/features/review5_train.npy --bias \
+            --output experiments/results/blend5_bias
+      - name: Store full train-only OOF results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: train-only-review5-svm-blend
+          path: experiments/results/blend5_*/
+          if-no-files-found: warn

@@ -87,3 +87,31 @@ model selection and adds optimism. If these experiments inform final selection,
 run a new nested evaluation or reserve the untouched test set for one
 pre-registered final comparison. A graph effect is not evidence of insect
 language understanding.
+
+## BGE-driven recurrent variant
+
+The independent `experiments/malecns_bge.py` experiment reuses the existing
+**train-only, pretrained BGE-small sentence embeddings** (shape 511 × 384)
+rather than attempting to learn a useful language encoder from 511 labels.
+A trainable 384-to-N adapter injects each sentence vector as a *constant drive*
+for six recurrent updates of the MaleCNS-masked hidden state. The state is
+read out to five sentiment classes. These six iterations are **not token
+positions**, and there is no claim that the measured fly subgraph evolved
+for language processing. This variant better isolates the choice of recurrent
+graph once the NLP representation is fixed.
+
+It also has the same biological, degree-preserving rewired and edge-matched
+random controls. It asserts exact `PhraseId` and label alignment before
+loading embeddings to prevent using unrelated rows. No `test.csv` is used.
+
+```bash
+python -m pytest -q tests/test_malecns_bge.py
+python experiments/malecns_bge.py --nodes 80 --epochs 30 --steps 6 \\
+  --seeds 42 123 2026 --output experiments/results/malecns_bge_80
+```
+
+Compare against the repository's existing nested-CV BGE-small + LR score,
+acknowledging that our frozen-epoch configuration and the LR inner-tuning
+protocol are not perfectly matched. If the recurrent model does not improve
+macro-F1 *and* consistently beat rewired controls across seeds, the
+biological graph is not currently helping sentiment classification.

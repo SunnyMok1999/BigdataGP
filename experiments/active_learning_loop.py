@@ -20,7 +20,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import normalize
 
 ROOT = Path(__file__).resolve().parents[1]
-POLICIES = ("random", "entropy", "margin", "adjacent", "entropy_diversity")
+POLICIES = ("random", "entropy", "margin", "adjacent", "entropy_diversity", "hybrid", "balanced_hybrid")
 
 
 def load_features(csv: Path, embedding: Path, rows_csv: Path | None):
@@ -49,7 +49,7 @@ def fit_model(features, labels, indices, c=1.0):
     return model
 
 
-def query_batch(probs, embeddings, pool_indices, labeled_indices, batch_size, policy, rng):
+def query_batch(probs, embeddings, pool_indices, labeled_indices, batch_size, policy, rng, labeled_labels=None):
     """The query policy receives NO gold labels for the candidate pool."""
     pool_indices = np.asarray(pool_indices, dtype=int)
     labeled_indices = np.asarray(labeled_indices, dtype=int)
@@ -61,15 +61,36 @@ def query_batch(probs, embeddings, pool_indices, labeled_indices, batch_size, po
     probs = np.clip(np.asarray(probs, dtype=float), 1e-12, 1.0)
     if probs.shape != (len(pool_indices), 5):
         raise ValueError("Pool probabilities must have shape (pool_size, 5)")
+    entropy = -(probs * np.log(probs)).sum(1) / np.log(5)
+    adjacent = (np.sqrt(probs[:, :-1] * probs[:, 1:])
+                * np.array([1.25, 1.0, 1.0, 1.25])).max(1)
     if policy in ("entropy", "entropy_diversity"):
-        score = -(probs * np.log(probs)).sum(1) / np.log(5)
+        score = entropy
+    elif policy in ("hybrid", "balanced_hybrid"):
+        def rank(values):
+            ordering = np.argsort(values, kind="stable")
+            ranks = np.empty(len(values))
+            ranks[ordering] = np.linspace(0., 1., len(values))
+            return ranks
+        base = .65 * rank(adjacent) + .35 * rank(entropy)
+        if policy == "hybrid":
+            score = base
+        else:
+            if labeled_labels is None or len(labeled_labels) != len(labeled_indices):
+                raise ValueError("balanced_hybrid requires verified labels for labeled_indices only")
+            known = np.asarray(labeled_labels, dtype=int)
+            if not np.isin(known, range(5)).all():
+                raise ValueError("Expected five-class verified labels")
+            counts = np.bincount(known, minlength=5).astype(float)
+            inverse = np.clip(np.sqrt(counts.mean() / (counts + 1.)), .7, 1.7)
+            # Expected scarcity bonus; candidate pool truth is NEVER accessed.
+            class_priority = (probs * inverse[None, :]).sum(1)
+            score = .85 * base + .15 * rank(class_priority)
     elif policy == "margin":
         best_two = np.sort(probs, axis=1)[:, -2:]
         score = 1 - (best_two[:, 1] - best_two[:, 0])
     elif policy == "adjacent":
-        # The 0/1 and 3/4 boundaries receive a modest additional priority.
-        pair_scores = np.sqrt(probs[:, :-1] * probs[:, 1:])
-        score = (pair_scores * np.array([1.25, 1.0, 1.0, 1.25])).max(1)
+        score = adjacent
     else:
         raise ValueError(f"Unknown policy {policy!r}")
     if policy != "entropy_diversity":
@@ -127,7 +148,7 @@ def simulate(frame, features, policies, seeds, per_class, batch, rounds, c):
                 if round_index == rounds or len(pending) == 0:
                     break
                 probs = model.predict_proba(features[pending])
-                chosen = query_batch(probs, features, pending, labeled, batch, policy, rng)
+                chosen = query_batch(probs, features, pending, labeled, batch, policy, rng, y[labeled])
                 for idx in chosen:
                     all_queries.append(dict(seed=seed, policy=policy,
                                             round=round_index + 1, row_index=int(idx),
@@ -167,7 +188,7 @@ def human_queue(frame, features, annotations_csv, batch, policy, seed, c):
         y = np.array([lookup.get(id_, -1) for id_ in frame.PhraseId.astype(str)], dtype=int)
         model = fit_model(features, y, labeled, c)
         chosen = query_batch(model.predict_proba(features[candidates]), features, candidates,
-                             labeled, batch, policy, rng)
+                             labeled, batch, policy, rng, y[labeled])
     # No model guesses shown to annotators; avoid anchoring.
     queue = frame.iloc[chosen][["PhraseId", "Phrase"]].copy()
     queue["Sentiment"] = ""
@@ -201,6 +222,29 @@ def main():
             accuracy=("accuracy", "mean"), macro_f1=("macro_f1", "mean"))
         summary.to_csv(args.output / "summary.csv", index=False)
         print(summary[summary.labeled == summary.labeled.max()].to_string(index=False))
+        # Paired final-budget differences + learning-curve area against random.
+        final = curves[curves["round"] == curves["round"].max()]
+        recall_cols = [f"recall_{i}" for i in range(5)]
+        final.groupby("policy")[recall_cols].mean().to_csv(args.output / "class_recall.csv")
+        baseline = final[final.policy == "random"].set_index("seed").macro_f1
+        comparison = []
+        for policy, part in final.groupby("policy"):
+            differences = part.set_index("seed").macro_f1 - baseline
+            mean = float(differences.mean())
+            se = float(differences.std(ddof=1) / np.sqrt(len(differences))) if len(differences) > 1 else float("nan")
+            comparison.append(dict(policy=policy, seeds=len(differences), paired_gain=mean,
+                                   normal_ci95_low=mean - 1.96 * se,
+                                   normal_ci95_high=mean + 1.96 * se,
+                                   wins_over_random=int((differences > 0).sum())))
+        pd.DataFrame(comparison).to_csv(args.output / "paired_comparison.csv", index=False)
+        # Per-seed normalized area under the macro-F1 learning curve.
+        areas = []
+        for (seed, policy), part in curves.groupby(["seed", "policy"]):
+            part = part.sort_values("labeled")
+            area = float(np.trapz(part.macro_f1, part.labeled)
+                         / (part.labeled.iloc[-1] - part.labeled.iloc[0]))
+            areas.append(dict(seed=seed, policy=policy, normalized_auc_macro_f1=area))
+        pd.DataFrame(areas).to_csv(args.output / "learning_curve_auc.csv", index=False)
     else:
         queue, status = human_queue(frame, features, args.annotations,
                                     args.batch, args.policy, args.seeds[0], args.c)

@@ -1,0 +1,44 @@
+name: RoBERTa LoRA sentiment smoke
+on:
+  push:
+    branches: [experiment/posttraining-four-stage]
+    paths:
+      - "experiments/posttrain_roberta_lora.py"
+      - "experiments/posttrain_common.py"
+      - "tests/test_posttraining.py"
+      - ".github/workflows/posttrain_lora.yml"
+  workflow_dispatch:
+jobs:
+  lora-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU training dependencies
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install "transformers==4.48.3" "peft==0.14.0" pandas scikit-learn pytest
+      - name: Validate CV invariants
+        run: python -m pytest -q tests/test_posttraining.py
+      - name: LoRA four-step single-fold CPU smoke (NOT full CV)
+        env:
+          OMP_NUM_THREADS: "3"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "3"
+          TOKENIZERS_PARALLELISM: "false"
+          HF_HUB_DOWNLOAD_TIMEOUT: "120"
+          HF_HUB_DISABLE_XET: "1"
+        run: |
+          python experiments/posttrain_roberta_lora.py \
+            --folds 5 --limit-folds 1 --epochs 1 \
+            --max-updates-per-fold 4 --batch-size 4 --max-length 64 \
+            --device cpu --output experiments/results/posttrain_lora_smoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: roberta-lora-smoke-not-full-cv
+          path: experiments/results/posttrain_lora_smoke/
+          if-no-files-found: warn

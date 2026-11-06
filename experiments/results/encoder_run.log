@@ -1,0 +1,591 @@
+Device: mps
+START minilm_ce fold=0 epoch selection
+{"epoch": 1, "seed": 42, "train_loss": 1.63981431722641, "val_macro_f1": 0.2477966101694915, "val_nll": 1.5403254354545903}
+{"epoch": 2, "seed": 42, "train_loss": 1.4971983858517237, "val_macro_f1": 0.2644621007468616, "val_nll": 1.5061954926252692}
+{"epoch": 3, "seed": 42, "train_loss": 1.363645851612091, "val_macro_f1": 0.32036281179138315, "val_nll": 1.466128425074579}
+{"epoch": 4, "seed": 42, "train_loss": 1.2243020619664873, "val_macro_f1": 0.3066448801742919, "val_nll": 1.450868930867822}
+{"epoch": 5, "seed": 42, "train_loss": 1.048264524766377, "val_macro_f1": 0.31569763205828777, "val_nll": 1.4100608873280032}
+{"epoch": 6, "seed": 42, "train_loss": 0.9028549449784415, "val_macro_f1": 0.31169257000459044, "val_nll": 1.4101690341631006}
+{"epoch": 7, "seed": 42, "train_loss": 0.7355918415955135, "val_macro_f1": 0.3072314395843808, "val_nll": 1.4446194203425586}
+{"epoch": 8, "seed": 42, "train_loss": 0.6009049969060081, "val_macro_f1": 0.28312931999845536, "val_nll": 1.4592373299804036}
+REFIT minilm_ce fold=0 epochs=5
+{"epoch": 1, "seed": 42, "train_loss": 1.6167491674423218}
+{"epoch": 2, "seed": 42, "train_loss": 1.4795595056870405}
+{"epoch": 3, "seed": 42, "train_loss": 1.3253041365567375}
+{"epoch": 4, "seed": 42, "train_loss": 1.1726824816535502}
+{"epoch": 5, "seed": 42, "train_loss": 1.0114756121354944}
+DONE minilm_ce fold=0 macro_f1=0.3439
+START minilm_ce fold=1 epoch selection
+{"epoch": 1, "seed": 43, "train_loss": 1.612939008644649, "val_macro_f1": 0.24285714285714288, "val_nll": 1.5563859160217786}
+{"epoch": 2, "seed": 43, "train_loss": 1.460254226412092, "val_macro_f1": 0.31315815966978755, "val_nll": 1.52386469703413}
+{"epoch": 3, "seed": 43, "train_loss": 1.3169626423290797, "val_macro_f1": 0.3167240116624521, "val_nll": 1.4713862899287935}
+{"epoch": 4, "seed": 43, "train_loss": 1.152459340436118, "val_macro_f1": 0.3332693589230974, "val_nll": 1.4408193331182235}
+{"epoch": 5, "seed": 43, "train_loss": 0.9737127423286438, "val_macro_f1": 0.34881372286250334, "val_nll": 1.4140650320755856}
+{"epoch": 6, "seed": 43, "train_loss": 0.8128486701420375, "val_macro_f1": 0.3606370987503063, "val_nll": 1.4181819277808927}
+{"epoch": 7, "seed": 43, "train_loss": 0.6604113919394357, "val_macro_f1": 0.32770236299648065, "val_nll": 1.4385594825427714}
+{"epoch": 8, "seed": 43, "train_loss": 0.5212374393429074, "val_macro_f1": 0.3479358839358839, "val_nll": 1.482017282726645}
+REFIT minilm_ce fold=1 epochs=5
+{"epoch": 1, "seed": 43, "train_loss": 1.602640966574351}
+{"epoch": 2, "seed": 43, "train_loss": 1.4721201062202454}
+{"epoch": 3, "seed": 43, "train_loss": 1.288771218723721}
+{"epoch": 4, "seed": 43, "train_loss": 1.1282833019892375}
+{"epoch": 5, "seed": 43, "train_loss": 0.9591227074464163}
+DONE minilm_ce fold=1 macro_f1=0.3528
+START minilm_ce fold=2 epoch selection
+{"epoch": 1, "seed": 44, "train_loss": 1.6048642311777388, "val_macro_f1": 0.2002499414199797, "val_nll": 1.53879599336485}
+{"epoch": 2, "seed": 44, "train_loss": 1.4561469554901123, "val_macro_f1": 0.25993208828522923, "val_nll": 1.4751190007046229}
+{"epoch": 3, "seed": 44, "train_loss": 1.3213997994150435, "val_macro_f1": 0.3306022358456545, "val_nll": 1.4164675534718052}
+{"epoch": 4, "seed": 44, "train_loss": 1.17876056262425, "val_macro_f1": 0.3299319727891156, "val_nll": 1.348827945769596}
+{"epoch": 5, "seed": 44, "train_loss": 1.0060097404888697, "val_macro_f1": 0.36450834403080873, "val_nll": 1.3089118071636392}
+{"epoch": 6, "seed": 44, "train_loss": 0.8758478803294045, "val_macro_f1": 0.3176854219948849, "val_nll": 1.292303736495749}
+{"epoch": 7, "seed": 44, "train_loss": 0.6987104820353645, "val_macro_f1": 0.30088505747126437, "val_nll": 1.289167478410603}
+{"epoch": 8, "seed": 44, "train_loss": 0.5717199891805649, "val_macro_f1": 0.3158962057432822, "val_nll": 1.2873737019337113}
+{"epoch": 9, "seed": 44, "train_loss": 0.4400199374982289, "val_macro_f1": 0.3152287581699347, "val_nll": 1.3426378856290715}
+{"epoch": 10, "seed": 44, "train_loss": 0.3375572924103056, "val_macro_f1": 0.30092478202292894, "val_nll": 1.415281864625652}
+REFIT minilm_ce fold=2 epochs=8
+{"epoch": 1, "seed": 44, "train_loss": 1.6042906178368463}
+{"epoch": 2, "seed": 44, "train_loss": 1.4676306777530246}
+{"epoch": 3, "seed": 44, "train_loss": 1.2804464168018765}
+{"epoch": 4, "seed": 44, "train_loss": 1.1227206687132518}
+{"epoch": 5, "seed": 44, "train_loss": 0.9412227835920122}
+{"epoch": 6, "seed": 44, "train_loss": 0.7787317898538377}
+{"epoch": 7, "seed": 44, "train_loss": 0.6368691888120439}
+{"epoch": 8, "seed": 44, "train_loss": 0.5144903908173243}
+DONE minilm_ce fold=2 macro_f1=0.3680
+START minilm_ce fold=3 epoch selection
+{"epoch": 1, "seed": 45, "train_loss": 1.641079110758645, "val_macro_f1": 0.17945438308414713, "val_nll": 1.560083902627889}
+{"epoch": 2, "seed": 45, "train_loss": 1.5127416849136353, "val_macro_f1": 0.17500678426051558, "val_nll": 1.533221560341386}
+{"epoch": 3, "seed": 45, "train_loss": 1.3918389252253942, "val_macro_f1": 0.21327891156462586, "val_nll": 1.5169767947656954}
+{"epoch": 4, "seed": 45, "train_loss": 1.253101178577968, "val_macro_f1": 0.21873433950694707, "val_nll": 1.4880838640747198}
+{"epoch": 5, "seed": 45, "train_loss": 1.1190737911633082, "val_macro_f1": 0.26011615660076437, "val_nll": 1.4701422215831874}
+{"epoch": 6, "seed": 45, "train_loss": 0.9372835287025997, "val_macro_f1": 0.282986642986643, "val_nll": 1.4664488027822267}
+{"epoch": 7, "seed": 45, "train_loss": 0.7972210134778704, "val_macro_f1": 0.2660329219119813, "val_nll": 1.4747557488915028}
+{"epoch": 8, "seed": 45, "train_loss": 0.6691551378795079, "val_macro_f1": 0.30135821837798604, "val_nll": 1.4916046431623156}
+{"epoch": 9, "seed": 45, "train_loss": 0.5171857987131391, "val_macro_f1": 0.3182365654779448, "val_nll": 1.587426080802665}
+REFIT minilm_ce fold=3 epochs=6
+{"epoch": 1, "seed": 45, "train_loss": 1.631053414609697}
+{"epoch": 2, "seed": 45, "train_loss": 1.5034178760316637}
+{"epoch": 3, "seed": 45, "train_loss": 1.3697729772991605}
+{"epoch": 4, "seed": 45, "train_loss": 1.2111326588524713}
+{"epoch": 5, "seed": 45, "train_loss": 1.0498891472816467}
+{"epoch": 6, "seed": 45, "train_loss": 0.8841348853376176}
+DONE minilm_ce fold=3 macro_f1=0.2792
+START minilm_ce fold=4 epoch selection
+{"epoch": 1, "seed": 46, "train_loss": 1.6219414983476912, "val_macro_f1": 0.21015212364609953, "val_nll": 1.6076554755747645}
+{"epoch": 2, "seed": 46, "train_loss": 1.4980046238218034, "val_macro_f1": 0.20602536997885834, "val_nll": 1.5735519842766286}
+{"epoch": 3, "seed": 46, "train_loss": 1.3506696564810616, "val_macro_f1": 0.2788114630467572, "val_nll": 1.5562468572882784}
+{"epoch": 4, "seed": 46, "train_loss": 1.1987828867776054, "val_macro_f1": 0.24905239687848382, "val_nll": 1.5372576174737167}
+{"epoch": 5, "seed": 46, "train_loss": 1.0332599026816232, "val_macro_f1": 0.2820291159881515, "val_nll": 1.5213544506966399}
+{"epoch": 6, "seed": 46, "train_loss": 0.8717500780309949, "val_macro_f1": 0.2695813204508857, "val_nll": 1.50939103021706}
+{"epoch": 7, "seed": 46, "train_loss": 0.7086463740893773, "val_macro_f1": 0.26470753238181666, "val_nll": 1.526156887094108}
+{"epoch": 8, "seed": 46, "train_loss": 0.5611112543514797, "val_macro_f1": 0.29171542891818236, "val_nll": 1.5560215480127648}
+{"epoch": 9, "seed": 46, "train_loss": 0.4289229214191437, "val_macro_f1": 0.3119334235348128, "val_nll": 1.5998190322640968}
+REFIT minilm_ce fold=4 epochs=6
+{"epoch": 1, "seed": 46, "train_loss": 1.6217303607198927}
+{"epoch": 2, "seed": 46, "train_loss": 1.4977347718344793}
+{"epoch": 3, "seed": 46, "train_loss": 1.3375727269384596}
+{"epoch": 4, "seed": 46, "train_loss": 1.1805022822486029}
+{"epoch": 5, "seed": 46, "train_loss": 0.9989492959446378}
+{"epoch": 6, "seed": 46, "train_loss": 0.8269515335559845}
+DONE minilm_ce fold=4 macro_f1=0.3205
+START minilm_ce_low_lr fold=0 epoch selection
+{"epoch": 1, "seed": 42, "train_loss": 1.6477041585104806, "val_macro_f1": 0.25308769491378186, "val_nll": 1.5549163900741008}
+{"epoch": 2, "seed": 42, "train_loss": 1.539216126714434, "val_macro_f1": 0.24968766001024062, "val_nll": 1.521370630055449}
+{"epoch": 3, "seed": 42, "train_loss": 1.4575018457004003, "val_macro_f1": 0.2920608899297424, "val_nll": 1.4886829254349185}
+{"epoch": 4, "seed": 42, "train_loss": 1.3773846541132246, "val_macro_f1": 0.29752002648129755, "val_nll": 1.474796878792435}
+{"epoch": 5, "seed": 42, "train_loss": 1.2856287019593375, "val_macro_f1": 0.30549219546631107, "val_nll": 1.4509104969601492}
+{"epoch": 6, "seed": 42, "train_loss": 1.2300380042621069, "val_macro_f1": 0.24654931972789118, "val_nll": 1.4341410333120566}
+{"epoch": 7, "seed": 42, "train_loss": 1.1420694845063346, "val_macro_f1": 0.2729356725146198, "val_nll": 1.4241585827858856}
+{"epoch": 8, "seed": 42, "train_loss": 1.0944496265479497, "val_macro_f1": 0.3101499949326036, "val_nll": 1.4111720654173756}
+{"epoch": 9, "seed": 42, "train_loss": 1.0389976969787054, "val_macro_f1": 0.33605061605061604, "val_nll": 1.4035098821726313}
+{"epoch": 10, "seed": 42, "train_loss": 0.9701530890805381, "val_macro_f1": 0.33605061605061604, "val_nll": 1.4055373926085275}
+REFIT minilm_ce_low_lr fold=0 epochs=9
+{"epoch": 1, "seed": 42, "train_loss": 1.6247171303805183}
+{"epoch": 2, "seed": 42, "train_loss": 1.5189252741196577}
+{"epoch": 3, "seed": 42, "train_loss": 1.423530620687148}
+{"epoch": 4, "seed": 42, "train_loss": 1.3457783881355734}
+{"epoch": 5, "seed": 42, "train_loss": 1.2684418524012846}
+{"epoch": 6, "seed": 42, "train_loss": 1.2095400094985962}
+{"epoch": 7, "seed": 42, "train_loss": 1.1389061387847452}
+{"epoch": 8, "seed": 42, "train_loss": 1.079505510189954}
+{"epoch": 9, "seed": 42, "train_loss": 0.9921479610835805}
+DONE minilm_ce_low_lr fold=0 macro_f1=0.3273
+START minilm_ce_low_lr fold=1 epoch selection
+{"epoch": 1, "seed": 43, "train_loss": 1.6156272803034102, "val_macro_f1": 0.2579093038109431, "val_nll": 1.5668032314543137}
+{"epoch": 2, "seed": 43, "train_loss": 1.5092640604291643, "val_macro_f1": 0.2765337586390218, "val_nll": 1.5429863373861665}
+{"epoch": 3, "seed": 43, "train_loss": 1.434692186968667, "val_macro_f1": 0.28879052149400986, "val_nll": 1.5134071515044851}
+{"epoch": 4, "seed": 43, "train_loss": 1.34960618189403, "val_macro_f1": 0.3308524513253578, "val_nll": 1.4880904332769498}
+{"epoch": 5, "seed": 43, "train_loss": 1.2644031729016985, "val_macro_f1": 0.34632476108817734, "val_nll": 1.4754043969187607}
+{"epoch": 6, "seed": 43, "train_loss": 1.1774989366531372, "val_macro_f1": 0.3466500767284642, "val_nll": 1.458775637804488}
+{"epoch": 7, "seed": 43, "train_loss": 1.0972506020750319, "val_macro_f1": 0.37103448275862067, "val_nll": 1.4442930795991769}
+{"epoch": 8, "seed": 43, "train_loss": 1.0350262522697449, "val_macro_f1": 0.35950960422595574, "val_nll": 1.4389038555864153}
+{"epoch": 9, "seed": 43, "train_loss": 0.9797780088015965, "val_macro_f1": 0.3547237401335762, "val_nll": 1.4336069510548222}
+{"epoch": 10, "seed": 43, "train_loss": 0.9072791721139636, "val_macro_f1": 0.3553100110362067, "val_nll": 1.4271139540569466}
+REFIT minilm_ce_low_lr fold=1 epochs=10
+{"epoch": 1, "seed": 43, "train_loss": 1.6106755932172139}
+{"epoch": 2, "seed": 43, "train_loss": 1.5194130274984572}
+{"epoch": 3, "seed": 43, "train_loss": 1.4099968208207025}
+{"epoch": 4, "seed": 43, "train_loss": 1.330050614145067}
+{"epoch": 5, "seed": 43, "train_loss": 1.2421048680941265}
+{"epoch": 6, "seed": 43, "train_loss": 1.1607701116138034}
+{"epoch": 7, "seed": 43, "train_loss": 1.1063987215360005}
+{"epoch": 8, "seed": 43, "train_loss": 1.0421397619777255}
+{"epoch": 9, "seed": 43, "train_loss": 0.9663347336981032}
+{"epoch": 10, "seed": 43, "train_loss": 0.8972452878952026}
+DONE minilm_ce_low_lr fold=1 macro_f1=0.3424
+START minilm_ce_low_lr fold=2 epoch selection
+{"epoch": 1, "seed": 44, "train_loss": 1.6118699737957545, "val_macro_f1": 0.20607553366174058, "val_nll": 1.5623980177052692}
+{"epoch": 2, "seed": 44, "train_loss": 1.5016601596559798, "val_macro_f1": 0.2537019969278034, "val_nll": 1.504462198865962}
+{"epoch": 3, "seed": 44, "train_loss": 1.426043655191149, "val_macro_f1": 0.2520302582384141, "val_nll": 1.4719147752811765}
+{"epoch": 4, "seed": 44, "train_loss": 1.3549252322741918, "val_macro_f1": 0.3149172888303323, "val_nll": 1.438916436954296}
+{"epoch": 5, "seed": 44, "train_loss": 1.2779406564576286, "val_macro_f1": 0.33011320754716983, "val_nll": 1.411013589007179}
+{"epoch": 6, "seed": 44, "train_loss": 1.2240153636251176, "val_macro_f1": 0.3361642462627685, "val_nll": 1.386952561234813}
+{"epoch": 7, "seed": 44, "train_loss": 1.1444335750171117, "val_macro_f1": 0.33807671309342235, "val_nll": 1.3661548038050804}
+{"epoch": 8, "seed": 44, "train_loss": 1.094491958618164, "val_macro_f1": 0.36175318933939626, "val_nll": 1.3483817198075163}
+{"epoch": 9, "seed": 44, "train_loss": 1.0282170176506042, "val_macro_f1": 0.3489779796583391, "val_nll": 1.3383804910273294}
+{"epoch": 10, "seed": 44, "train_loss": 0.9702621953827995, "val_macro_f1": 0.33686091686091685, "val_nll": 1.3126282121295882}
+REFIT minilm_ce_low_lr fold=2 epochs=10
+{"epoch": 1, "seed": 44, "train_loss": 1.617702219221327}
+{"epoch": 2, "seed": 44, "train_loss": 1.5163694090313382}
+{"epoch": 3, "seed": 44, "train_loss": 1.4027000135845609}
+{"epoch": 4, "seed": 44, "train_loss": 1.3364419473542108}
+{"epoch": 5, "seed": 44, "train_loss": 1.243547863430447}
+{"epoch": 6, "seed": 44, "train_loss": 1.1567347281508975}
+{"epoch": 7, "seed": 44, "train_loss": 1.097388568851683}
+{"epoch": 8, "seed": 44, "train_loss": 1.0266828272077773}
+{"epoch": 9, "seed": 44, "train_loss": 0.9706249799993303}
+{"epoch": 10, "seed": 44, "train_loss": 0.8852080371644762}
+DONE minilm_ce_low_lr fold=2 macro_f1=0.3114
+START minilm_ce_low_lr fold=3 epoch selection
+{"epoch": 1, "seed": 45, "train_loss": 1.6488996062959944, "val_macro_f1": 0.18142036841727244, "val_nll": 1.5749154247938675}
+{"epoch": 2, "seed": 45, "train_loss": 1.55267938545772, "val_macro_f1": 0.16970161977834614, "val_nll": 1.5446673046061428}
+{"epoch": 3, "seed": 45, "train_loss": 1.479679959160941, "val_macro_f1": 0.21470805154323563, "val_nll": 1.523194443845182}
+{"epoch": 4, "seed": 45, "train_loss": 1.3955273883683341, "val_macro_f1": 0.19940242763772176, "val_nll": 1.5070732799450879}
+{"epoch": 5, "seed": 45, "train_loss": 1.3392737082072668, "val_macro_f1": 0.20251207729468595, "val_nll": 1.4957893914059337}
+{"epoch": 6, "seed": 45, "train_loss": 1.241797319480351, "val_macro_f1": 0.24302678358486274, "val_nll": 1.4850901747543663}
+{"epoch": 7, "seed": 45, "train_loss": 1.1918160659926278, "val_macro_f1": 0.2949347286654439, "val_nll": 1.473707728257676}
+{"epoch": 8, "seed": 45, "train_loss": 1.1572047982897078, "val_macro_f1": 0.2939507352550831, "val_nll": 1.4619709654620094}
+{"epoch": 9, "seed": 45, "train_loss": 1.085218710558755, "val_macro_f1": 0.25849080911719086, "val_nll": 1.4546771187282002}
+{"epoch": 10, "seed": 45, "train_loss": 1.0073580954756056, "val_macro_f1": 0.27008520603916486, "val_nll": 1.4491593250799475}
+REFIT minilm_ce_low_lr fold=3 epochs=10
+{"epoch": 1, "seed": 45, "train_loss": 1.6373788846863642}
+{"epoch": 2, "seed": 45, "train_loss": 1.5456531114048428}
+{"epoch": 3, "seed": 45, "train_loss": 1.464608861340417}
+{"epoch": 4, "seed": 45, "train_loss": 1.3791265620125666}
+{"epoch": 5, "seed": 45, "train_loss": 1.3028980228636}
+{"epoch": 6, "seed": 45, "train_loss": 1.2326244711875916}
+{"epoch": 7, "seed": 45, "train_loss": 1.1588092512554593}
+{"epoch": 8, "seed": 45, "train_loss": 1.080458528465695}
+{"epoch": 9, "seed": 45, "train_loss": 1.0160192118750677}
+{"epoch": 10, "seed": 45, "train_loss": 0.9529804156886207}
+DONE minilm_ce_low_lr fold=3 macro_f1=0.2941
+START minilm_ce_low_lr fold=4 epoch selection
+{"epoch": 1, "seed": 46, "train_loss": 1.6281046526772636, "val_macro_f1": 0.2113433934486566, "val_nll": 1.6169908845002583}
+{"epoch": 2, "seed": 46, "train_loss": 1.5399476545197623, "val_macro_f1": 0.22088516746411485, "val_nll": 1.5869530700906962}
+{"epoch": 3, "seed": 46, "train_loss": 1.448197501046317, "val_macro_f1": 0.24981968569065344, "val_nll": 1.5694410357041826}
+{"epoch": 4, "seed": 46, "train_loss": 1.367400280066899, "val_macro_f1": 0.26515317002132416, "val_nll": 1.5523845814315593}
+{"epoch": 5, "seed": 46, "train_loss": 1.2895043577466692, "val_macro_f1": 0.23851353874883285, "val_nll": 1.5462270153740538}
+{"epoch": 6, "seed": 46, "train_loss": 1.2166969861303056, "val_macro_f1": 0.2624501424501425, "val_nll": 1.5337908204955109}
+{"epoch": 7, "seed": 46, "train_loss": 1.1352890559605189, "val_macro_f1": 0.2757256663671758, "val_nll": 1.5266496023535863}
+{"epoch": 8, "seed": 46, "train_loss": 1.0787105049405779, "val_macro_f1": 0.28597304173658855, "val_nll": 1.5174324812632882}
+{"epoch": 9, "seed": 46, "train_loss": 1.001347976071494, "val_macro_f1": 0.29412565026010407, "val_nll": 1.5166820234033493}
+{"epoch": 10, "seed": 46, "train_loss": 0.942465773650578, "val_macro_f1": 0.29380552220888356, "val_nll": 1.5159957516702498}
+REFIT minilm_ce_low_lr fold=4 epochs=10
+{"epoch": 1, "seed": 46, "train_loss": 1.6302079690827265}
+{"epoch": 2, "seed": 46, "train_loss": 1.5379540986484952}
+{"epoch": 3, "seed": 46, "train_loss": 1.4344515932930841}
+{"epoch": 4, "seed": 46, "train_loss": 1.3569769461949666}
+{"epoch": 5, "seed": 46, "train_loss": 1.2778010103437636}
+{"epoch": 6, "seed": 46, "train_loss": 1.2034301227993436}
+{"epoch": 7, "seed": 46, "train_loss": 1.1296196546819475}
+{"epoch": 8, "seed": 46, "train_loss": 1.0533353553877935}
+{"epoch": 9, "seed": 46, "train_loss": 0.9749538799126943}
+{"epoch": 10, "seed": 46, "train_loss": 0.9281261132823097}
+DONE minilm_ce_low_lr fold=4 macro_f1=0.3203
+START minilm_last2_ce fold=0 epoch selection
+{"epoch": 1, "seed": 42, "train_loss": 1.6424159492765154, "val_macro_f1": 0.24153265214017386, "val_nll": 1.5453282827018937}
+{"epoch": 2, "seed": 42, "train_loss": 1.5268422705786568, "val_macro_f1": 0.25632561447358143, "val_nll": 1.514881161043233}
+{"epoch": 3, "seed": 42, "train_loss": 1.433720350265503, "val_macro_f1": 0.3046571255095845, "val_nll": 1.4750858020923299}
+{"epoch": 4, "seed": 42, "train_loss": 1.3474249499184745, "val_macro_f1": 0.30419047619047623, "val_nll": 1.4649849306990717}
+{"epoch": 5, "seed": 42, "train_loss": 1.2414504459926061, "val_macro_f1": 0.2624470077886227, "val_nll": 1.4375611908893944}
+{"epoch": 6, "seed": 42, "train_loss": 1.1767885174070085, "val_macro_f1": 0.22886274509803925, "val_nll": 1.421949604391878}
+{"epoch": 7, "seed": 42, "train_loss": 1.0837877988815308, "val_macro_f1": 0.28398860398860404, "val_nll": 1.4153979437176711}
+{"epoch": 8, "seed": 42, "train_loss": 1.0277089263711656, "val_macro_f1": 0.31780626780626775, "val_nll": 1.4076844247941944}
+{"epoch": 9, "seed": 42, "train_loss": 0.9635787223066602, "val_macro_f1": 0.304447391688771, "val_nll": 1.4095191862724568}
+{"epoch": 10, "seed": 42, "train_loss": 0.8889828026294708, "val_macro_f1": 0.2698350247202706, "val_nll": 1.4262059944617325}
+REFIT minilm_last2_ce fold=0 epochs=8
+{"epoch": 1, "seed": 42, "train_loss": 1.6199265367844526}
+{"epoch": 2, "seed": 42, "train_loss": 1.506874449112836}
+{"epoch": 3, "seed": 42, "train_loss": 1.3982695761848898}
+{"epoch": 4, "seed": 42, "train_loss": 1.308884760912727}
+{"epoch": 5, "seed": 42, "train_loss": 1.224439915488748}
+{"epoch": 6, "seed": 42, "train_loss": 1.1592736840248108}
+{"epoch": 7, "seed": 42, "train_loss": 1.080858753008001}
+{"epoch": 8, "seed": 42, "train_loss": 1.0146963280789993}
+DONE minilm_last2_ce fold=0 macro_f1=0.3565
+START minilm_last2_ce fold=1 epoch selection
+{"epoch": 1, "seed": 43, "train_loss": 1.61412079845156, "val_macro_f1": 0.2577518499033412, "val_nll": 1.5576579042615455}
+{"epoch": 2, "seed": 43, "train_loss": 1.4962150709969657, "val_macro_f1": 0.2674436731214225, "val_nll": 1.5375070557743296}
+{"epoch": 3, "seed": 43, "train_loss": 1.4112866180283683, "val_macro_f1": 0.3158973013930174, "val_nll": 1.50975520307244}
+{"epoch": 4, "seed": 43, "train_loss": 1.31551536491939, "val_macro_f1": 0.3444912280701754, "val_nll": 1.486594144154826}
+{"epoch": 5, "seed": 43, "train_loss": 1.2209842119898116, "val_macro_f1": 0.33238095238095233, "val_nll": 1.487834859950635}
+{"epoch": 6, "seed": 43, "train_loss": 1.1259630024433136, "val_macro_f1": 0.31433472462587797, "val_nll": 1.4745062186520563}
+{"epoch": 7, "seed": 43, "train_loss": 1.0374035622392381, "val_macro_f1": 0.33181113460183226, "val_nll": 1.4755183515233303}
+{"epoch": 8, "seed": 43, "train_loss": 0.9709758630820683, "val_macro_f1": 0.3060962566844919, "val_nll": 1.484214999945667}
+{"epoch": 9, "seed": 43, "train_loss": 0.9126701056957245, "val_macro_f1": 0.3022153209109731, "val_nll": 1.4896656743044632}
+REFIT minilm_last2_ce fold=1 epochs=6
+{"epoch": 1, "seed": 43, "train_loss": 1.6067274345291986}
+{"epoch": 2, "seed": 43, "train_loss": 1.5109820697042677}
+{"epoch": 3, "seed": 43, "train_loss": 1.3884283900260925}
+{"epoch": 4, "seed": 43, "train_loss": 1.2989238169458177}
+{"epoch": 5, "seed": 43, "train_loss": 1.2055462333891127}
+{"epoch": 6, "seed": 43, "train_loss": 1.1160278452767267}
+DONE minilm_last2_ce fold=1 macro_f1=0.2967
+START minilm_last2_ce fold=2 epoch selection
+{"epoch": 1, "seed": 44, "train_loss": 1.6078727841377258, "val_macro_f1": 0.18740037950664137, "val_nll": 1.5494601169593905}
+{"epoch": 2, "seed": 44, "train_loss": 1.4899971314838953, "val_macro_f1": 0.25905267146646455, "val_nll": 1.494569590324116}
+{"epoch": 3, "seed": 44, "train_loss": 1.4061944399561201, "val_macro_f1": 0.2832802086351782, "val_nll": 1.4579784667235747}
+{"epoch": 4, "seed": 44, "train_loss": 1.3277220726013184, "val_macro_f1": 0.3309634490930635, "val_nll": 1.4209631023588725}
+{"epoch": 5, "seed": 44, "train_loss": 1.245253963129861, "val_macro_f1": 0.3389937106918239, "val_nll": 1.3946190399620306}
+{"epoch": 6, "seed": 44, "train_loss": 1.1854517459869385, "val_macro_f1": 0.34328454031843864, "val_nll": 1.374581180752199}
+{"epoch": 7, "seed": 44, "train_loss": 1.1010428624493735, "val_macro_f1": 0.34270853245542615, "val_nll": 1.3601088854136127}
+{"epoch": 8, "seed": 44, "train_loss": 1.052372966493879, "val_macro_f1": 0.346449864498645, "val_nll": 1.34859811327659}
+{"epoch": 9, "seed": 44, "train_loss": 0.9710666494710105, "val_macro_f1": 0.34185085354896677, "val_nll": 1.3469635318859785}
+{"epoch": 10, "seed": 44, "train_loss": 0.9122501228536878, "val_macro_f1": 0.32809661835748793, "val_nll": 1.3279785426229798}
+REFIT minilm_last2_ce fold=2 epochs=10
+{"epoch": 1, "seed": 44, "train_loss": 1.610193928082784}
+{"epoch": 2, "seed": 44, "train_loss": 1.5064017640219793}
+{"epoch": 3, "seed": 44, "train_loss": 1.3802385263972812}
+{"epoch": 4, "seed": 44, "train_loss": 1.3089467618200514}
+{"epoch": 5, "seed": 44, "train_loss": 1.2090883122550116}
+{"epoch": 6, "seed": 44, "train_loss": 1.1216861605644226}
+{"epoch": 7, "seed": 44, "train_loss": 1.0555567310916052}
+{"epoch": 8, "seed": 44, "train_loss": 0.9843516482247247}
+{"epoch": 9, "seed": 44, "train_loss": 0.9264861279063754}
+{"epoch": 10, "seed": 44, "train_loss": 0.8388320340050591}
+DONE minilm_last2_ce fold=2 macro_f1=0.3371
+START minilm_last2_ce fold=3 epoch selection
+{"epoch": 1, "seed": 45, "train_loss": 1.6448109490530831, "val_macro_f1": 0.21146267428101045, "val_nll": 1.5672605398520134}
+{"epoch": 2, "seed": 45, "train_loss": 1.5422032986368452, "val_macro_f1": 0.17490196078431372, "val_nll": 1.5391997487353586}
+{"epoch": 3, "seed": 45, "train_loss": 1.4584071040153503, "val_macro_f1": 0.2384990253411306, "val_nll": 1.5158100500633684}
+{"epoch": 4, "seed": 45, "train_loss": 1.3632853882653373, "val_macro_f1": 0.20126984126984127, "val_nll": 1.4981743915549808}
+{"epoch": 5, "seed": 45, "train_loss": 1.2956054210662842, "val_macro_f1": 0.2196825396825397, "val_nll": 1.4841013642485592}
+{"epoch": 6, "seed": 45, "train_loss": 1.1939073034695216, "val_macro_f1": 0.27352345215759855, "val_nll": 1.4759142919804284}
+{"epoch": 7, "seed": 45, "train_loss": 1.1326851461614882, "val_macro_f1": 0.3018016800320885, "val_nll": 1.4671593214324108}
+{"epoch": 8, "seed": 45, "train_loss": 1.089620943580355, "val_macro_f1": 0.2982370962662645, "val_nll": 1.457904885670163}
+{"epoch": 9, "seed": 45, "train_loss": 1.0072878641741616, "val_macro_f1": 0.29970186335403726, "val_nll": 1.4592463452970035}
+{"epoch": 10, "seed": 45, "train_loss": 0.9266395313399178, "val_macro_f1": 0.31635019001914066, "val_nll": 1.4569187111800457}
+REFIT minilm_last2_ce fold=3 epochs=10
+{"epoch": 1, "seed": 45, "train_loss": 1.6342790060573154}
+{"epoch": 2, "seed": 45, "train_loss": 1.5350340604782104}
+{"epoch": 3, "seed": 45, "train_loss": 1.4415550033251445}
+{"epoch": 4, "seed": 45, "train_loss": 1.3435451123449538}
+{"epoch": 5, "seed": 45, "train_loss": 1.2630287607510884}
+{"epoch": 6, "seed": 45, "train_loss": 1.1803505619366963}
+{"epoch": 7, "seed": 45, "train_loss": 1.0984795424673293}
+{"epoch": 8, "seed": 45, "train_loss": 1.0100508828957875}
+{"epoch": 9, "seed": 45, "train_loss": 0.9397501779927148}
+{"epoch": 10, "seed": 45, "train_loss": 0.8688341147369809}
+DONE minilm_last2_ce fold=3 macro_f1=0.3183
+START minilm_last2_ce fold=4 epoch selection
+{"epoch": 1, "seed": 46, "train_loss": 1.6242590206010001, "val_macro_f1": 0.2060113328406011, "val_nll": 1.610242396097775}
+{"epoch": 2, "seed": 46, "train_loss": 1.5285987087658472, "val_macro_f1": 0.1915897435897436, "val_nll": 1.5812037648637103}
+{"epoch": 3, "seed": 46, "train_loss": 1.4231396998677934, "val_macro_f1": 0.26529470529470534, "val_nll": 1.5675339530317056}
+{"epoch": 4, "seed": 46, "train_loss": 1.3300368189811707, "val_macro_f1": 0.29065919535447127, "val_nll": 1.5541133931694708}
+{"epoch": 5, "seed": 46, "train_loss": 1.2398662396839686, "val_macro_f1": 0.23988982259570496, "val_nll": 1.5535094389298159}
+{"epoch": 6, "seed": 46, "train_loss": 1.1627426317759924, "val_macro_f1": 0.2638391763485055, "val_nll": 1.5499857414938663}
+{"epoch": 7, "seed": 46, "train_loss": 1.0669697650841303, "val_macro_f1": 0.2557389265317279, "val_nll": 1.5570587290868427}
+{"epoch": 8, "seed": 46, "train_loss": 1.00301969902856, "val_macro_f1": 0.23900363936661578, "val_nll": 1.5565246778559931}
+{"epoch": 9, "seed": 46, "train_loss": 0.9184965406145368, "val_macro_f1": 0.2171709068066586, "val_nll": 1.5689795217972367}
+REFIT minilm_last2_ce fold=4 epochs=6
+{"epoch": 1, "seed": 46, "train_loss": 1.6254527237680223}
+{"epoch": 2, "seed": 46, "train_loss": 1.5289461016654968}
+{"epoch": 3, "seed": 46, "train_loss": 1.4094964000913832}
+{"epoch": 4, "seed": 46, "train_loss": 1.3211016721195645}
+{"epoch": 5, "seed": 46, "train_loss": 1.2335294087727864}
+{"epoch": 6, "seed": 46, "train_loss": 1.1526584923267365}
+DONE minilm_last2_ce fold=4 macro_f1=0.3111
+START minilm_supcon fold=0 epoch selection
+{"epoch": 1, "seed": 42, "train_loss": 1.9764760306903295, "val_macro_f1": 0.24157635467980293, "val_nll": 1.5398254558982098}
+{"epoch": 2, "seed": 42, "train_loss": 1.8339086515562875, "val_macro_f1": 0.2640836740364387, "val_nll": 1.503921490351485}
+{"epoch": 3, "seed": 42, "train_loss": 1.687570137637002, "val_macro_f1": 0.29475750526199185, "val_nll": 1.4604459816631556}
+{"epoch": 4, "seed": 42, "train_loss": 1.5353881120681763, "val_macro_f1": 0.3073778422835027, "val_nll": 1.440220074290622}
+{"epoch": 5, "seed": 42, "train_loss": 1.3433236905506678, "val_macro_f1": 0.31569763205828777, "val_nll": 1.3997677943944606}
+{"epoch": 6, "seed": 42, "train_loss": 1.1910897237913949, "val_macro_f1": 0.33506678033532256, "val_nll": 1.4000040955490975}
+{"epoch": 7, "seed": 42, "train_loss": 1.0105440957205636, "val_macro_f1": 0.3145822021116139, "val_nll": 1.435795126805818}
+{"epoch": 8, "seed": 42, "train_loss": 0.8693241945334843, "val_macro_f1": 0.3375243664717349, "val_nll": 1.4509908483754068}
+REFIT minilm_supcon fold=0 epochs=5
+{"epoch": 1, "seed": 42, "train_loss": 1.963829889016993}
+{"epoch": 2, "seed": 42, "train_loss": 1.8177920439664055}
+{"epoch": 3, "seed": 42, "train_loss": 1.6485318015603458}
+{"epoch": 4, "seed": 42, "train_loss": 1.4819043664371265}
+{"epoch": 5, "seed": 42, "train_loss": 1.313569328364204}
+DONE minilm_supcon fold=0 macro_f1=0.3347
+START minilm_supcon fold=1 epoch selection
+{"epoch": 1, "seed": 43, "train_loss": 1.9497332743235998, "val_macro_f1": 0.24285714285714288, "val_nll": 1.5540597972233468}
+{"epoch": 2, "seed": 43, "train_loss": 1.7929014819008964, "val_macro_f1": 0.3026798955990209, "val_nll": 1.5179205270288014}
+{"epoch": 3, "seed": 43, "train_loss": 1.6398398450442724, "val_macro_f1": 0.31663638686894496, "val_nll": 1.4650393905117192}
+{"epoch": 4, "seed": 43, "train_loss": 1.4566965869494848, "val_macro_f1": 0.33238114923522116, "val_nll": 1.4287210440387885}
+{"epoch": 5, "seed": 43, "train_loss": 1.2693286793572562, "val_macro_f1": 0.34536759631388786, "val_nll": 1.4040440550472633}
+{"epoch": 6, "seed": 43, "train_loss": 1.1037637037890298, "val_macro_f1": 0.3474389221608635, "val_nll": 1.4090580635992462}
+{"epoch": 7, "seed": 43, "train_loss": 0.9361051065581185, "val_macro_f1": 0.35021279829761365, "val_nll": 1.4336709601732491}
+{"epoch": 8, "seed": 43, "train_loss": 0.7832690477371216, "val_macro_f1": 0.32202957646752395, "val_nll": 1.4821139063615898}
+REFIT minilm_supcon fold=1 epochs=5
+{"epoch": 1, "seed": 43, "train_loss": 1.9385957055621676}
+{"epoch": 2, "seed": 43, "train_loss": 1.7977602415614657}
+{"epoch": 3, "seed": 43, "train_loss": 1.5999530951182048}
+{"epoch": 4, "seed": 43, "train_loss": 1.433351821369595}
+{"epoch": 5, "seed": 43, "train_loss": 1.2533999681472778}
+DONE minilm_supcon fold=1 macro_f1=0.3463
+START minilm_supcon fold=2 epoch selection
+{"epoch": 1, "seed": 44, "train_loss": 1.949479809829167, "val_macro_f1": 0.2002499414199797, "val_nll": 1.5397315256559763}
+{"epoch": 2, "seed": 44, "train_loss": 1.790969397340502, "val_macro_f1": 0.261750270103411, "val_nll": 1.4749225717359171}
+{"epoch": 3, "seed": 44, "train_loss": 1.6463281427110945, "val_macro_f1": 0.3159541711421411, "val_nll": 1.41359804136925}
+{"epoch": 4, "seed": 44, "train_loss": 1.4930349928992135, "val_macro_f1": 0.3349115423583509, "val_nll": 1.3427036234298855}
+{"epoch": 5, "seed": 44, "train_loss": 1.3030818445341927, "val_macro_f1": 0.33518901503960385, "val_nll": 1.298262067331805}
+{"epoch": 6, "seed": 44, "train_loss": 1.158582559653691, "val_macro_f1": 0.3401521739130435, "val_nll": 1.283975280505644}
+{"epoch": 7, "seed": 44, "train_loss": 0.9740785786083767, "val_macro_f1": 0.32498550724637687, "val_nll": 1.2809656345333391}
+{"epoch": 8, "seed": 44, "train_loss": 0.8354780077934265, "val_macro_f1": 0.3270595169986651, "val_nll": 1.281010348474589}
+{"epoch": 9, "seed": 44, "train_loss": 0.6904694395405906, "val_macro_f1": 0.3016776968211764, "val_nll": 1.3352164283860708}
+{"epoch": 10, "seed": 44, "train_loss": 0.5835138303892953, "val_macro_f1": 0.2978905255501, "val_nll": 1.4193108741815645}
+REFIT minilm_supcon fold=2 epochs=7
+{"epoch": 1, "seed": 44, "train_loss": 1.9382260176870558}
+{"epoch": 2, "seed": 44, "train_loss": 1.7962228059768677}
+{"epoch": 3, "seed": 44, "train_loss": 1.5932242472966511}
+{"epoch": 4, "seed": 44, "train_loss": 1.4244864847924974}
+{"epoch": 5, "seed": 44, "train_loss": 1.2290154231919184}
+{"epoch": 6, "seed": 44, "train_loss": 1.05653096569909}
+{"epoch": 7, "seed": 44, "train_loss": 0.9026803606086307}
+DONE minilm_supcon fold=2 macro_f1=0.3514
+START minilm_supcon fold=3 epoch selection
+{"epoch": 1, "seed": 45, "train_loss": 1.9829268285206385, "val_macro_f1": 0.1725578313600092, "val_nll": 1.5601506570154906}
+{"epoch": 2, "seed": 45, "train_loss": 1.856055157525199, "val_macro_f1": 0.17488105004101723, "val_nll": 1.5315707764746271}
+{"epoch": 3, "seed": 45, "train_loss": 1.721869204725538, "val_macro_f1": 0.21004355043452788, "val_nll": 1.5091836818430102}
+{"epoch": 4, "seed": 45, "train_loss": 1.5681861809321813, "val_macro_f1": 0.23705663433113142, "val_nll": 1.476023079870476}
+{"epoch": 5, "seed": 45, "train_loss": 1.4201879416193282, "val_macro_f1": 0.23959412235274305, "val_nll": 1.4540746047878415}
+{"epoch": 6, "seed": 45, "train_loss": 1.2223681722368513, "val_macro_f1": 0.2688644688644689, "val_nll": 1.4518070178860631}
+{"epoch": 7, "seed": 45, "train_loss": 1.07496953862054, "val_macro_f1": 0.25300898275374084, "val_nll": 1.461536768927469}
+{"epoch": 8, "seed": 45, "train_loss": 0.9371039015906197, "val_macro_f1": 0.27240395675178286, "val_nll": 1.4814372262535813}
+{"epoch": 9, "seed": 45, "train_loss": 0.7737023404666356, "val_macro_f1": 0.304056636487393, "val_nll": 1.5746698223311986}
+REFIT minilm_supcon fold=3 epochs=6
+{"epoch": 1, "seed": 45, "train_loss": 1.9704965816603766}
+{"epoch": 2, "seed": 45, "train_loss": 1.8408898247612848}
+{"epoch": 3, "seed": 45, "train_loss": 1.6876174012819927}
+{"epoch": 4, "seed": 45, "train_loss": 1.5135943823390536}
+{"epoch": 5, "seed": 45, "train_loss": 1.3430694739023845}
+{"epoch": 6, "seed": 45, "train_loss": 1.1643732123904758}
+DONE minilm_supcon fold=3 macro_f1=0.3034
+START minilm_supcon fold=4 epoch selection
+{"epoch": 1, "seed": 46, "train_loss": 1.9618195635931832, "val_macro_f1": 0.21126878541512686, "val_nll": 1.6061873485510207}
+{"epoch": 2, "seed": 46, "train_loss": 1.8319822294371468, "val_macro_f1": 0.20858689849767406, "val_nll": 1.5684872099156204}
+{"epoch": 3, "seed": 46, "train_loss": 1.6673477802957808, "val_macro_f1": 0.27869642783738235, "val_nll": 1.543965620055973}
+{"epoch": 4, "seed": 46, "train_loss": 1.5119125502450126, "val_macro_f1": 0.28948908915314286, "val_nll": 1.5180943560137743}
+{"epoch": 5, "seed": 46, "train_loss": 1.3251624873706274, "val_macro_f1": 0.2875925925925926, "val_nll": 1.4988919957136981}
+{"epoch": 6, "seed": 46, "train_loss": 1.1518796937806266, "val_macro_f1": 0.277914653784219, "val_nll": 1.4870213190194594}
+{"epoch": 7, "seed": 46, "train_loss": 0.9865576667445046, "val_macro_f1": 0.2960061755198533, "val_nll": 1.5029861349231999}
+{"epoch": 8, "seed": 46, "train_loss": 0.8196938293320792, "val_macro_f1": 0.3052947265862867, "val_nll": 1.5305579480736964}
+{"epoch": 9, "seed": 46, "train_loss": 0.6726676055363247, "val_macro_f1": 0.30527093522382254, "val_nll": 1.5739163787569856}
+REFIT minilm_supcon fold=4 epochs=6
+{"epoch": 1, "seed": 46, "train_loss": 1.956685463587443}
+{"epoch": 2, "seed": 46, "train_loss": 1.8285342852274578}
+{"epoch": 3, "seed": 46, "train_loss": 1.6555551754103766}
+{"epoch": 4, "seed": 46, "train_loss": 1.4841605358653598}
+{"epoch": 5, "seed": 46, "train_loss": 1.2901733915011089}
+{"epoch": 6, "seed": 46, "train_loss": 1.1015759971406724}
+DONE minilm_supcon fold=4 macro_f1=0.3339
+START minilm_teacher fold=0 epoch selection
+{"epoch": 1, "seed": 42, "train_loss": 1.8668609006064278, "val_macro_f1": 0.234679802955665, "val_nll": 1.5408024494275008}
+{"epoch": 2, "seed": 42, "train_loss": 1.66439745255879, "val_macro_f1": 0.28437222087476755, "val_nll": 1.50720012119658}
+{"epoch": 3, "seed": 42, "train_loss": 1.4834367547716414, "val_macro_f1": 0.335953216374269, "val_nll": 1.4675067949478893}
+{"epoch": 4, "seed": 42, "train_loss": 1.3319224544933863, "val_macro_f1": 0.3066448801742919, "val_nll": 1.4516408975355755}
+{"epoch": 5, "seed": 42, "train_loss": 1.144929472889219, "val_macro_f1": 0.2955989879822897, "val_nll": 1.4106296471873714}
+{"epoch": 6, "seed": 42, "train_loss": 0.9852592859949384, "val_macro_f1": 0.3268476621417798, "val_nll": 1.4119353715397207}
+{"epoch": 7, "seed": 42, "train_loss": 0.8032501723085131, "val_macro_f1": 0.3072314395843808, "val_nll": 1.4447625520386447}
+{"epoch": 8, "seed": 42, "train_loss": 0.6568700245448521, "val_macro_f1": 0.28312931999845536, "val_nll": 1.460504771543797}
+REFIT minilm_teacher fold=0 epochs=5
+{"epoch": 1, "seed": 42, "train_loss": 1.8424478138194365}
+{"epoch": 2, "seed": 42, "train_loss": 1.6353643852121689}
+{"epoch": 3, "seed": 42, "train_loss": 1.437393307685852}
+{"epoch": 4, "seed": 42, "train_loss": 1.2757622354170854}
+{"epoch": 5, "seed": 42, "train_loss": 1.1030156822765576}
+DONE minilm_teacher fold=0 macro_f1=0.3434
+START minilm_teacher fold=1 epoch selection
+{"epoch": 1, "seed": 43, "train_loss": 1.7856891580990382, "val_macro_f1": 0.24285714285714288, "val_nll": 1.5564081620013643}
+{"epoch": 2, "seed": 43, "train_loss": 1.5776010666574751, "val_macro_f1": 0.3051687193724496, "val_nll": 1.5222496401359256}
+{"epoch": 3, "seed": 43, "train_loss": 1.4204843640327454, "val_macro_f1": 0.3372549019607843, "val_nll": 1.466077772347256}
+{"epoch": 4, "seed": 43, "train_loss": 1.2462813087872096, "val_macro_f1": 0.34039664668059355, "val_nll": 1.4363174047980989}
+{"epoch": 5, "seed": 43, "train_loss": 1.0546465856688363, "val_macro_f1": 0.33495387421516015, "val_nll": 1.4092640288940064}
+{"epoch": 6, "seed": 43, "train_loss": 0.8830957838467189, "val_macro_f1": 0.3606370987503063, "val_nll": 1.4159203079192386}
+{"epoch": 7, "seed": 43, "train_loss": 0.7225514948368073, "val_macro_f1": 0.3441736694677871, "val_nll": 1.4394643522617088}
+{"epoch": 8, "seed": 43, "train_loss": 0.5722789487668446, "val_macro_f1": 0.3479358839358839, "val_nll": 1.4828315063262554}
+REFIT minilm_teacher fold=1 epochs=5
+{"epoch": 1, "seed": 43, "train_loss": 1.7704319689008925}
+{"epoch": 2, "seed": 43, "train_loss": 1.5854050980673895}
+{"epoch": 3, "seed": 43, "train_loss": 1.3912943402926128}
+{"epoch": 4, "seed": 43, "train_loss": 1.2187520464261372}
+{"epoch": 5, "seed": 43, "train_loss": 1.0378031233946483}
+DONE minilm_teacher fold=1 macro_f1=0.3548
+START minilm_teacher fold=2 epoch selection
+{"epoch": 1, "seed": 44, "train_loss": 1.7657755698476518, "val_macro_f1": 0.20516545601291364, "val_nll": 1.5384876519786035}
+{"epoch": 2, "seed": 44, "train_loss": 1.5723238161631994, "val_macro_f1": 0.2594541910331384, "val_nll": 1.475085574613942}
+{"epoch": 3, "seed": 44, "train_loss": 1.4271768161228724, "val_macro_f1": 0.32539861895794103, "val_nll": 1.4156069251025032}
+{"epoch": 4, "seed": 44, "train_loss": 1.2743734887668066, "val_macro_f1": 0.31428415759896633, "val_nll": 1.3459010073282347}
+{"epoch": 5, "seed": 44, "train_loss": 1.0877588987350464, "val_macro_f1": 0.36450834403080873, "val_nll": 1.3046501472192131}
+{"epoch": 6, "seed": 44, "train_loss": 0.9439410865306854, "val_macro_f1": 0.31172463768115943, "val_nll": 1.2911576873275175}
+{"epoch": 7, "seed": 44, "train_loss": 0.7568179965019226, "val_macro_f1": 0.300953059140017, "val_nll": 1.2885869855740997}
+{"epoch": 8, "seed": 44, "train_loss": 0.6230968683958054, "val_macro_f1": 0.3158962057432822, "val_nll": 1.2895024880713488}
+{"epoch": 9, "seed": 44, "train_loss": 0.48028935279164997, "val_macro_f1": 0.3167843137254902, "val_nll": 1.3447975457295989}
+{"epoch": 10, "seed": 44, "train_loss": 0.3700629600456783, "val_macro_f1": 0.2997215329473394, "val_nll": 1.423476828314131}
+REFIT minilm_teacher fold=2 epochs=7
+{"epoch": 1, "seed": 44, "train_loss": 1.7617330352465312}
+{"epoch": 2, "seed": 44, "train_loss": 1.580353597799937}
+{"epoch": 3, "seed": 44, "train_loss": 1.3816602759891086}
+{"epoch": 4, "seed": 44, "train_loss": 1.2093007895681593}
+{"epoch": 5, "seed": 44, "train_loss": 1.014744973844952}
+{"epoch": 6, "seed": 44, "train_loss": 0.8459471861521403}
+{"epoch": 7, "seed": 44, "train_loss": 0.6958988540702395}
+DONE minilm_teacher fold=2 macro_f1=0.3371
+START minilm_teacher fold=3 epoch selection
+{"epoch": 1, "seed": 45, "train_loss": 1.8345268539019994, "val_macro_f1": 0.17945438308414713, "val_nll": 1.560201701623328}
+{"epoch": 2, "seed": 45, "train_loss": 1.638412424496242, "val_macro_f1": 0.16903663500678426, "val_nll": 1.5329582436905973}
+{"epoch": 3, "seed": 45, "train_loss": 1.5014126215662276, "val_macro_f1": 0.21428612447649403, "val_nll": 1.515516891170771}
+{"epoch": 4, "seed": 45, "train_loss": 1.354849364076342, "val_macro_f1": 0.22006759225429304, "val_nll": 1.4861439138787824}
+{"epoch": 5, "seed": 45, "train_loss": 1.211880964892251, "val_macro_f1": 0.26011615660076437, "val_nll": 1.4660559009751226}
+{"epoch": 6, "seed": 45, "train_loss": 1.0152967359338487, "val_macro_f1": 0.282986642986643, "val_nll": 1.4621907283789672}
+{"epoch": 7, "seed": 45, "train_loss": 0.8611717053822109, "val_macro_f1": 0.2656341291471095, "val_nll": 1.4722332737976125}
+{"epoch": 8, "seed": 45, "train_loss": 0.7232114587511335, "val_macro_f1": 0.3042195485673747, "val_nll": 1.4878380829491344}
+{"epoch": 9, "seed": 45, "train_loss": 0.5629092156887054, "val_macro_f1": 0.3185935544690801, "val_nll": 1.5834881119199016}
+REFIT minilm_teacher fold=3 epochs=6
+{"epoch": 1, "seed": 45, "train_loss": 1.8213037716017828}
+{"epoch": 2, "seed": 45, "train_loss": 1.6248284379641216}
+{"epoch": 3, "seed": 45, "train_loss": 1.4766068789694045}
+{"epoch": 4, "seed": 45, "train_loss": 1.3096640706062317}
+{"epoch": 5, "seed": 45, "train_loss": 1.133201042811076}
+{"epoch": 6, "seed": 45, "train_loss": 0.9544347988234626}
+DONE minilm_teacher fold=3 macro_f1=0.2808
+START minilm_teacher fold=4 epoch selection
+{"epoch": 1, "seed": 46, "train_loss": 1.8096080337251936, "val_macro_f1": 0.21015212364609953, "val_nll": 1.6082499869428413}
+{"epoch": 2, "seed": 46, "train_loss": 1.6242304274014063, "val_macro_f1": 0.2148611111111111, "val_nll": 1.573918363452033}
+{"epoch": 3, "seed": 46, "train_loss": 1.4589529207774572, "val_macro_f1": 0.2712383066434121, "val_nll": 1.5555264557053194}
+{"epoch": 4, "seed": 46, "train_loss": 1.2968312757355827, "val_macro_f1": 0.24914142928535732, "val_nll": 1.5360063580015115}
+{"epoch": 5, "seed": 46, "train_loss": 1.116804586989539, "val_macro_f1": 0.30175746974823653, "val_nll": 1.5187049442016307}
+{"epoch": 6, "seed": 46, "train_loss": 0.9402775892189571, "val_macro_f1": 0.2606698187549251, "val_nll": 1.5079106797522013}
+{"epoch": 7, "seed": 46, "train_loss": 0.7662903453622546, "val_macro_f1": 0.26470753238181666, "val_nll": 1.525136932484491}
+{"epoch": 8, "seed": 46, "train_loss": 0.6093525418213436, "val_macro_f1": 0.2909530431557966, "val_nll": 1.5548182634778134}
+{"epoch": 9, "seed": 46, "train_loss": 0.46962942821638926, "val_macro_f1": 0.27508229098090853, "val_nll": 1.5978284640051315}
+REFIT minilm_teacher fold=4 epochs=6
+{"epoch": 1, "seed": 46, "train_loss": 1.8047055999437969}
+{"epoch": 2, "seed": 46, "train_loss": 1.6165450678931341}
+{"epoch": 3, "seed": 46, "train_loss": 1.4423525465859308}
+{"epoch": 4, "seed": 46, "train_loss": 1.2747000124719408}
+{"epoch": 5, "seed": 46, "train_loss": 1.0778134663899739}
+{"epoch": 6, "seed": 46, "train_loss": 0.8921645647949643}
+DONE minilm_teacher fold=4 macro_f1=0.3388
+START minilm_ordinal fold=0 epoch selection
+{"epoch": 1, "seed": 42, "train_loss": 1.7082900404930115, "val_macro_f1": 0.24142050040355123, "val_nll": 1.5388299842091304}
+{"epoch": 2, "seed": 42, "train_loss": 1.5583568215370178, "val_macro_f1": 0.2644621007468616, "val_nll": 1.5022073792137436}
+{"epoch": 3, "seed": 42, "train_loss": 1.4168041093008858, "val_macro_f1": 0.31135848278705425, "val_nll": 1.4595102438921823}
+{"epoch": 4, "seed": 42, "train_loss": 1.2652581078665597, "val_macro_f1": 0.3069424286405419, "val_nll": 1.4435872978977626}
+{"epoch": 5, "seed": 42, "train_loss": 1.0783178210258484, "val_macro_f1": 0.31569763205828777, "val_nll": 1.399065952031259}
+{"epoch": 6, "seed": 42, "train_loss": 0.9254917843001229, "val_macro_f1": 0.31846153846153846, "val_nll": 1.4010120305225102}
+{"epoch": 7, "seed": 42, "train_loss": 0.7537945508956909, "val_macro_f1": 0.30756997499854644, "val_nll": 1.436824186439426}
+{"epoch": 8, "seed": 42, "train_loss": 0.61611636195864, "val_macro_f1": 0.29201156618186525, "val_nll": 1.4499685817757193}
+REFIT minilm_ordinal fold=0 epochs=5
+{"epoch": 1, "seed": 42, "train_loss": 1.6836589715060066}
+{"epoch": 2, "seed": 42, "train_loss": 1.538964264533099}
+{"epoch": 3, "seed": 42, "train_loss": 1.3737983563367058}
+{"epoch": 4, "seed": 42, "train_loss": 1.2091446133220898}
+{"epoch": 5, "seed": 42, "train_loss": 1.0381795483476974}
+DONE minilm_ordinal fold=0 macro_f1=0.3504
+START minilm_ordinal fold=1 epoch selection
+{"epoch": 1, "seed": 43, "train_loss": 1.6805107678685869, "val_macro_f1": 0.24294592280073224, "val_nll": 1.5550393755834302}
+{"epoch": 2, "seed": 43, "train_loss": 1.5181245718683516, "val_macro_f1": 0.3139755766621438, "val_nll": 1.520158204564282}
+{"epoch": 3, "seed": 43, "train_loss": 1.3621077367237635, "val_macro_f1": 0.3078898225957049, "val_nll": 1.4641052073691776}
+{"epoch": 4, "seed": 43, "train_loss": 1.1825643181800842, "val_macro_f1": 0.32687748291752744, "val_nll": 1.4359305174795698}
+{"epoch": 5, "seed": 43, "train_loss": 0.9974316273416791, "val_macro_f1": 0.34810030221350974, "val_nll": 1.4087511194909434}
+{"epoch": 6, "seed": 43, "train_loss": 0.8336514958313533, "val_macro_f1": 0.3606370987503063, "val_nll": 1.4148295571276326}
+{"epoch": 7, "seed": 43, "train_loss": 0.6799524618046624, "val_macro_f1": 0.3356510809451986, "val_nll": 1.436213292351777}
+{"epoch": 8, "seed": 43, "train_loss": 0.5380187439067023, "val_macro_f1": 0.38733724448010165, "val_nll": 1.478582718924464}
+REFIT minilm_ordinal fold=1 epochs=5
+{"epoch": 1, "seed": 43, "train_loss": 1.6687254177199469}
+{"epoch": 2, "seed": 43, "train_loss": 1.52974847290251}
+{"epoch": 3, "seed": 43, "train_loss": 1.3296351300345526}
+{"epoch": 4, "seed": 43, "train_loss": 1.1629377636644576}
+{"epoch": 5, "seed": 43, "train_loss": 0.9847001400258806}
+DONE minilm_ordinal fold=1 macro_f1=0.3546
+START minilm_ordinal fold=2 epoch selection
+{"epoch": 1, "seed": 44, "train_loss": 1.6707810504095895, "val_macro_f1": 0.2002499414199797, "val_nll": 1.5374689149195826}
+{"epoch": 2, "seed": 44, "train_loss": 1.5131738781929016, "val_macro_f1": 0.2567741935483871, "val_nll": 1.4703293296428752}
+{"epoch": 3, "seed": 44, "train_loss": 1.3690953935895647, "val_macro_f1": 0.3209961685823755, "val_nll": 1.4082372734083888}
+{"epoch": 4, "seed": 44, "train_loss": 1.214578994682857, "val_macro_f1": 0.33473193473193474, "val_nll": 1.3363670967847847}
+{"epoch": 5, "seed": 44, "train_loss": 1.0300679121698653, "val_macro_f1": 0.3714690215867676, "val_nll": 1.2944109953064893}
+{"epoch": 6, "seed": 44, "train_loss": 0.8948231041431427, "val_macro_f1": 0.31628377746610564, "val_nll": 1.2808304511036857}
+{"epoch": 7, "seed": 44, "train_loss": 0.713921029652868, "val_macro_f1": 0.31954464703132307, "val_nll": 1.275416806049294}
+{"epoch": 8, "seed": 44, "train_loss": 0.5838780403137207, "val_macro_f1": 0.3158962057432822, "val_nll": 1.2717253782702214}
+{"epoch": 9, "seed": 44, "train_loss": 0.45260560299668995, "val_macro_f1": 0.3152287581699347, "val_nll": 1.3263456374513531}
+{"epoch": 10, "seed": 44, "train_loss": 0.3499146636043276, "val_macro_f1": 0.30092478202292894, "val_nll": 1.3952840955845793}
+REFIT minilm_ordinal fold=2 epochs=8
+{"epoch": 1, "seed": 44, "train_loss": 1.6698613630400763}
+{"epoch": 2, "seed": 44, "train_loss": 1.5237632195154827}
+{"epoch": 3, "seed": 44, "train_loss": 1.3210266100035772}
+{"epoch": 4, "seed": 44, "train_loss": 1.149446490738127}
+{"epoch": 5, "seed": 44, "train_loss": 0.959583580493927}
+{"epoch": 6, "seed": 44, "train_loss": 0.7967859870857663}
+{"epoch": 7, "seed": 44, "train_loss": 0.6527490781413184}
+{"epoch": 8, "seed": 44, "train_loss": 0.5308031903372871}
+DONE minilm_ordinal fold=2 macro_f1=0.3682
+START minilm_ordinal fold=3 epoch selection
+{"epoch": 1, "seed": 45, "train_loss": 1.7105222174099513, "val_macro_f1": 0.15802232854864434, "val_nll": 1.5587189281698437}
+{"epoch": 2, "seed": 45, "train_loss": 1.5743692346981593, "val_macro_f1": 0.16913419913419916, "val_nll": 1.530666042187656}
+{"epoch": 3, "seed": 45, "train_loss": 1.4473160079547338, "val_macro_f1": 0.21330576441102758, "val_nll": 1.512051620200715}
+{"epoch": 4, "seed": 45, "train_loss": 1.2981534940855843, "val_macro_f1": 0.22735468619634744, "val_nll": 1.4806422776558377}
+{"epoch": 5, "seed": 45, "train_loss": 1.155305232320513, "val_macro_f1": 0.2525689867894436, "val_nll": 1.460213727949474}
+{"epoch": 6, "seed": 45, "train_loss": 0.9634540634495872, "val_macro_f1": 0.282986642986643, "val_nll": 1.4560612573901026}
+{"epoch": 7, "seed": 45, "train_loss": 0.8191748304026467, "val_macro_f1": 0.27365422102264203, "val_nll": 1.4636619603180456}
+{"epoch": 8, "seed": 45, "train_loss": 0.6866051512105125, "val_macro_f1": 0.2872187715665977, "val_nll": 1.479780774973161}
+{"epoch": 9, "seed": 45, "train_loss": 0.5322778097220829, "val_macro_f1": 0.32891737891737893, "val_nll": 1.5824381980003281}
+REFIT minilm_ordinal fold=3 epochs=6
+{"epoch": 1, "seed": 45, "train_loss": 1.7000588907135858}
+{"epoch": 2, "seed": 45, "train_loss": 1.5648336344295077}
+{"epoch": 3, "seed": 45, "train_loss": 1.4201676514413621}
+{"epoch": 4, "seed": 45, "train_loss": 1.2478523916668363}
+{"epoch": 5, "seed": 45, "train_loss": 1.077907856967714}
+{"epoch": 6, "seed": 45, "train_loss": 0.9055962695015801}
+DONE minilm_ordinal fold=3 macro_f1=0.2803
+START minilm_ordinal fold=4 epoch selection
+{"epoch": 1, "seed": 46, "train_loss": 1.6917779019900732, "val_macro_f1": 0.21015212364609953, "val_nll": 1.6057727749145012}
+{"epoch": 2, "seed": 46, "train_loss": 1.5610545022147042, "val_macro_f1": 0.21503496503496505, "val_nll": 1.5694390917513406}
+{"epoch": 3, "seed": 46, "train_loss": 1.4047370723315649, "val_macro_f1": 0.26390920740765944, "val_nll": 1.5490705397252762}
+{"epoch": 4, "seed": 46, "train_loss": 1.2417661888258797, "val_macro_f1": 0.2672122031738834, "val_nll": 1.5283950071797603}
+{"epoch": 5, "seed": 46, "train_loss": 1.062043764761516, "val_macro_f1": 0.3023364854215918, "val_nll": 1.5086367001773586}
+{"epoch": 6, "seed": 46, "train_loss": 0.8931668741362435, "val_macro_f1": 0.2695813204508857, "val_nll": 1.4976932693982996}
+{"epoch": 7, "seed": 46, "train_loss": 0.7252674315656934, "val_macro_f1": 0.26470753238181666, "val_nll": 1.5119862025095023}
+{"epoch": 8, "seed": 46, "train_loss": 0.5760657340288162, "val_macro_f1": 0.29171542891818236, "val_nll": 1.5400430456592729}
+{"epoch": 9, "seed": 46, "train_loss": 0.4427477866411209, "val_macro_f1": 0.31561101028433153, "val_nll": 1.5820966173918178}
+REFIT minilm_ordinal fold=4 epochs=6
+{"epoch": 1, "seed": 46, "train_loss": 1.6912917693456013}
+{"epoch": 2, "seed": 46, "train_loss": 1.5584674212667677}
+{"epoch": 3, "seed": 46, "train_loss": 1.3869394461313884}
+{"epoch": 4, "seed": 46, "train_loss": 1.2177149388525221}
+{"epoch": 5, "seed": 46, "train_loss": 1.0246244834529028}
+{"epoch": 6, "seed": 46, "train_loss": 0.8468827737702264}
+DONE minilm_ordinal fold=4 macro_f1=0.3385
+START minilm_hard_negative fold=0 epoch selection
+Traceback (most recent call last):
+  File "/Users/SunnyMok/Desktop/polyu/Y5S1/DSAI4205/Data 2 - Movie Reviews/experiments/encoder_finetuning.py", line 454, in <module>
+    main()
+  File "/Users/SunnyMok/Desktop/polyu/Y5S1/DSAI4205/Data 2 - Movie Reviews/experiments/encoder_finetuning.py", line 450, in main
+    {"smoke": smoke, "cv": run_cv, "final": final_fit}[args.command](args)
+  File "/Users/SunnyMok/Desktop/polyu/Y5S1/DSAI4205/Data 2 - Movie Reviews/experiments/encoder_finetuning.py", line 334, in run_cv
+    model, selected_epochs, inner_history = train_run(
+                                            ^^^^^^^^^^
+  File "/Users/SunnyMok/Desktop/polyu/Y5S1/DSAI4205/Data 2 - Movie Reviews/experiments/encoder_finetuning.py", line 251, in train_run
+    loss, parts = loss_parts(model, logits, z, projected, labels, teacher, cfg)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/SunnyMok/Desktop/polyu/Y5S1/DSAI4205/Data 2 - Movie Reviews/experiments/encoder_finetuning.py", line 190, in loss_parts
+    hard = ordinal_hard_negative(embeddings, labels)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/SunnyMok/Desktop/polyu/Y5S1/DSAI4205/Data 2 - Movie Reviews/experiments/encoder_finetuning.py", line 166, in ordinal_hard_negative
+    return F.relu(margin + neg[valid] - pos[valid]).mean()
+                  ~~~~~~~^~~~~~~~~~~~
+RuntimeError: The size of tensor a (24) must match the size of tensor b (23) at non-singleton dimension 0

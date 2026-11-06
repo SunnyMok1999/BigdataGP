@@ -1,0 +1,25 @@
+ce_only fold 0: epochs=5, accuracy=0.3592, macro-F1=0.3340
+ce_only fold 1: epochs=4, accuracy=0.3039, macro-F1=0.2790
+ce_only fold 2: epochs=4, accuracy=0.3039, macro-F1=0.2745
+ce_only fold 3: epochs=4, accuracy=0.2353, macro-F1=0.1877
+ce_only fold 4: epochs=3, accuracy=0.3627, macro-F1=0.2787
+teacher_ce fold 0: epochs=5, accuracy=0.3495, macro-F1=0.3193
+teacher_ce fold 1: epochs=3, accuracy=0.2451, macro-F1=0.2192
+teacher_ce fold 2: epochs=4, accuracy=0.3137, macro-F1=0.2585
+teacher_ce fold 3: epochs=3, accuracy=0.2451, macro-F1=0.1950
+teacher_ce fold 4: epochs=3, accuracy=0.3627, macro-F1=0.2770
+teacher_ce_balanced fold 0: epochs=6, accuracy=0.3301, macro-F1=0.3186
+teacher_ce_balanced fold 1: epochs=4, accuracy=0.2745, macro-F1=0.2624
+teacher_ce_balanced fold 2: epochs=4, accuracy=0.3333, macro-F1=0.3046
+teacher_ce_balanced fold 3: epochs=3, accuracy=0.2451, macro-F1=0.2235
+teacher_ce_balanced fold 4: epochs=3, accuracy=0.3137, macro-F1=0.2745
+ordinal_ce fold 0: epochs=5, accuracy=0.3495, macro-F1=0.3196
+ordinal_ce fold 1: epochs=4, accuracy=0.2941, macro-F1=0.2749
+ordinal_ce fold 2: epochs=4, accuracy=0.3137, macro-F1=0.2793
+ordinal_ce fold 3: epochs=4, accuracy=0.2451, macro-F1=0.1937
+ordinal_ce fold 4: epochs=3, accuracy=0.3627, macro-F1=0.2787
+            variant  accuracy  macro_f1  balanced_accuracy  quadratic_weighted_kappa  mean_absolute_error  class_0_recall  log_loss  silhouette_euclidean  silhouette_cosine  full_fit_training_accuracy
+            ce_only  0.313112  0.275047           0.277485                  0.374292             1.027397        0.138462  1.591187             -0.018462          -0.033909                    0.743640
+         teacher_ce  0.303327  0.258439           0.265197                  0.384367             1.029354        0.123077  1.648766             -0.022330          -0.041947                    0.669276
+teacher_ce_balanced  0.299413  0.279724           0.287809                  0.378488             1.097847        0.215385  1.655112             -0.024470          -0.045797                    0.774951
+         ordinal_ce  0.313112  0.273317           0.276971                  0.377515             1.027397        0.138462  1.589064             -0.018989          -0.034873                    0.749511

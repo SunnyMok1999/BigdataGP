@@ -1,0 +1,15 @@
+{
+  "device": "mps",
+  "seconds": 0.8907009172253311,
+  "loss": 2.2734367847442627,
+  "loss_parts": {
+    "ce": 1.5815985202789307,
+    "supcon": 3.2631423473358154,
+    "teacher": 1.2262296676635742,
+    "ordinal": 0.8012337684631348,
+    "hard_negative": 0.4015469551086426
+  },
+  "encoder_gradient_norm": 0.18466517329216003,
+  "probabilities_finite": true,
+  "unit_embeddings": true
+}

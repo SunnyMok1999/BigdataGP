@@ -1,0 +1,39 @@
+{
+  "id": "google-bert/bert-base-uncased",
+  "pooling": "mean",
+  "max_length": 128,
+  "description": "Generic masked-language encoder; mean pooling is a baseline, not a sentence-trained model",
+  "snapshot": "86b5e0934494bd15c9632b12f734a8a67f723594",
+  "local_snapshot": "/Users/SunnyMok/.cache/huggingface/hub/models--google-bert--bert-base-uncased/snapshots/86b5e0934494bd15c9632b12f734a8a67f723594",
+  "split": "train",
+  "samples": 511,
+  "dimensions": 768,
+  "dtype": "float32",
+  "text_sha256": "4c8806284d9a2c95af6bd8fd1906a01c4204611b5bcfe674c9f92a49637a3f4b",
+  "source_file_sha256": "cd5858d1053b3c7712b30cc41fc0197b4ac92f6f3951eb20874dbdc91947fb39",
+  "embedding_file_sha256": "a9a04ce04b716c672b448d619c4fd78165355f70e47f0dfe64daca43565cdd3a",
+  "device": "mps",
+  "torch_threads": 2,
+  "torch_version": "2.14.0",
+  "transformers_version": "4.56.1",
+  "numpy_version": "2.4.6",
+  "sklearn_version": "1.7.1",
+  "python_version": "3.11.13",
+  "row_order": "Original CSV order; see adjacent rows CSV",
+  "normalization": "L2",
+  "raw_text": true,
+  "includes_special_tokens_in_mean": true,
+  "maximum_observed_tokens": 63,
+  "truncated_rows": 0,
+  "smoke_checks": {
+    "all_finite": true,
+    "max_unit_norm_error": 1.1920928955078125e-07,
+    "repeatability_max_abs_delta_first3": 0.0
+  },
+  "files_sha256": {
+    "model.safetensors": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3",
+    "config.json": "7160e1553ad2ca51d8c1cb066be533db31826e12d173824c1bb0cb1a4f187d20",
+    "tokenizer.json": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98"
+  },
+  "extraction_seconds": 2.812000036239624
+}

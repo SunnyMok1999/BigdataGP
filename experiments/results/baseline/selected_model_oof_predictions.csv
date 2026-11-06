@@ -1,0 +1,512 @@
+row_index,PhraseId,SentenceId,Phrase,Sentiment,cv_fold,predicted_sentiment
+0,144934,7871,"An unremittingly ugly movie to look at , listen to , and think about , it is quite possibly the sturdiest example yet of why the DV revolution has cheapened the artistry of making a film .",0,4,1
+1,137519,7440,Makes 98 minutes feel like three hours .,0,4,0
+2,70201,3575,"-LRB- N -RRB- o matter how much good will the actors generate , Showtime eventually folds under its own thinness .",0,0,0
+3,19954,885,"An erotic thriller that 's neither too erotic nor very thrilling , either .",0,3,2
+4,101128,5315,"Bray is completely at sea ; with nothing but a Savage Garden music video on his resume , he has no clue about making a movie .",0,0,1
+5,130295,7019,Whether Jason X is this bad on purpose is never clear .,0,4,4
+6,33293,1560,So bland and utterly forgettable that it might as well have been titled Generic Jennifer Lopez Romantic Comedy .,0,1,4
+7,80003,4122,The pacing is often way off and there are too many bona fide groaners among too few laughs .,0,0,3
+8,121483,6508,"Feels at times like a giant commercial for Universal Studios , where much of the action takes place .",0,4,1
+9,85028,4398,"I found it slow , predictable and not very amusing .",0,2,2
+10,79349,4087,I ca n't recommend it .,0,2,1
+11,60524,3056,"A summary of the plot does n't quite do justice to the awfulness of the movie , for that comes through all too painfully in the execution .",0,0,2
+12,150608,8209,"Even on its own ludicrous terms , The Sum of All Fears generates little narrative momentum , and invites unflattering comparisons to other installments in the Ryan series .",0,3,1
+13,153024,8356,"Confuses its message with an ultimate desire to please , and contorting itself into an idea of expectation is the last thing any of these three actresses , nor their characters , deserve .",0,1,3
+14,153888,8407,Terminally brain dead production .,0,2,1
+15,117252,6256,This thing works on no level whatsoever for me .,0,1,1
+16,102677,5409,- spy action flick with Antonio Banderas and Lucy Liu never comes together .,0,0,1
+17,89515,4655,"Hey everybody , wanna watch a movie in which a guy dressed as a children 's party clown gets violently gang-raped ?",0,1,2
+18,50049,2457,Most of the dialogue made me want to pack raw dough in my ears .,0,3,2
+19,94607,4939,"There is no psychology here , and no real narrative logic -- just a series of carefully choreographed atrocities , which become strangely impersonal and abstract .",0,0,0
+20,96082,5019,A major waste ... generic .,0,0,3
+21,151053,8234,"A frustrating ` tweener ' -- too slick , contrived and exploitative for the art houses and too cynical , small and decadent for the malls .",0,4,2
+22,58801,2965,"Despite terrific special effects and funnier gags , Harry Potter and the Chamber of Secrets finds a way to make J.K. Rowling 's marvelous series into a deadly bore .",0,0,3
+23,89234,4638,You 'll cry for your money back .,0,3,0
+24,123664,6641,Nothing about the film -- with the possible exception of Elizabeth Hurley 's breasts -- is authentic .,0,2,1
+25,73216,3739,"As it is , it 's too long and unfocused .",0,1,0
+26,59782,3015,Sade achieves the near-impossible : It turns the Marquis de Sade into a dullard .,0,4,0
+27,124694,6701,"Without Shakespeare 's eloquent language , the update is dreary and sluggish .",0,4,3
+28,8745,365,"The movie resolutely avoids all the comic possibilities of its situation , and becomes one more dumb high school comedy about sex gags and prom dates .",0,4,0
+29,78181,4023,"It 's clotted with heavy-handed symbolism , dime-store psychology and endless scenic shots that make 105 minutes seem twice as long .",0,3,3
+30,80614,4151,The 50-something lovebirds are too immature and unappealing to care about .,0,2,1
+31,146210,7951,"Rifkin no doubt fancies himself something of a Hubert Selby Jr. , but there is n't an ounce of honest poetry in his entire script ; it 's simply crude and unrelentingly exploitative .",0,3,3
+32,104540,5518,Crummy .,0,4,1
+33,119981,6417,The story is bogus and its characters tissue-thin .,0,1,3
+34,114625,6099,"A gratingly unfunny groaner littered with zero-dimensional , unlikable characters and hackneyed , threadbare comic setups .",0,2,3
+35,88386,4593,About the only thing to give the movie points for is bravado -- to take an entirely stale concept and push it through the audience 's meat grinder one more time .,0,2,1
+36,80117,4128,"The result , however well-intentioned , is ironically just the sort of disposable , kitchen-sink homage that illustrates why the whole is so often less than the sum of its parts in today 's Hollywood .",0,1,3
+37,25015,1141,"The documentary is much too conventional -- lots of boring talking heads , etc. -- to do the subject matter justice .",0,3,0
+38,110308,5842,That chirpy songbird Britney Spears has popped up with more mindless drivel .,0,0,1
+39,35542,1674,"The movie 's plot is almost entirely witless and inane , carrying every gag two or three times beyond its limit to sustain a laugh .",0,2,1
+40,145745,7922,"In the end , there is n't much to it .",0,4,4
+41,143667,7797,"Soulless and -- even more damning -- virtually joyless , XXX achieves near virtuosity in its crapulence .",0,3,1
+42,39691,1895,"Cold , Sterile And Lacking Any Color Or Warmth .",0,2,1
+43,142933,7759,The whole mess boils down to a transparently hypocritical work that feels as though it 's trying to set the women 's liberation movement back 20 years . ',0,2,3
+44,149978,8168,"After you laugh once -LRB- maybe twice -RRB- , you will have completely forgotten the movie by the time you get back to your car in the parking lot .",0,3,0
+45,78646,4048,"... feels as if -LRB- there 's -RRB- a choke leash around your neck so director Nick Cassavetes can give it a good , hard yank whenever he wants you to feel something .",0,3,4
+46,87352,4531,Lacks the inspiration of the original and has a bloated plot that stretches the running time about 10 minutes past a child 's interest and an adult 's patience .,0,0,3
+47,71207,3634,Most of the storylines feel like time fillers between surf shots .,0,1,0
+48,81573,4207,"Despite bearing the Paramount imprint , it 's a bargain-basement European pickup .",0,0,3
+49,93849,4896,It is n't that Stealing Harvard is a horrible movie -- if only it were that grand a failure !,0,4,1
+50,109815,5818,"Many went to see the attraction for the sole reason that it was hot outside and there was air conditioning inside , and I do n't think that A.C. will help this movie one bit .",0,3,1
+51,149097,8113,It aimlessly and unsuccessfully attempts to fuse at least three dull plots into one good one .,0,2,0
+52,22837,1034,Highly uneven and inconsistent ... Margarita Happy Hour kinda resembles the el cheapo margaritas served within .,0,1,3
+53,144111,7822,Glazed with a tawdry B-movie scum .,0,4,1
+54,155428,8508,"As exciting as all this exoticism might sound to the typical Pax viewer , the rest of us will be lulled into a coma .",0,0,3
+55,111638,5925,You 'll just have your head in your hands wondering why Lee 's character did n't just go to a bank manager and save everyone the misery .,0,1,1
+56,65580,3323,"a huge disappointment coming , as it does , from filmmakers and performers of this calibre",0,1,2
+57,82179,4241,"Bread , My Sweet has so many flaws it would be easy for critics to shred it .",0,4,3
+58,35337,1662,"It is supremely unfunny and unentertaining to watch middle-age and older men drink to excess , piss on trees , b.s. one another and put on a show in drag .",0,2,2
+59,110394,5848,You 'll trudge out of the theater feeling as though you rode the Zipper after eating a corn dog and an extra-large cotton candy .,0,1,0
+60,5877,235,"Thoughtless , random , superficial humour and a lot of very bad Scouse accents",0,0,2
+61,146243,7952,"A chilly , remote , emotionally distant piece ... so dull that its tagline should be : ` In space , no one can hear you snore . '",0,3,1
+62,40790,1955,... about as exciting to watch as two last-place basketball teams playing one another on the final day of the season .,0,1,2
+63,22308,1004,"None of this is very original , and it is n't particularly funny .",0,2,3
+64,60376,3049,Viewers will need all the luck they can muster just figuring out who 's who in this pretentious mess .,0,3,1
+65,117469,6269,It 's kind of sad that so many people put so much time and energy into this turkey .,1,0,0
+66,88641,4606,"This odd , distant Portuguese import more or less borrows from Bad Lieutenant and Les Vampires , and comes up with a kind of art-house gay porn film .",1,1,1
+67,44351,2150,"A non-Britney person might survive a screening with little harm done , except maybe for the last 15 minutes , which are as maudlin as any after-school special you can imagine .",1,1,2
+68,39515,1887,"The trouble with making this queen a thoroughly modern maiden is that it also makes her appear foolish and shallow rather than , as was more likely , a victim of mental illness .",1,4,3
+69,8894,371,Translation : ` We do n't need to try very hard . ',1,1,0
+70,27776,1276,"All the more disquieting for its relatively gore-free allusions to the serial murders , but it falls down in its attempts to humanize its subject .",1,0,3
+71,17137,744,"Van Wilder has a built-in audience , but only among those who are drying out from spring break and are still unconcerned about what they ingest .",1,0,2
+72,150364,8191,May offend viewers not amused by the sick sense of humor .,1,2,2
+73,68785,3494,"Although God Is Great addresses interesting matters of identity and heritage , it 's hard to shake the feeling that it was intended to be a different kind of film .",1,4,1
+74,145275,7894,Too bad Kramer could n't make a guest appearance to liven things up .,1,3,1
+75,93260,4863,This is n't a new idea .,1,3,3
+76,11496,496,"Even in the summertime , the most restless young audience deserves the dignity of an action hero motivated by something more than franchise possibilities .",1,1,1
+77,115779,6170,"Jacobi , the most fluent of actors , is given relatively dry material from Nijinsky 's writings to perform , and the visuals , even erotically frank ones , become dullingly repetitive .",1,2,1
+78,43503,2103,"A pale Xerox of other , better crime movies .",1,2,1
+79,77910,4008,"Too much power , not enough puff .",1,1,1
+80,150311,8187,"What Jackson has done is proven that no amount of imagination , no creature , no fantasy story and no incredibly outlandish scenery",1,0,1
+81,97073,5075,"A boring masquerade ball where normally good actors , even Kingsley , are made to look bad .",1,1,0
+82,28920,1340,Becomes the last thing you would expect from a film with this title or indeed from any Plympton film : boring .,1,1,2
+83,149274,8123,"Too much of the movie feels contrived , as if the filmmakers were worried the story would n't work without all those gimmicks .",1,3,0
+84,122361,6559,Collapses under its own meager weight .,1,2,0
+85,62760,3174,"entertaining enough , but nothing new",1,3,3
+86,47845,2332,"The whole thing 's fairly lame , making it par for the course for Disney sequels .",1,4,2
+87,54127,2689,"I never thought I 'd say this , but I 'd much rather watch teens poking their genitals into fruit pies !",1,0,1
+88,56081,2806,Odd and weird .,1,1,1
+89,23749,1080,"The direction occasionally rises to the level of marginal competence , but for most of the film it is hard to tell who is chasing who or why .",1,0,1
+90,60588,3059,... the story simply putters along looking for astute observations and coming up blank .,1,4,3
+91,141734,7689,Witless and utterly pointless .,1,2,3
+92,71807,3664,"Seemingly disgusted with the lazy material and the finished product 's unshapely look , director Fisher Stevens inexplicably dips key moments from the film in Waking Life water colors .",1,0,3
+93,111484,5915,It 's hard to pity the ` plain ' girl who becomes a ravishing waif after applying a smear of lip-gloss .,1,2,1
+94,99735,5233,The darker elements of misogyny and unprovoked violence suffocate the illumination created by the two daughters and the sparse instances of humor meant to shine through the gloomy film noir veil .,1,4,1
+95,90774,4724,"Morrissette has performed a difficult task indeed - he 's taken one of the world 's most fascinating stories and made it dull , lifeless , and irritating .",1,2,4
+96,36243,1713,The jokes are telegraphed so far in advance they must have been lost in the mail .,1,2,2
+97,51252,2523,"The weird thing about The Santa Clause 2 , purportedly a children 's movie , is that there is nothing in it to engage children emotionally .",1,4,0
+98,17109,743,"With all the sympathy , empathy and pity fogging up the screen ... His Secret Life enters the land of unintentional melodrama and tiresome love triangles .",1,3,1
+99,151670,8275,"I 've seen some bad singer-turned actors , but Lil Bow Wow takes the cake .",1,2,1
+100,68176,3461,The fact that it is n't very good is almost beside the point .,1,1,0
+101,56779,2854,"The most opaque , self-indulgent and just plain goofy an excuse for a movie as you can imagine .",1,4,3
+102,41117,1971,One suspects that Craven endorses They simply because this movie makes his own look much better by comparison .,1,2,4
+103,101598,5347,"A distinctly mixed bag , the occasional bursts of sharp writing alternating with lots of sloppiness and the obligatory moments of sentimental ooze .",1,2,2
+104,118982,6360,"Releasing a film with the word ` dog ' in its title in January lends itself to easy jokes and insults , and Snow Dogs deserves every single one of them .",1,1,1
+105,140181,7607,-LRB- Seems -RRB- even more uselessly redundant and shamelessly money-grubbing than most third-rate horror sequels .,1,0,4
+106,57277,2886,Cattaneo reworks the formula that made The Full Monty a smashing success ... but neglects to add the magic that made it all work .,1,1,2
+107,143780,7803,"Just a string of stale gags , with no good inside dope , and no particular bite .",1,4,0
+108,45568,2215,"What with all the blanket statements and dime-store ruminations on vanity , the worries of the rich and sudden wisdom , the film becomes a sermon for most of its running time .",1,3,3
+109,9843,411,A movie like The Guys is why film criticism can be considered work .,1,3,0
+110,127500,6859,"Pretty much sucks , but has a funny moment or two .",1,3,3
+111,20520,917,"Sorvino makes the princess seem smug and cartoonish , and the film only really comes alive when poor Hermocrates and Leontine pathetically compare notes about their budding amours .",1,4,4
+112,76239,3912,Queen of the Damned is too long with too little going on .,1,1,0
+113,65710,3331,An average B-movie with no aspirations to be anything more .,1,4,1
+114,80365,4141,I ca n't say this enough : This movie is about an adult male dressed in pink jammies .,1,3,1
+115,25006,1140,And that is where Ararat went astray .,1,2,1
+116,41069,1969,"Unless you 're a fanatic , the best advice is : ` Scooby ' do n't .",1,2,4
+117,12248,524,Goes on and on to the point of nausea .,1,0,2
+118,10360,436,The rollerball sequences feel sanitised and stagey .,1,4,0
+119,128788,6927,"It 's a strange film , one that was hard for me to warm up to .",1,1,2
+120,132348,7137,"Wimps out by going for that PG-13 rating , so the more graphic violence is mostly off-screen and the sexuality is muted .",1,4,3
+121,141220,7660,"Lucy 's a dull girl , that 's all .",1,2,4
+122,41345,1986,"Steve Oedekerk is , alas , no Woody Allen .",1,3,1
+123,153063,8358,... its solemn pretension prevents us from sharing the awe in which it holds itself .,1,2,2
+124,101734,5356,"A worthy idea , but the uninspired scripts , acting and direction never rise above the level of an after-school TV special .",1,0,3
+125,152383,8315,"And second , what 's with all the shooting ?",1,0,1
+126,112163,5956,"Barely manages for but a few seconds over its seemingly eternal running time to pique your interest , your imagination , your empathy or anything , really , save your disgust and your indifference .",1,3,2
+127,75315,3864,"Despite engaging offbeat touches , Knockaround Guys rarely seems interested in kicking around a raison d'etre that 's as fresh-faced as its young-guns cast .",1,4,3
+128,128160,6896,"A fragile framework upon which to hang broad , mildly fleshed-out characters that seem to have been conjured up only 10 minutes prior to filming .",1,2,2
+129,97969,5132,"... expands the horizons of boredom to the point of collapse , turning into a black hole of dullness , from which no interesting concept can escape .",1,1,1
+130,119337,6380,"By the time the surprise ending is revealed , interest can not be revived .",1,4,3
+131,71397,3642,The film runs on a little longer than it needs to -- Muccino either does n't notice when his story ends or just ca n't tear himself away from the characters -- but it 's smooth and professional .,1,0,2
+132,66513,3376,"Klein , charming in comedies like American Pie and dead-on in Election , delivers one of the saddest action hero performances ever witnessed .",1,4,4
+133,37149,1762,"... the good and different idea -LRB- of middle-aged romance -RRB- is not handled well and , except for the fine star performances , there is little else to recommend `` Never Again . ''",1,4,4
+134,121669,6520,"The criticism never rises above easy , cynical potshots at morally bankrupt characters ...",1,4,2
+135,46711,2273,-- is a crime that should be punishable by chainsaw .,1,0,1
+136,39416,1883,"Throwing in everything except someone pulling the pin from a grenade with his teeth , Windtalkers seems to have ransacked every old World War II movie for overly familiar material .",1,4,1
+137,129777,6985,"Unfortunately , Carvey 's rubber-face routine is no match for the insipid script he has crafted with Harris Goldberg .",1,2,0
+138,141070,7652,Disappointing in comparison to other recent war movies ... or any other John Woo flick for that matter .,1,0,1
+139,33682,1582,"Apparently designed as a reverie about memory and regret , but the only thing you 'll regret is remembering the experience of sitting through it .",1,1,3
+140,46165,2247,... The movie feels stitched together from stock situations and characters from other movies .,1,3,0
+141,53509,2653,"Despite its visual virtuosity , ` Naqoyqatsi ' is banal in its message and the choice of material to convey it .",1,0,1
+142,150435,8196,A cautionary tale about the folly of superficiality that is itself endlessly superficial .,1,1,4
+143,39362,1880,Brosnan 's finest non-Bondish performance yet fails to overcome the film 's manipulative sentimentality and annoying stereotypes .,1,3,1
+144,9708,404,"Despite slick production values and director Roger Michell 's tick-tock pacing , the final effect is like having two guys yelling in your face for two hours .",1,4,0
+145,2013,77,The major problem with Windtalkers is that the bulk of the movie centers on the wrong character .,1,3,0
+146,96203,5026,It 's so downbeat and nearly humorless that it becomes a chore to sit through -- despite some first-rate performances by its lead .,1,4,4
+147,55590,2776,Taken outside the context of the current political climate -LRB- see : terrorists are more evil than ever ! -RRB-,1,0,3
+148,12608,542,The movie is too amateurishly square to make the most of its own ironic implications .,1,4,0
+149,56488,2837,"Formulaic to the 51st power , more like .",1,0,1
+150,134148,7240,Resembles a soft porn Brian De Palma pastiche .,1,0,2
+151,104116,5490,"Skip this dreck , rent Animal House and go back to the source .",1,0,4
+152,72383,3700,Can I admit XXX is as deep as a Petri dish and as well-characterized as a telephone book but still say it was a guilty pleasure ?,1,2,2
+153,1918,71,"But it has an ambition to say something about its subjects , but not a willingness .",1,3,3
+154,56484,2836,Tends to plod .,1,2,4
+155,22255,1000,Action - mechanical .,1,1,0
+156,119174,6370,"While this one gets off with a good natured warning , future Lizard endeavors will need to adhere more closely to the laws of laughter",1,4,0
+157,63069,3191,"Carrying this wafer-thin movie on his nimble shoulders , Chan wades through putrid writing , direction and timing with a smile that says , ` If I stay positive , maybe I can channel one of my greatest pictures , Drunken Master . '",1,1,4
+158,7555,307,A well-intentioned effort that 's still too burdened by the actor 's offbeat sensibilities for the earnest emotional core to emerge with any degree of accessibility .,1,1,1
+159,22939,1038,"Queen of the Damned as you might have guessed , makes sorry use of Aaliyah in her one and only starring role -- she does little here but point at things that explode into flame .",1,2,2
+160,60126,3033,"While easier to sit through than most of Jaglom 's self-conscious and gratingly irritating films , it 's still tainted by cliches , painful improbability and murky points .",1,3,1
+161,110132,5832,I have n't seen such self-amused trash since Freddy Got Fingered .,1,0,2
+162,32882,1540,"An ugly , revolting movie .",1,0,0
+163,4719,180,An awkwardly contrived exercise in magic realism .,1,1,1
+164,122573,6575,What 's really sad is to see two Academy Award winning actresses -LRB- and one Academy Award winning actor -RRB- succumb to appearing in this junk that 's TV sitcom material at best .,1,3,4
+165,41485,1996,"Offers big , fat , dumb laughs that may make you hate yourself for giving in .",1,3,3
+166,138563,7505,This film biggest problem ?,1,3,4
+167,26874,1233,It is n't scary .,1,1,0
+168,74321,3808,The film is way too full of itself ; it 's stuffy and pretentious in a give-me-an-Oscar kind of way .,1,4,1
+169,32661,1531,At once overly old-fashioned in its sudsy plotting and heavy-handed in its effort to modernize it with encomia to diversity and tolerance .,1,3,1
+170,19555,859,An unintentionally surreal kid 's picture ... in which actors in bad bear suits enact a sort of inter-species parody of a VH1 Behind the Music episode .,1,2,2
+171,118898,6353,Imagine Susan Sontag falling in love with Howard Stern .,1,2,4
+172,109301,5789,"Unfortunately , a cast of competent performers from movies , television and the theater are cast adrift in various New York City locations with no unifying rhythm or visual style .",1,0,1
+173,37864,1801,"Never decides whether it wants to be a black comedy , drama , melodrama or some combination of the three .",1,1,3
+174,97532,5100,Video games are more involving than this mess .,1,3,2
+175,88833,4615,"It stars schticky Chris Rock and stolid Anthony Hopkins , who seem barely in the same movie .",1,0,0
+176,142480,7734,A seriously bad film with seriously warped logic by writer-director Kurt Wimmer at the screenplay level .,1,3,3
+177,128754,6925,"Every joke is repeated at least -- annoying , is n't it ?",1,2,3
+178,147898,8048,Hip-hop prison thriller of stupefying absurdity .,1,2,2
+179,77546,3989,Family togetherness takes a back seat to inter-family rivalry and workplace ambition ... whole subplots have no explanation or even plot relevance .,1,1,1
+180,126329,6791,The dialogue is very choppy and monosyllabic despite the fact that it is being dubbed .,1,1,0
+181,49460,2421,Why would anyone cast the magnificent Jackie Chan in a movie full of stunt doubles and special effects ?,1,3,1
+182,6221,247,Feral and uncomfortable .,1,0,4
+183,11621,502,"The film has the thrown-together feel of a summer-camp talent show : hastily written , underrehearsed , arbitrarily plotted and filled with crude humor and vulgar innuendo .",1,2,3
+184,39361,1879,Why ?,1,3,0
+185,7071,285,"Is n't as sharp as the original ... Despite some visual virtues , ` Blade II ' just does n't cut it .",1,4,2
+186,70765,3608,"Scherfig , who has had a successful career in TV , tackles more than she can handle .",1,4,3
+187,127563,6862,"What Madonna does here ca n't properly be called acting -- more accurately , it 's moving and it 's talking and it 's occasionally gesturing , sometimes all at once .",1,4,4
+188,122488,6570,"That neither protagonist has a distinguishable condition hardly matters because both are just actory concoctions , defined by childlike dimness and a handful of quirks .",1,2,3
+189,132314,7134,"It 's mildly sentimental , unabashedly consumerist ... studiously inoffensive and completely disposable .",1,0,4
+190,123062,6605,An opportunity missed .,1,0,3
+191,77961,4012,These are textbook lives of quiet desperation .,1,0,3
+192,136136,7357,I spied with my little eye ... a mediocre collection of cookie-cutter action scenes and occasionally inspired dialogue bits,1,3,1
+193,89888,4678,The movie is about as deep as that sentiment .,1,1,1
+194,155646,8519,With its parade of almost perpetually wasted characters ... Margarita feels like a hazy high that takes too long to shake .,1,3,0
+195,27039,1243,Boasts eye-catching art direction but has a forcefully quirky tone that quickly wears out its limited welcome .,1,1,3
+196,83495,4315,Though its atmosphere is intriguing ... the drama is finally too predictable to leave much of an impression .,2,2,1
+197,33191,1556,A technically well-made suspenser ... but its abrupt drop in IQ points as it races to the finish line proves simply too discouraging to let slide .,2,3,2
+198,89332,4644,"Even though it is infused with the sensibility of a video director , it does n't make for completely empty entertainment",2,0,2
+199,34234,1609,"Watching Harris ham it up while physically and emotionally disintegrating over the course of the movie has a certain poignancy in light of his recent death , but Boyd 's film offers little else of consequence .",2,2,3
+200,112337,5966,"Almost nothing else -- raunchy and graphic as it may be in presentation -- is one-sided , outwardly sexist or mean-spirited .",2,0,2
+201,118109,6309,The best drug addition movies are usually depressing but rewarding .,2,1,4
+202,26343,1207,Absurdities and,2,4,1
+203,154612,8454,"The film did n't move me one way or the other , but it was an honest effort and if you want to see a flick about telemarketers this one will due .",2,0,0
+204,124579,6694,So verbally flatfooted and so emotionally predictable or bland that it plays like the standard made-for-TV movie .,2,2,1
+205,104912,5542,Some stunning visuals -- and some staggeringly boring cinema .,2,0,2
+206,46429,2258,"There 's a neat twist , subtly rendered , that could have wrapped things up at 80 minutes , but Kang tacks on three or four more endings .",2,3,3
+207,29681,1375,Does little to elaborate the conceit of setting this blood-soaked tragedy of murderous ambition in the era of Richard Nixon .,2,0,1
+208,40445,1934,"In -LRB- screenwriter -RRB- Charlie Kaufman 's world , truth and fiction are equally strange , and his for the taking .",2,3,3
+209,122068,6543,"A violent initiation rite for the audience , as much as it is for Angelique , the -LRB- opening -RRB- dance guarantees Karmen 's enthronement among the cinema 's memorable women .",2,1,2
+210,71946,3674,Please see previous answer .,2,2,4
+211,29898,1386,The simplicity of The Way Home has few equals this side of Aesop,2,3,3
+212,100088,5252,"Yet another movie which presumes that high school social groups are at war , let alone conscious of each other 's existence .",2,3,1
+213,131639,7095,"In both the writing and cutting , it does not achieve the kind of dramatic unity that transports you .",2,3,1
+214,78204,4024,"The characters are interesting and the relationship between Yosuke and Saeko is worth watching as it develops , but there 's not enough to the story to fill two hours .",2,4,3
+215,34154,1605,` Snow Dogs ' has both .,2,4,3
+216,149207,8119,As happily glib and vicious as its characters .,2,1,2
+217,69528,3534,Helps to remind the First World that HIV\/AIDS is far from being yesterday 's news .,2,3,3
+218,135144,7295,"It is n't that the picture is unfamiliar , but that it manages to find new avenues of discourse on old problems .",2,3,3
+219,38933,1857,Those unfamiliar with Mormon traditions may find The Singles Ward occasionally bewildering .,2,3,3
+220,56885,2862,A lot of its gags and observations reflect a woman 's point-of-view .,2,1,0
+221,78335,4031,This film was made by and for those folks who collect the serial killer cards and are fascinated by the mere suggestion of serial killers .,2,2,3
+222,149175,8117,This is amusing for about three minutes .,2,3,0
+223,125472,6741,The name says it all .,2,2,1
+224,104309,5503,"For all the complications , it 's all surprisingly predictable .",2,2,0
+225,59757,3013,"Sean Penn , you owe Nicolas Cage an apology .",2,0,0
+226,155246,8498,The culmination of everyone 's efforts is given life when A Selection appears in its final form -LRB- in `` Last Dance '' -RRB- .,2,1,1
+227,31432,1471,A tasty slice of droll whimsy .,2,1,3
+228,54536,2711,"Leading a double life in an American film only comes to no good , but not here .",2,1,1
+229,40873,1958,Famuyiwa 's feature,2,1,3
+230,43121,2083,It bites hard .,2,1,0
+231,27410,1259,"About a Boy vividly recalls the Cary Grant of Room for One More , Houseboat and Father Goose in its affectionate depiction of the gentle war between a reluctant , irresponsible man and the kid who latches onto him .",2,4,2
+232,131101,7065,And I expect much more from a talent as outstanding as director Bruce McCulloch .,2,3,1
+233,125367,6737,"This engrossing , characteristically complex Tom Clancy thriller is shifty in the manner in which it addresses current terrorism anxieties and sidesteps them at the same time .",2,0,0
+234,113695,6043,"I admit it , I hate to like it .",2,4,3
+235,54925,2735,Really dumb but occasionally really funny .,2,3,3
+236,94002,4905,"It 's a brilliant , honest performance by Nicholson , but the film is an agonizing bore except when the fantastic Kathy Bates turns up .",2,2,3
+237,122860,6591,"Freundlich 's made -LRB- Crudup -RRB- a suburban architect , and a cipher .",2,0,2
+238,35647,1679,"Spider-Man is in the same category as X-Men - occasionally brilliant but mostly average , showing signs of potential for the sequels , but not giving us much this time around .",2,3,3
+239,108959,5768,"The farcical elements seemed too pat and familiar to hold my interest , yet its diverting grim message is a good one .",2,2,1
+240,118675,6343,"It 's harmless , diverting fluff .",2,4,3
+241,51849,2558,A preposterously melodramatic paean to gang-member teens in Brooklyn circa 1958 .,2,2,2
+242,155837,8531,"Even if you have no interest in the gang-infested , East-vs .",2,1,2
+243,136246,7366,"Both flawed and delayed , Martin Scorcese 's Gangs of New York still emerges as his most vital work since GoodFellas .",2,3,3
+244,73488,3756,"Silly , loud and goofy .",2,1,1
+245,92766,4832,"Instead , he focuses on the anguish that can develop when one mulls leaving the familiar to traverse uncharted ground .",2,1,2
+246,127606,6864,"A different kind of love story - one that is dark , disturbing , painful to watch , yet compelling .",2,4,1
+247,88255,4584,"It 's better than mid-range Steven Seagal , but not as sharp as Jet Li on rollerblades .",2,1,3
+248,11118,477,A puzzling experience .,2,2,3
+249,92079,4793,"It has the right approach and the right opening premise , but it lacks the zest and it goes for a plot twist instead of trusting the material .",2,3,3
+250,92692,4829,It 's clear that Mehta simply wanted to update her beloved genre for the thousands of Indians who fancy themselves too sophisticated for the cheese-laced spectacles that pack 'em in on the subcontinent .,2,0,0
+251,28774,1334,Trades run-of-the-mill revulsion for extreme unease .,2,1,3
+252,130853,7051,"Alas , the black-and-white archival footage of their act showcases pretty mediocre shtick .",2,0,3
+253,149677,8148,The film 's only missteps come from the script 's insistence on providing deep emotional motivation for each and every one of Abagnale 's antics .,2,2,1
+254,119845,6411,It 's an often-cute film but either needs more substance to fill the time or some judicious editing .,2,0,3
+255,47310,2306,in period costume and with a bigger budget .,2,1,3
+256,117848,6293,Neither a rousing success nor a blinding embarrassment .,2,0,0
+257,94028,4906,cynical and serious look at teenage boys doing what they do best - being teenagers .,2,1,3
+258,133535,7205,"The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Mike Myers shows up and ruins everything .",2,4,3
+259,90416,4706,An overwrought Taiwanese soaper about three people and their mixed-up relationship .,2,0,2
+260,149065,8110,Visually sumptuous but intellectually stultifying .,2,4,3
+261,147698,8037,A flawed film but an admirable one that tries to immerse us in a world of artistic abandon and political madness and very nearly succeeds .,2,1,3
+262,70297,3580,Eckstraordinarily lame and Severely boring .,2,0,0
+263,76245,3913,A charming and funny story of clashing cultures and a clashing mother\/daughter relationship .,2,4,3
+264,104095,5489,"Kurys never shows why , of all the period 's volatile romantic lives , Sand and Musset are worth particular attention .",2,2,1
+265,20283,903,Almost .,2,3,4
+266,5267,209,"... only Bond can save us from the latest eccentric , super-wealthy megalomaniac bent on world domination and destruction .",2,3,1
+267,96829,5059,Cynics need not apply . ',2,3,1
+268,98521,5165,"Maid in Manhattan might not look so appealing on third or fourth viewing down the road ... But as a high concept vehicle for two bright stars of the moment who can rise to fans ' lofty expectations , the movie passes inspection .",2,4,1
+269,127865,6878,Feeling like a dope has rarely been more fun than it is in Nine Queens .,2,4,3
+270,10276,432,Paul Bettany playing Malcolm McDowell ?,2,2,3
+271,131256,7074,A family-friendly fantasy that ends up doing very little with its imaginative premise .,2,4,1
+272,128763,6926,"Made-Up lampoons the moviemaking process itself , while shining a not particularly flattering spotlight on America 's skin-deep notions of pulchritude .",2,0,2
+273,101571,5343,The camera whirls !,2,0,3
+274,147847,8045,The dark and bittersweet twist feels strange as things turn nasty and tragic during the final third of the film .,2,2,3
+275,110526,5857,Barrels along at the start before becoming mired in sentimentality .,2,4,1
+276,126370,6794,Then Nadia 's birthday might not have been such a bad day after all .,2,4,1
+277,85583,4426,The obligatory break-ups and hook-ups do n't seem to have much emotional impact on the characters .,2,4,1
+278,65454,3316,It 's obvious -LRB- Je-Gyu is -RRB- trying for poetry ; what he gets instead has all the lyricism of a limerick scrawled in a public restroom .,2,4,3
+279,152451,8319,There 's no clear picture of who killed Bob Crane .,2,2,3
+280,99950,5245,"It 's not particularly subtle ... However , it still manages to build to a terrifying , if obvious , conclusion .",2,0,3
+281,92261,4802,than ` Magnifique ' .,2,0,3
+282,129827,6989,"The movie 's messages are quite admirable , but",2,1,3
+283,63977,3237,"It may sound like a mere disease-of - the-week TV movie , but A Song For Martin is made infinitely more wrenching by the performances of real-life spouses Seldahl and Wollter .",2,0,2
+284,62620,3168,If Sinise 's character had a brain his ordeal would be over in five minutes but instead the plot goes out of its way to introduce obstacles for him to stumble over .,2,4,2
+285,113988,6060,"Few of the increasingly far-fetched events that first-time writer-director Neil Burger follows up with are terribly convincing , which is a pity , considering Barry 's terrific performance .",2,2,4
+286,90635,4718,"the Venezuelans say things like `` si , pretty much '' and `` por favor , go home '' when talking to Americans .",2,3,1
+287,114018,6062,How I Killed My Father is one of those art house films that makes you feel like you 're watching an iceberg melt -- only it never melts .,2,2,0
+288,56655,2847,... the picture 's cleverness is ironically muted by the very people who are intended to make it shine .,2,4,4
+289,82728,4273,"The movie has generic virtues , and despite a lot of involved talent , seems done by the numbers .",2,1,0
+290,53992,2682,A crisply made movie that is no more than mildly amusing .,2,2,1
+291,75515,3872,But it does n't need Gangs of New York .,2,3,2
+292,10853,461,"In some ways , Lagaan is quintessential Bollywood .",2,1,3
+293,73300,3744,"It ca n't escape its past , and it does n't want to .",2,2,2
+294,93942,4902,"As the princess , Sorvino glides gracefully from male persona to female without missing a beat .",3,1,1
+295,81391,4195,Strangely comes off as a kingdom more mild than wild .,3,1,2
+296,147943,8052,"By and large this is Mr. Kilmer 's movie , and it 's his strongest performance since The Doors .",3,1,1
+297,134986,7286,"For decades we 've marveled at Disney 's rendering of water , snow , flames and shadows in a hand-drawn animated world .",3,1,3
+298,149902,8163,"By turns pretentious , fascinating , ludicrous , provocative and vainglorious .",3,0,1
+299,77400,3982,"The story line may be 127 years old , but El Crimen del Padre Amaro ... could n't be more timely in its despairing vision of corruption within the Catholic establishment .",3,2,1
+300,85509,4422,"Angel presents events partly from the perspective of Aurelie and Christelle , and infuses the film with the sensibility of a particularly nightmarish fairytale .",3,2,1
+301,107781,5698,Drumline ably captures the complicated relationships in a marching band .,3,3,2
+302,139455,7563,This story still seems timely and important .,3,4,1
+303,56597,2843,"Originality ai n't on the menu , but there 's never a dull moment in the giant spider invasion comic chiller .",3,2,0
+304,95422,4984,A film that will enthrall the whole family .,3,4,3
+305,133482,7202,"Buy is an accomplished actress , and this is a big , juicy role .",3,2,3
+306,53173,2638,"It 's an ambitious film , and as with all ambitious films , it has some problems .",3,2,1
+307,2218,84,"Inventive , fun , intoxicatingly sexy , violent , self-indulgent and maddening .",3,1,4
+308,103827,5474,"The filmmakers know how to please the eye , but it is not always the prettiest pictures that tell the best story .",3,2,4
+309,2394,92,"... it 's as comprehensible as any Dummies guide , something even non-techies can enjoy .",3,1,0
+310,149372,8128,Best enjoyed as a work of fiction inspired by real-life events .,3,2,4
+311,27024,1242,"A touching , small-scale story of family responsibility and care in the community .",3,0,3
+312,14939,642,"Enough may pander to our basest desires for payback , but unlike many revenge fantasies , it ultimately delivers .",3,0,3
+313,15980,686,"It takes you somewhere you 're not likely to have seen before , but beneath the exotic surface -LRB- and exotic dancing -RRB- it 's surprisingly old-fashioned .",3,4,1
+314,127852,6877,"Even when it drags , we are forced to reflect that its visual imagination is breathtaking",3,3,1
+315,1569,59,"Claude Chabrol 's camera has a way of gently swaying back and forth as it cradles its characters , veiling tension beneath otherwise tender movements .",3,0,2
+316,122912,6594,"The sentimental script has problems , but the actors pick up the slack .",3,3,1
+317,96600,5046,"Director Paul Cox 's unorthodox , abstract approach to visualizing Nijinsky 's diaries is both stimulating and demanding .",3,3,3
+318,114997,6125,What `` Empire '' lacks in depth it makes up for with its heart .,3,2,2
+319,94383,4926,"The movie , despite its rough edges and a tendency to sag in certain places , is wry and engrossing .",3,3,0
+320,41175,1974,"It 's nice to see Piscopo again after all these years , and Chaykin and Headly are priceless .",3,4,1
+321,127511,6860,"It 's not like having a real film of Nijinsky , but at least it 's better than that eponymous 1980 biopic that used soap in the places where the mysteries lingered .",3,3,3
+322,58198,2933,"Moretti ... is the rare common-man artist who 's wise enough to recognize that there are few things in this world more complex -- and , as it turns out , more fragile -- than happiness .",3,3,3
+323,103688,5469,"J. Lo will earn her share of the holiday box office pie , although this movie makes one thing perfectly clear : She 's a pretty woman , but she 's no working girl .",3,4,3
+324,4164,157,Has the rare capability to soothe and break your heart with a single stroke .,3,1,4
+325,32030,1499,"Yes , soar .",3,4,1
+326,14585,629,"Although the subject matter may still be too close to recent national events , the film works - mostly due to its superior cast of characters .",3,4,1
+327,101531,5339,He 's a better actor than a standup comedian .,3,2,2
+328,27943,1283,An ebullient Tunisian film about the startling transformation of a tradition-bound widow who is drawn into the exotic world of belly dancing .,3,1,3
+329,147373,8019,Rodriguez has the chops of a smart-aleck film school brat and the imagination of a big kid ...,3,3,1
+330,133649,7210,"Davis ' candid , archly funny and deeply authentic take on intimate relationships comes to fruition in her sophomore effort .",3,0,3
+331,45244,2199,A perfectly pleasant if slightly pokey comedy .,3,2,3
+332,75922,3895,"This is a movie that is what it is : a pleasant distraction , a Friday night diversion , an excuse to eat popcorn .",3,0,3
+333,145323,7897,"Cannon 's confidence and laid-back good spirits are , with the drumming routines , among the film 's saving graces .",3,0,3
+334,81554,4206,Director Peter Kosminsky gives these women a forum to demonstrate their acting ` chops ' and they take full advantage .,3,0,3
+335,17934,781,Essentially a collection of bits -- and they 're all naughty .,3,3,1
+336,54565,2713,"Compulsively watchable , no matter how degraded things get .",3,0,1
+337,149293,8124,"The picture runs a mere 84 minutes , but it 's no glance .",3,4,2
+338,132403,7140,"Asks what truth can be discerned from non-firsthand experience , and specifically questions cinema 's capability for recording truth .",3,1,1
+339,2102,81,"All in all , it 's a pretty good execution of a story that 's a lot richer than the ones Hollywood action screenwriters usually come up with on their own .",3,4,0
+340,147979,8054,The charming result is Festival in Cannes .,3,0,2
+341,143757,7802,"Rich in atmosphere of the post-war art world , it manages to instruct without reeking of research library dust .",3,4,2
+342,89770,4672,"Despite a quieter middle section , involving Aragorn 's dreams of Arwen , this is even better than The Fellowship .",3,2,2
+343,133618,7208,"A grittily beautiful film that looks , sounds , and feels more like an extended , open-ended poem than a traditionally structured story .",3,3,3
+344,23589,1070,waydowntown manages to nail the spirit-crushing ennui of denuded urban living without giving in to it .,3,2,3
+345,151717,8278,Arteta paints a picture of lives lived in a state of quiet desperation .,3,3,1
+346,91580,4766,"Shyamalan offers copious hints along the way -- myriad signs , if you will -- that beneath the familiar , funny surface is a far bigger , far more meaningful story than one in which little green men come to Earth for harvesting purposes .",3,1,2
+347,39061,1865,"The rich performances by Friel -- and especially Williams , an American actress who becomes fully English -- round out the square edges .",3,1,1
+348,67532,3429,"It has a dashing and resourceful hero ; a lisping , reptilian villain ; big fights ; big hair ; lavish period scenery ; and a story just complicated enough to let you bask in your own cleverness as you figure it out .",3,3,4
+349,129029,6940,"Oddly , the film is n't nearly as downbeat as it sounds , but strikes a tone that 's alternately melancholic , hopeful and strangely funny .",3,2,3
+350,2453,94,"Writer\/director Burr Steers emphasizes the Q in Quirky , with mixed results .",3,1,1
+351,45080,2190,Meyjes ... has done his homework and soaked up some jazzy new revisionist theories about the origins of Nazi politics and aesthetics .,3,0,1
+352,18437,809,"I liked the movie , but I know I would have liked it more if it had just gone that one step further .",3,2,2
+353,18021,786,"The Powerpuff Girls arrive on the big screen with their super-powers , their super-simple animation and their super-dooper-adorability intact .",3,1,1
+354,7092,286,"A smart , arch and rather cold-blooded comedy .",3,3,4
+355,87713,4555,The screenplay never lets us forget that Bourne was once an amoral assassin just like the ones who are pursuing him ... There is never really a true `` us '' versus `` them '' .,3,0,2
+356,118402,6326,"As animation increasingly emphasizes the computer and the cool , this is a film that takes a stand in favor of tradition and warmth .",3,0,3
+357,84185,4349,"Like its bizarre heroine , it irrigates our souls .",3,1,3
+358,58688,2960,"Until it goes off the rails in its final 10 or 15 minutes , Wendigo , Larry Fessenden 's spooky new thriller , is a refreshingly smart and newfangled variation on several themes derived from far less sophisticated and knowing horror films .",3,3,1
+359,8673,361,Bigelow offers some flashy twists and turns that occasionally fortify this turgid fable .,3,0,2
+360,106270,5611,... a funny yet dark and seedy clash of cultures and generations .,3,1,2
+361,120121,6425,"As they used to say in the 1950s sci-fi movies , Signs is a tribute to Shyamalan 's gifts , which are such that we 'll keep watching the skies for his next project .",3,2,4
+362,150039,8173,"Singer\/composer Bryan Adams contributes a slew of songs -- a few potential hits , a few more simply intrusive to the story -- but the whole package certainly captures the intended , er , spirit of the piece .",3,2,3
+363,48060,2344,Its adult themes of familial separation and societal betrayal are head and shoulders above much of the director 's previous popcorn work .,3,4,1
+364,84037,4342,"Lathan and Diggs carry the film with their charisma , and both exhibit sharp comic timing that makes the more hackneyed elements of the film easier to digest .",3,4,3
+365,155041,8485,"Visually , ` Santa Clause 2 ' is wondrously creative .",3,2,3
+366,142073,7707,The gags are often a stitch .,3,3,0
+367,41227,1977,Manages to be wholesome and subversive at the same time .,3,0,3
+368,106563,5628,"Like Kubrick , Soderbergh is n't afraid to try any genre and to do it his own way .",3,0,1
+369,142001,7704,Unfolds in a series of achronological vignettes whose cumulative effect is chilling .,3,4,0
+370,81099,4179,"Plunges you into a reality that is , more often then not , difficult and sad , and then , without sentimentalizing it or denying its brutality , transforms that reality into a lyrical and celebratory vision .",3,4,1
+371,95564,4990,"To others , it will remind them that Hong Kong action cinema is still alive and kicking .",3,1,1
+372,135413,7313,"In fact , it 's quite fun in places .",3,2,3
+373,119610,6395,A gangster movie with the capacity to surprise .,3,2,1
+374,74484,3818,A beautiful paean to a time long past .,3,1,4
+375,32888,1541,"It never quite makes it to the boiling point , but manages to sustain a good simmer for most of its running time .",3,4,2
+376,11570,498,"She nearly glows with enthusiasm , sensuality and a conniving wit .",3,0,1
+377,14099,608,A compelling allegory about the last days of Germany 's democratic Weimar Republic .,3,1,0
+378,120514,6444,"By turns fanciful , grisly and engagingly quixotic .",3,0,1
+379,85976,4449,"All in all , an interesting look at the life of the campaign-trail press , especially ones that do n't really care for the candidate they 're forced to follow .",3,1,2
+380,80947,4172,A spiffy animated feature about an unruly adolescent boy who is yearning for adventure and a chance to prove his worth .,3,3,2
+381,90097,4690,"If not a home run , then at least a solid base hit .",3,1,3
+382,41444,1992,"A quaint , romanticized rendering .",3,4,2
+383,73820,3777,"I 'm sure mainstream audiences will be baffled , but , for those with at least a minimal appreciation of Woolf and Clarissa Dalloway , The Hours represents two of those well spent .",3,1,1
+384,98003,5134,Leigh makes these lives count .,3,4,3
+385,44101,2137,It 's the sweet Cinderella story that `` Pretty Woman '' wanted to be .,3,1,3
+386,119228,6373,"A good film with a solid pedigree both in front of and , more specifically , behind the camera .",3,0,3
+387,106241,5610,"By halfway through this picture I was beginning to hate it , and , of course , feeling guilty for it ... Then , miracle of miracles , the movie does a flip-flop .",3,0,1
+388,137913,7462,"This film is an act of spiritual faith -- an eloquent , deeply felt meditation on the nature of compassion .",3,4,2
+389,87244,4525,"In The Pianist , Polanski is saying what he has long wanted to say , confronting the roots of his own preoccupations and obsessions , and he allows nothing to get in the way .",3,2,2
+390,40400,1933,"The Bourne Identity should n't be half as entertaining as it is , but director Doug Liman and his colleagues have managed to pack it with enough action to satisfy the boom-bam crowd without a huge sacrifice of character and mood .",3,2,3
+391,116517,6213,"A B-movie you can sit through , enjoy on a certain level and then forget .",3,3,1
+392,83387,4307,Lawrence plumbs personal tragedy and also the human comedy .,3,2,3
+393,47640,2323,"When it 's not wallowing in hormonal melodrama , `` Real Women Have Curves '' is a sweet , honest , and enjoyable comedy-drama about a young woman who wants many things in life , but fears she 'll become her mother before she gets to fulfill her dreams .",3,0,3
+394,86750,4494,A film of ideas and wry comic mayhem .,3,3,4
+395,109329,5790,Reveals how important our special talents can be when put in service of of others .,3,4,4
+396,78407,4033,"After an uncertain start , Murder hits and generally sustains a higher plateau with Bullock 's memorable first interrogation of Gosling .",3,4,4
+397,20211,900,"... a sweetly affecting story about four sisters who are coping , in one way or another , with life 's endgame .",3,3,2
+398,40965,1964,"As literary desecrations go , this makes for perfectly acceptable , occasionally very enjoyable children 's entertainment .",3,3,3
+399,147807,8042,"I am not generally a huge fan of cartoons derived from TV shows , but Hey Arnold !",3,0,2
+400,85669,4430,"Much of it is funny , but there are also some startling , surrealistic moments ...",3,4,4
+401,72349,3698,This 90-minute postmodern voyage was more diverting and thought-provoking than I 'd expected it to be .,3,4,3
+402,117122,6249,Those with a modicum of patience will find in these characters ' foibles a timeless and unique perspective .,3,1,3
+403,40680,1949,And it is .,3,3,0
+404,214,8,"The Importance of Being Earnest , so thick with wit it plays like a reading from Bartlett 's Familiar Quotations",3,3,3
+405,34584,1626,"Quaid is utterly fearless as the tortured husband living a painful lie , and Moore wonderfully underplays the long-suffering heroine with an unflappable '50s dignity somewhere between Jane Wyman and June Cleaver .",3,1,3
+406,23659,1074,"Strange it is , but delightfully so .",3,1,2
+407,130670,7040,There are enough throwaway references to faith and rainbows to plant smile-button faces on that segment of the populace that made A Walk to Remember a niche hit .,3,4,4
+408,98241,5149,"If you 're down for a silly hack-and-slash flick , you can do no wrong with Jason X.",3,0,1
+409,135781,7335,"Nakata 's technique is to imply terror by suggestion , rather than the overuse of special effects .",3,3,4
+410,79351,4088,Russian Ark is a new treasure of the Hermitage .,3,4,1
+411,16908,733,It has more than a few moments that are insightful enough to be fondly remembered in the endlessly challenging maze of moviegoing .,3,2,1
+412,54052,2686,"What makes Barbershop so likable , with all its flaws , is that it has none of the pushiness and decibel volume of most contemporary comedies .",3,2,1
+413,106397,5619,"A pleasing , often-funny comedy .",3,4,3
+414,38613,1840,With exquisite craftsmanship ... Olivier Assayas has fashioned an absorbing look at provincial bourgeois French society .,3,4,3
+415,47741,2327,imagine a scenario where Bergman approaches Swedish fatalism using Gary Larson 's Far Side humor,3,0,1
+416,67450,3423,I liked it just enough .,3,2,3
+417,129996,6999,A tasty masala .,3,0,2
+418,29597,1372,This deeply spiritual film taps into the meaning and consolation in afterlife communications .,3,0,3
+419,54573,2714,"If you can push on through the slow spots , you 'll be rewarded with some fine acting .",3,4,3
+420,111481,5914,... quite endearing .,3,0,3
+421,154799,8468,This is a more fascinating look at the future than `` Bladerunner '' and one of the most high-concept sci fi adventures attempted for the screen .,3,1,2
+422,29988,1391,"One of the funniest motion pictures of the year , but ... also one of the most curiously depressing .",3,0,4
+423,154056,8416,Gondry 's direction is adequate ... but what gives Human Nature its unique feel is Kaufman 's script .,3,1,1
+424,116741,6226,"Using an endearing cast , writer\/director Dover Kosashvili takes a slightly dark look at relationships , both sexual and kindred .",3,2,3
+425,127052,6833,"Yes , MIBII is rote work and predictable , but with a philosophical visual coming right at the end that extravagantly redeems it .",3,1,2
+426,129666,6974,"A film of epic scale with an intimate feeling , a saga of the ups and downs of friendships .",3,2,4
+427,136784,7399,"The film 's highlight is definitely its screenplay , both for the rhapsodic dialogue that jumps off the page , and for the memorable character creations .",3,3,2
+428,55014,2741,"Let 's issue a moratorium , effective immediately , on treacly films about inspirational prep-school professors and the children they so heartwarmingly motivate .",3,4,3
+429,132558,7148,"Talk To Her is not the perfect movie many have made it out to be , but it 's still quite worth seeing .",3,3,1
+430,64607,3270,"The hook is the drama within the drama , as an unsolved murder and an unresolved moral conflict jockey for the spotlight .",3,3,2
+431,52119,2573,"Expect no major discoveries , nor any stylish sizzle , but the film sits with square conviction and touching good sense on the experience of its women .",3,3,2
+432,22625,1023,Alternately frustrating and rewarding .,3,2,2
+433,49652,2434,Coppola has made a film of intoxicating atmosphere and little else .,3,3,2
+434,27531,1266,An intelligently made -LRB- and beautifully edited -RRB- picture that at the very least has a spark of life to it -- more than you can say for plenty of movies that flow through the Hollywood pipeline without a hitch .,4,1,2
+435,46404,2257,"Stanley Kwan has directed not only one of the best gay love stories ever made , but one of the best love stories of any stripe .",4,0,4
+436,77926,4010,"Elegant and eloquent -LRB- meditation -RRB- on death and that most elusive of passions , love .",4,4,4
+437,117856,6294,A heroic tale of persistence that is sure to win viewers ' hearts .,4,0,4
+438,120721,6458,It 's a great performance and a reminder of Dickens ' grandeur .,4,4,4
+439,134020,7233,One of those exceedingly rare films in which the talk alone is enough to keep us involved .,4,4,4
+440,139838,7588,There 's so much to look at in Metropolis you hate to tear your eyes away from the images long enough to read the subtitles .,4,2,0
+441,107138,5661,"An interesting psychological game of cat-and-mouse , three-dimensional characters and believable performances all add up to a satisfying crime drama .",4,4,1
+442,147293,8015,"It 's a fine , focused piece of work that reopens an interesting controversy and never succumbs to sensationalism .",4,3,1
+443,33354,1563,"And thanks to Kline 's superbly nuanced performance , that pondering is highly pleasurable .",4,0,4
+444,89735,4670,"A first-class , thoroughly involving B movie that effectively combines two surefire , beloved genres -- the prison flick and the fight film .",4,1,4
+445,10411,438,"It is most remarkable not because of its epic scope , but because of the startling intimacy it achieves despite that breadth .",4,1,1
+446,84330,4358,"Colorful , energetic and sweetly whimsical ... the rare sequel that 's better than its predecessor .",4,2,2
+447,115008,6126,Sensitive ensemble performances and good period reconstruction add up to a moving tragedy with some buoyant human moments .,4,0,1
+448,147059,8004,LaBute 's careful handling makes the material seem genuine rather than pandering .,4,2,1
+449,79732,4106,"Laugh-out-loud lines , adorably ditsy but heartfelt performances , and sparkling , bittersweet dialogue that cuts to the chase of the modern girl 's dilemma .",4,0,1
+450,24676,1124,The film is one of the year 's best .,4,3,4
+451,134579,7261,Exceptionally well acted by Diane Lane and Richard Gere .,4,1,4
+452,117394,6264,Raimi and his team could n't have done any better in bringing the story of Spider-Man to the big screen .,4,1,1
+453,124303,6676,"Wickedly funny , visually engrossing , never boring , this movie challenges us to think about the ways we consume pop culture .",4,0,3
+454,103094,5436,"A slam-bang extravaganza that is all about a wild-and-woolly , wall-to-wall good time .",4,3,1
+455,81621,4211,"A beautiful , timeless and universal tale of heated passions -- jealousy , betrayal , forgiveness and murder .",4,3,4
+456,104555,5521,A captivating coming-of-age story that may also be the first narrative film to be truly informed by the wireless age .,4,2,3
+457,130409,7026,"It 's a technically superb film , shining with all the usual Spielberg flair , expertly utilizing the talents of his top-notch creative team .",4,0,2
+458,116798,6230,It 's technically sumptuous but also almost wildly alive .,4,4,2
+459,101559,5342,A deliciously nonsensical comedy about a city coming apart at its seams .,4,2,3
+460,10196,428,This beautifully animated epic is never dull .,4,3,3
+461,73053,3731,There is greatness here .,4,0,4
+462,112240,5961,"If you ever wondered what it would be like to be smack in the middle of a war zone armed with nothing but a camera , this Oscar-nominated documentary takes you there .",4,0,3
+463,75405,3867,"Brims with passion : for words , for its eccentric , accident-prone characters , and for the crazy things that keep people going in this crazy life .",4,1,3
+464,46597,2268,"Even when there are lulls , the emotions seem authentic , and the picture is so lovely toward the end ... you almost do n't notice the 129-minute running time .",4,3,1
+465,64970,3288,Arteta directs one of the best ensemble casts of the year,4,2,4
+466,118450,6329,"A powerful and telling story that examines forbidden love , racial tension , and other issues that are as valid today as they were in the 1950s .",4,4,3
+467,146779,7986,Director Charles Stone III applies more detail to the film 's music than to the story line ; what 's best about Drumline is its energy .,4,2,1
+468,100362,5267,"The problems and characters it reveals are universal and involving , and the film itself -- as well its delightful cast -- is so breezy , pretty and gifted , it really won my heart .",4,2,1
+469,37689,1792,Richly entertaining and suggestive of any number of metaphorical readings .,4,2,3
+470,93438,4872,A thoroughly entertaining comedy that uses Grant 's own twist of acidity to prevent itself from succumbing to its own bathos .,4,4,1
+471,66412,3370,One of the best inside-show-biz yarns ever .,4,3,4
+472,62053,3138,"With few respites , Marshall keeps the energy humming , and his edits , unlike those in Moulin Rouge , are crisp and purposeful without overdoing it .",4,1,3
+473,145929,7935,Allen 's funniest and most likeable movie in years .,4,0,4
+474,25934,1188,The large-format film is well suited to capture these musicians in full regalia and the incredible IMAX sound system lets you feel the beat down to your toes .,4,4,3
+475,101085,5311,... spellbinding fun and deliciously exploitative .,4,3,3
+476,124836,6708,"Payne has created a beautiful canvas , and Nicholson proves once again that he 's the best brush in the business .",4,2,4
+477,98155,5143,I like this movie a lot .,4,3,0
+478,123135,6609,The most amazing super-sized dosage of goofball stunts any `` Jackass '' fan could want .,4,1,4
+479,150359,8190,"... a solid , well-formed satire .",4,4,3
+480,107940,5709,"Uplifting as only a document of the worst possibilities of mankind can be , and among the best films of the year .",4,0,3
+481,126988,6828,"It 's endlessly inventive , consistently intelligent and sickeningly savage .",4,1,3
+482,79152,4077,"Ramsay is clearly extraordinarily talented , and based on three short films and two features , here 's betting her third feature will be something to behold .",4,1,0
+483,31638,1483,Brian Tufano 's handsome widescreen photography and Paul Grabowsky 's excellent music turn this fairly parochial melodrama into something really rather special .,4,0,1
+484,124455,6687,"A strong first act and absolutely , inescapably gorgeous , skyscraper-trapeze motion of the amazing Spider-Man .",4,2,4
+485,149565,8141,"With an admirably dark first script by Brent Hanley , Paxton , making his directorial feature debut , does strong , measured work .",4,0,2
+486,34273,1610,"As quiet , patient and tenacious as Mr. Lopez himself , who approaches his difficult , endless work with remarkable serenity and discipline .",4,4,3
+487,36945,1751,"Directed with purpose and finesse by England 's Roger Mitchell , who handily makes the move from pleasing , relatively lightweight commercial fare such as Notting Hill to commercial fare with real thematic heft .",4,3,1
+488,120081,6423,"It 's a wise and powerful tale of race and culture forcefully told , with superb performances throughout .",4,2,4
+489,60602,3060,It is also beautifully acted .,4,2,3
+490,80329,4139,... a rich and intelligent film that uses its pulpy core conceit to probe questions of attraction and interdependence and how the heart accomodates practical needs .,4,1,3
+491,36586,1731,I had more fun watching Spy than I had with most of the big summer movies .,4,3,3
+492,139464,7566,It leaves little doubt that Kidman has become one of our best actors .,4,3,1
+493,88751,4611,Rifkin 's references are ... impeccable throughout .,4,2,3
+494,84727,4383,What makes this film special is Serry 's ability to take what is essentially a contained family conflict and put it into a much larger historical context .,4,2,1
+495,66917,3396,"Enjoyably fast-moving , hard-hitting documentary .",4,3,3
+496,145921,7934,A backstage must-see for true fans of comedy .,4,4,2
+497,120418,6439,Isabelle Huppert excels as the enigmatic Mika and Anna Mouglalis is a stunning new young talent in one of Chabrol 's most intense psychological mysteries .,4,4,2
+498,108699,5754,"First and foremost ... the reason to go see `` Blue Crush '' is the phenomenal , water-born cinematography by David Hennings .",4,4,4
+499,51455,2534,"Hailed as a clever exercise in neo-Hitchcockianism , this clever and very satisfying picture is more accurately Chabrolian .",4,0,2
+500,137770,7456,"Unfolds with such a wallop of you-are-there immediacy that when the bullets start to fly , your first instinct is to duck .",4,0,2
+501,139415,7560,"A classy , sprightly spin on film .",4,0,3
+502,96323,5031,Gives everyone something to shout about .,4,1,0
+503,154598,8453,"Maybe not a classic , but a movie the kids will want to see over and over again .",4,4,1
+504,47481,2314,"Mr. Deeds is sure to give you a lot of laughs in this simple , sweet and romantic comedy .",4,3,4
+505,68094,3456,Happily stays close to the ground in a spare and simple manner and does n't pummel us with phony imagery or music .,4,3,1
+506,141194,7659,"Stands as one of the year 's most intriguing movie experiences , letting its imagery speak for it while it forces you to ponder anew what a movie can be .",4,4,4
+507,65807,3336,Smart and taut .,4,4,3
+508,129815,6987,"insightfully written , delicately performed",4,1,4
+509,136306,7369,"It 's sweet , funny , charming , and completely delightful .",4,1,3
+510,58011,2924,"The film is enriched by an imaginatively mixed cast of antic spirits , headed by Christopher Plummer as the subtlest and most complexly evil Uncle Ralph I 've ever seen in the many film and stage adaptations of the work .",4,1,1

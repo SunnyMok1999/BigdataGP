@@ -1,0 +1,15 @@
+{
+  "python": "3.11.13",
+  "dependencies": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.1",
+    "joblib": "1.5.2",
+    "threadpoolctl": "3.6.0"
+  },
+  "elapsed_seconds": 9.992058041971177,
+  "training_file": "/Users/SunnyMok/Desktop/polyu/Y5S1/DSAI4205/Data 2 - Movie Reviews/Cleaned data/cleaned_train.csv",
+  "n_jobs": 2,
+  "threads_per_worker": 1
+}

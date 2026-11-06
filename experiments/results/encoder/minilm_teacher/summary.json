@@ -1,0 +1,117 @@
+{
+  "accuracy": 0.3796477495107632,
+  "macro_f1": 0.33389497853173566,
+  "class0_recall": 0.06153846153846154,
+  "nll": 1.435687817728395,
+  "mae": 0.8356164383561644,
+  "quadratic_kappa": 0.5422597019517006,
+  "confusion_matrix": [
+    [
+      4,
+      42,
+      10,
+      8,
+      1
+    ],
+    [
+      12,
+      66,
+      28,
+      23,
+      2
+    ],
+    [
+      2,
+      43,
+      17,
+      31,
+      5
+    ],
+    [
+      3,
+      23,
+      20,
+      73,
+      21
+    ],
+    [
+      0,
+      7,
+      4,
+      32,
+      34
+    ]
+  ],
+  "classification_report": {
+    "0": {
+      "precision": 0.19047619047619047,
+      "recall": 0.06153846153846154,
+      "f1-score": 0.09302325581395349,
+      "support": 65.0
+    },
+    "1": {
+      "precision": 0.36464088397790057,
+      "recall": 0.5038167938931297,
+      "f1-score": 0.4230769230769231,
+      "support": 131.0
+    },
+    "2": {
+      "precision": 0.21518987341772153,
+      "recall": 0.17346938775510204,
+      "f1-score": 0.192090395480226,
+      "support": 98.0
+    },
+    "3": {
+      "precision": 0.437125748502994,
+      "recall": 0.5214285714285715,
+      "f1-score": 0.4755700325732899,
+      "support": 140.0
+    },
+    "4": {
+      "precision": 0.5396825396825397,
+      "recall": 0.44155844155844154,
+      "f1-score": 0.4857142857142857,
+      "support": 77.0
+    },
+    "accuracy": 0.3796477495107632,
+    "macro avg": {
+      "precision": 0.3494230472114692,
+      "recall": 0.34036233123474124,
+      "f1-score": 0.33389497853173566,
+      "support": 511.0
+    },
+    "weighted avg": {
+      "precision": 0.36006003155179794,
+      "recall": 0.3796477495107632,
+      "f1-score": 0.3606149743019699,
+      "support": 511.0
+    }
+  },
+  "config": {
+    "model": "minilm",
+    "last_layers": 6,
+    "teacher": 0.2
+  },
+  "checkpoint": "/Users/SunnyMok/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "config_name": "minilm_teacher",
+  "max_length": 128,
+  "seed": 42,
+  "fold_macro_f1": [
+    0.34338235294117647,
+    0.3548035929914488,
+    0.33711232911232913,
+    0.28083149665299767,
+    0.3388372645769754
+  ],
+  "selected_epochs": [
+    5,
+    5,
+    7,
+    6,
+    6
+  ],
+  "mean_macro_f1": 0.3309934072549855,
+  "std_macro_f1": 0.028877307256936637,
+  "seconds": 116.81353249913082,
+  "protocol": "5 outer folds; separate 20% inner holdout selects epochs by NLL. Fixed configurations; picking among configs adds selection optimism; test untouched."
+}

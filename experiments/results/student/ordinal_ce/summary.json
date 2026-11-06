@@ -1,0 +1,45 @@
+{
+  "settings": {
+    "distill": false,
+    "balanced": false,
+    "ordinal": true
+  },
+  "oof_metrics": {
+    "accuracy": 0.3131115459882583,
+    "macro_f1": 0.273317241800921,
+    "balanced_accuracy": 0.27697086991525377,
+    "quadratic_weighted_kappa": 0.3775146035653233,
+    "mean_absolute_error": 1.0273972602739727,
+    "class_0_recall": 0.13846153846153847,
+    "log_loss": 1.5890635770438184
+  },
+  "fold_mean_accuracy": 0.31304016752332,
+  "fold_mean_macro_f1": 0.26926186334490676,
+  "fold_sd_accuracy": 0.046839155355418105,
+  "fold_sd_macro_f1": 0.045992842607544895,
+  "oof_geometry_diagnostic": {
+    "silhouette_euclidean": -0.01898890547454357,
+    "silhouette_cosine": -0.03487258777022362
+  },
+  "inner_selected_epochs": [
+    5,
+    4,
+    4,
+    4,
+    3
+  ],
+  "full_fit_epochs": 4,
+  "full_fit_training_metrics_not_generalization": {
+    "accuracy": 0.7495107632093934,
+    "macro_f1": 0.720371331557214,
+    "balanced_accuracy": 0.7074278066535428,
+    "quadratic_weighted_kappa": 0.7783041897753018,
+    "mean_absolute_error": 0.3659491193737769,
+    "class_0_recall": 0.4,
+    "log_loss": 0.8405754651704868
+  },
+  "full_fit_geometry_not_generalization": {
+    "silhouette_euclidean": 0.029453376308083534,
+    "silhouette_cosine": 0.05253531038761139
+  }
+}

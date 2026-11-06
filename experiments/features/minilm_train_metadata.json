@@ -1,0 +1,39 @@
+{
+  "id": "sentence-transformers/all-MiniLM-L6-v2",
+  "pooling": "mean",
+  "max_length": 128,
+  "description": "Sentence-transformer pretrained with sentence-pair objectives",
+  "snapshot": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "local_snapshot": "/Users/SunnyMok/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "split": "train",
+  "samples": 511,
+  "dimensions": 384,
+  "dtype": "float32",
+  "text_sha256": "4c8806284d9a2c95af6bd8fd1906a01c4204611b5bcfe674c9f92a49637a3f4b",
+  "source_file_sha256": "cd5858d1053b3c7712b30cc41fc0197b4ac92f6f3951eb20874dbdc91947fb39",
+  "embedding_file_sha256": "52d71fc6daf203fdf985d2648f5c1f3a02d227fd0ff98a814154e67bd792d8d1",
+  "device": "mps",
+  "torch_threads": 2,
+  "torch_version": "2.14.0",
+  "transformers_version": "4.56.1",
+  "numpy_version": "2.4.6",
+  "sklearn_version": "1.7.1",
+  "python_version": "3.11.13",
+  "row_order": "Original CSV order; see adjacent rows CSV",
+  "normalization": "L2",
+  "raw_text": true,
+  "includes_special_tokens_in_mean": true,
+  "maximum_observed_tokens": 63,
+  "truncated_rows": 0,
+  "smoke_checks": {
+    "all_finite": true,
+    "max_unit_norm_error": 1.1920928955078125e-07,
+    "repeatability_max_abs_delta_first3": 2.2351741790771484e-08
+  },
+  "files_sha256": {
+    "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+    "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+    "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+  },
+  "extraction_seconds": 1.5880990028381348
+}

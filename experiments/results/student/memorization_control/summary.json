@@ -1,0 +1,17 @@
+{
+  "description": "Deliberately overfit teacher+CE on all training rows for 150 epochs; no independent performance estimate",
+  "epochs": 150,
+  "training_metrics_not_generalization": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "quadratic_weighted_kappa": 1.0,
+    "mean_absolute_error": 0.0,
+    "class_0_recall": 1.0,
+    "log_loss": 0.024954380630683674
+  },
+  "training_geometry_not_generalization": {
+    "silhouette_euclidean": 0.9188668727874756,
+    "silhouette_cosine": 0.9923465847969055
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "description": "Original default StemmedText TF-IDF + LogisticRegression baseline",
+  "parameters": {
+    "representation": "StemmedText",
+    "tfidf": "sklearn defaults",
+    "lr_max_iter": 1000,
+    "lr_C": 1.0,
+    "lr_class_weight": null,
+    "random_state": 42
+  },
+  "folds": {
+    "macro_f1": [
+      0.15459816650379266,
+      0.17535338155056465,
+      0.1824331550802139,
+      0.22657013574660634,
+      0.1572649572649573
+    ],
+    "accuracy": [
+      0.2621359223300971,
+      0.28431372549019607,
+      0.30392156862745096,
+      0.30392156862745096,
+      0.28431372549019607
+    ]
+  },
+  "mean_macro_f1": 0.17924395922922695,
+  "std_macro_f1": 0.02590585329617324,
+  "mean_accuracy": 0.2877213021130783,
+  "std_accuracy": 0.015509558896334989
+}

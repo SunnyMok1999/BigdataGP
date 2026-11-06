@@ -1,0 +1,246 @@
+{
+  "experiment": "new small projection-student audit, not exact ChatGPT reproduction",
+  "sample_count": 511,
+  "feature_dimensions": 384,
+  "class_counts": {
+    "0": 65,
+    "1": 131,
+    "2": 98,
+    "3": 140,
+    "4": 77
+  },
+  "feature_sha256": "52d71fc6daf203fdf985d2648f5c1f3a02d227fd0ff98a814154e67bd792d8d1",
+  "training_csv_sha256": "cd5858d1053b3c7712b30cc41fc0197b4ac92f6f3951eb20874dbdc91947fb39",
+  "input_norm_min": 0.9999998807907104,
+  "input_norm_max": 1.0000001192092896,
+  "original_frozen_geometry": {
+    "silhouette_euclidean": -0.00791990291327238,
+    "silhouette_cosine": -0.015781210735440254
+  },
+  "label_injected_teacher_geometry_not_generalization": {
+    "silhouette_euclidean": 0.9130646586418152,
+    "silhouette_cosine": 0.9922250509262085
+  },
+  "protocol": {
+    "outer_folds": 5,
+    "outer_stratified_shuffle_seed": 42,
+    "inner_validation_fraction": 0.2,
+    "inner_seed": "42 + fold",
+    "scaler": "fit inner-train for early stopping; refit outer-train for final fold fit",
+    "early_stopping": "minimum unweighted inner-validation cross entropy; patience 15; max 150 epochs",
+    "architecture": "384 -> 64 ReLU Dropout(0.3) -> 16, unit-normalized; fixed orthogonal prototypes",
+    "optimizer": "AdamW(lr=.001, weight_decay=.01), batch_size=64",
+    "teacher": "normalize(orthogonal_sentiment_center + .1 * normalized fixed Gaussian projection of raw MiniLM input)",
+    "teacher_loss": "CE + squared Euclidean distance to teacher target",
+    "ordinal_loss": "CE + .1 * SmoothL1(expected sentiment, true label)",
+    "class_balance": "training-fold inverse frequency weights for CE only",
+    "test_partition_accessed": false,
+    "geometry_caveat": "OOF points come from different fitted students; fixed anchors reduce arbitrary rotations but do not make cross-fold geometry equivalent to a single unseen-data encoder. Per-fold silhouette is also saved.",
+    "comparison_caveat": "Four prespecified variants were evaluated. Selecting the best using these OOF scores adds model-selection optimism. No multiple-comparison significance claim."
+  },
+  "variants": {
+    "ce_only": {
+      "settings": {
+        "distill": false,
+        "balanced": false,
+        "ordinal": false
+      },
+      "oof_metrics": {
+        "accuracy": 0.3131115459882583,
+        "macro_f1": 0.27504667061724797,
+        "balanced_accuracy": 0.27748496868453254,
+        "quadratic_weighted_kappa": 0.37429231694577225,
+        "mean_absolute_error": 1.0273972602739727,
+        "class_0_recall": 0.13846153846153847,
+        "log_loss": 1.5911874703283666
+      },
+      "fold_mean_accuracy": 0.31302113078241006,
+      "fold_mean_macro_f1": 0.27080376285908525,
+      "fold_sd_accuracy": 0.05199568752225187,
+      "fold_sd_macro_f1": 0.05256720284105727,
+      "oof_geometry_diagnostic": {
+        "silhouette_euclidean": -0.018462369218468666,
+        "silhouette_cosine": -0.033908724784851074
+      },
+      "inner_selected_epochs": [
+        5,
+        4,
+        4,
+        4,
+        3
+      ],
+      "full_fit_epochs": 4,
+      "full_fit_training_metrics_not_generalization": {
+        "accuracy": 0.7436399217221135,
+        "macro_f1": 0.7137167089687748,
+        "balanced_accuracy": 0.700192185132207,
+        "quadratic_weighted_kappa": 0.7736938148409578,
+        "mean_absolute_error": 0.37377690802348335,
+        "class_0_recall": 0.4,
+        "log_loss": 0.8443165622634294
+      },
+      "full_fit_geometry_not_generalization": {
+        "silhouette_euclidean": 0.02993583120405674,
+        "silhouette_cosine": 0.05352763459086418
+      }
+    },
+    "teacher_ce": {
+      "settings": {
+        "distill": true,
+        "balanced": false,
+        "ordinal": false
+      },
+      "oof_metrics": {
+        "accuracy": 0.30332681017612523,
+        "macro_f1": 0.25843867960685796,
+        "balanced_accuracy": 0.26519746338721256,
+        "quadratic_weighted_kappa": 0.38436677071045733,
+        "mean_absolute_error": 1.0293542074363993,
+        "class_0_recall": 0.12307692307692308,
+        "log_loss": 1.6487658468051576
+      },
+      "fold_mean_accuracy": 0.30323624595469256,
+      "fold_mean_macro_f1": 0.25379309097506175,
+      "fold_sd_accuracy": 0.056020336765452095,
+      "fold_sd_macro_f1": 0.048746965880657335,
+      "oof_geometry_diagnostic": {
+        "silhouette_euclidean": -0.022330155596137047,
+        "silhouette_cosine": -0.041947443038225174
+      },
+      "inner_selected_epochs": [
+        5,
+        3,
+        4,
+        3,
+        3
+      ],
+      "full_fit_epochs": 3,
+      "full_fit_training_metrics_not_generalization": {
+        "accuracy": 0.6692759295499021,
+        "macro_f1": 0.6448862933471069,
+        "balanced_accuracy": 0.6335847685575058,
+        "quadratic_weighted_kappa": 0.6822107808644116,
+        "mean_absolute_error": 0.5048923679060665,
+        "class_0_recall": 0.4307692307692308,
+        "log_loss": 0.939747006176957
+      },
+      "full_fit_geometry_not_generalization": {
+        "silhouette_euclidean": 0.01528274267911911,
+        "silhouette_cosine": 0.026946067810058594
+      }
+    },
+    "teacher_ce_balanced": {
+      "settings": {
+        "distill": true,
+        "balanced": true,
+        "ordinal": false
+      },
+      "oof_metrics": {
+        "accuracy": 0.299412915851272,
+        "macro_f1": 0.2797241999297075,
+        "balanced_accuracy": 0.28780889775437213,
+        "quadratic_weighted_kappa": 0.3784884321507237,
+        "mean_absolute_error": 1.0978473581213308,
+        "class_0_recall": 0.2153846153846154,
+        "log_loss": 1.6551116987610566
+      },
+      "fold_mean_accuracy": 0.2993527508090615,
+      "fold_mean_macro_f1": 0.2767178940902972,
+      "fold_sd_accuracy": 0.03829887595417991,
+      "fold_sd_macro_f1": 0.03729274735371914,
+      "oof_geometry_diagnostic": {
+        "silhouette_euclidean": -0.024469567462801933,
+        "silhouette_cosine": -0.04579737037420273
+      },
+      "inner_selected_epochs": [
+        6,
+        4,
+        4,
+        3,
+        3
+      ],
+      "full_fit_epochs": 4,
+      "full_fit_training_metrics_not_generalization": {
+        "accuracy": 0.7749510763209393,
+        "macro_f1": 0.7703755812448861,
+        "balanced_accuracy": 0.7828852608678127,
+        "quadratic_weighted_kappa": 0.7824376462511841,
+        "mean_absolute_error": 0.36203522504892366,
+        "class_0_recall": 0.8461538461538461,
+        "log_loss": 0.8133896612657798
+      },
+      "full_fit_geometry_not_generalization": {
+        "silhouette_euclidean": 0.03671257570385933,
+        "silhouette_cosine": 0.06437624990940094
+      }
+    },
+    "ordinal_ce": {
+      "settings": {
+        "distill": false,
+        "balanced": false,
+        "ordinal": true
+      },
+      "oof_metrics": {
+        "accuracy": 0.3131115459882583,
+        "macro_f1": 0.273317241800921,
+        "balanced_accuracy": 0.27697086991525377,
+        "quadratic_weighted_kappa": 0.3775146035653233,
+        "mean_absolute_error": 1.0273972602739727,
+        "class_0_recall": 0.13846153846153847,
+        "log_loss": 1.5890635770438184
+      },
+      "fold_mean_accuracy": 0.31304016752332,
+      "fold_mean_macro_f1": 0.26926186334490676,
+      "fold_sd_accuracy": 0.046839155355418105,
+      "fold_sd_macro_f1": 0.045992842607544895,
+      "oof_geometry_diagnostic": {
+        "silhouette_euclidean": -0.01898890547454357,
+        "silhouette_cosine": -0.03487258777022362
+      },
+      "inner_selected_epochs": [
+        5,
+        4,
+        4,
+        4,
+        3
+      ],
+      "full_fit_epochs": 4,
+      "full_fit_training_metrics_not_generalization": {
+        "accuracy": 0.7495107632093934,
+        "macro_f1": 0.720371331557214,
+        "balanced_accuracy": 0.7074278066535428,
+        "quadratic_weighted_kappa": 0.7783041897753018,
+        "mean_absolute_error": 0.3659491193737769,
+        "class_0_recall": 0.4,
+        "log_loss": 0.8405754651704868
+      },
+      "full_fit_geometry_not_generalization": {
+        "silhouette_euclidean": 0.029453376308083534,
+        "silhouette_cosine": 0.05253531038761139
+      }
+    }
+  },
+  "memorization_control": {
+    "description": "Deliberately overfit teacher+CE on all training rows for 150 epochs; no independent performance estimate",
+    "epochs": 150,
+    "training_metrics_not_generalization": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "quadratic_weighted_kappa": 1.0,
+      "mean_absolute_error": 0.0,
+      "class_0_recall": 1.0,
+      "log_loss": 0.024954380630683674
+    },
+    "training_geometry_not_generalization": {
+      "silhouette_euclidean": 0.9188668727874756,
+      "silhouette_cosine": 0.9923465847969055
+    }
+  },
+  "environment": {
+    "python": "3.11.13",
+    "torch": "2.14.0",
+    "numpy": "2.4.6"
+  },
+  "elapsed_seconds": 5.0553411659784615
+}

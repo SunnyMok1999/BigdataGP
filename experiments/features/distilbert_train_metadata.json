@@ -1,0 +1,39 @@
+{
+  "id": "distilbert-base-uncased",
+  "pooling": "mean",
+  "max_length": 128,
+  "description": "Generic distilled language encoder; mean pooling is a baseline, not a sentence-trained model",
+  "snapshot": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "local_snapshot": "/Users/SunnyMok/.cache/huggingface/hub/models--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "split": "train",
+  "samples": 511,
+  "dimensions": 768,
+  "dtype": "float32",
+  "text_sha256": "4c8806284d9a2c95af6bd8fd1906a01c4204611b5bcfe674c9f92a49637a3f4b",
+  "source_file_sha256": "cd5858d1053b3c7712b30cc41fc0197b4ac92f6f3951eb20874dbdc91947fb39",
+  "embedding_file_sha256": "a56d83e13dfd61b2c69c3644942e5613e85da502dd0c577b00f64f34f3fdb07e",
+  "device": "mps",
+  "torch_threads": 2,
+  "torch_version": "2.14.0",
+  "transformers_version": "4.56.1",
+  "numpy_version": "2.4.6",
+  "sklearn_version": "1.7.1",
+  "python_version": "3.11.13",
+  "row_order": "Original CSV order; see adjacent rows CSV",
+  "normalization": "L2",
+  "raw_text": true,
+  "includes_special_tokens_in_mean": true,
+  "maximum_observed_tokens": 63,
+  "truncated_rows": 0,
+  "smoke_checks": {
+    "all_finite": true,
+    "max_unit_norm_error": 1.1920928955078125e-07,
+    "repeatability_max_abs_delta_first3": 0.0
+  },
+  "files_sha256": {
+    "model.safetensors": "5e3f1108e3cb34ee048634875d8482665b65ac713291a7e32396fb18f6ff0063",
+    "config.json": "69c94b0222d5d1f4b0ad027ca7416cdafb98378cbbb8305d0bf47c9365c60c83",
+    "tokenizer.json": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98"
+  },
+  "extraction_seconds": 1.5127360820770264
+}

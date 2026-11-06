@@ -1,0 +1,117 @@
+{
+  "accuracy": 0.36007827788649704,
+  "macro_f1": 0.32354619694320064,
+  "class0_recall": 0.09230769230769231,
+  "nll": 1.4338380889161753,
+  "mae": 0.8708414872798435,
+  "quadratic_kappa": 0.5307174868228339,
+  "confusion_matrix": [
+    [
+      6,
+      43,
+      8,
+      6,
+      2
+    ],
+    [
+      15,
+      63,
+      25,
+      26,
+      2
+    ],
+    [
+      3,
+      38,
+      16,
+      32,
+      9
+    ],
+    [
+      5,
+      23,
+      24,
+      65,
+      23
+    ],
+    [
+      0,
+      7,
+      3,
+      33,
+      34
+    ]
+  ],
+  "classification_report": {
+    "0": {
+      "precision": 0.20689655172413793,
+      "recall": 0.09230769230769231,
+      "f1-score": 0.1276595744680851,
+      "support": 65.0
+    },
+    "1": {
+      "precision": 0.3620689655172414,
+      "recall": 0.48091603053435117,
+      "f1-score": 0.4131147540983607,
+      "support": 131.0
+    },
+    "2": {
+      "precision": 0.21052631578947367,
+      "recall": 0.16326530612244897,
+      "f1-score": 0.1839080459770115,
+      "support": 98.0
+    },
+    "3": {
+      "precision": 0.4012345679012346,
+      "recall": 0.4642857142857143,
+      "f1-score": 0.4304635761589404,
+      "support": 140.0
+    },
+    "4": {
+      "precision": 0.4857142857142857,
+      "recall": 0.44155844155844154,
+      "f1-score": 0.46258503401360546,
+      "support": 77.0
+    },
+    "accuracy": 0.36007827788649704,
+    "macro avg": {
+      "precision": 0.33328813732927465,
+      "recall": 0.3284666369617296,
+      "f1-score": 0.32354619694320064,
+      "support": 511.0
+    },
+    "weighted avg": {
+      "precision": 0.3426296062590389,
+      "recall": 0.36007827788649704,
+      "f1-score": 0.3450544851552978,
+      "support": 511.0
+    }
+  },
+  "config": {
+    "model": "minilm",
+    "last_layers": 6,
+    "lr": 5e-06
+  },
+  "checkpoint": "/Users/SunnyMok/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "config_name": "minilm_ce_low_lr",
+  "max_length": 128,
+  "seed": 42,
+  "fold_macro_f1": [
+    0.3273174899036968,
+    0.3424242424242424,
+    0.3113832390243121,
+    0.29408685407898627,
+    0.32033002085633666
+  ],
+  "selected_epochs": [
+    9,
+    10,
+    10,
+    10,
+    10
+  ],
+  "mean_macro_f1": 0.31910836925751485,
+  "std_macro_f1": 0.018015728509337893,
+  "seconds": 156.4524824586697,
+  "protocol": "5 outer folds; separate 20% inner holdout selects epochs by NLL. Fixed configurations; picking among configs adds selection optimism; test untouched."
+}

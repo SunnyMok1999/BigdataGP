@@ -1,0 +1,55 @@
+name: Nested kernel search on Amazon RoBERTa sentiment features
+on:
+  push:
+    branches: [experiment/target-050-macro-f1]
+    paths:
+      - "experiments/target_050_amazon.py"
+      - ".github/workflows/target_050_amazon.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        models:
+          - "rbf_dense poly2 poly3"
+          - "scaled_rbf linear logistic"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: python -m pip install numpy pandas scikit-learn
+      - name: Retrieve precomputed Amazon RoBERTa features
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p downloads/amazon
+          gh run download 42236520330 -n amazon-roberta-sentiment-transfer-cv -D downloads/amazon
+          find downloads/amazon -name 'amazon_roberta5_hidden_train*' -print
+          for src in $(find downloads/amazon -name 'amazon_roberta5_hidden_train*' -type f); do
+            cp "$src" experiments/features/
+          done
+          test -f experiments/features/amazon_roberta5_hidden_train.npy
+          test -f experiments/features/amazon_roberta5_hidden_train_rows.csv
+      - name: Evaluate nested CV candidates
+        env:
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          python experiments/target_050_amazon.py \
+            --models ${{ matrix.models }} \
+            --out "experiments/results/amazon_${{ strategy.job-index }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: amazon-kernel-search-${{ strategy.job-index }}
+          path: experiments/results/amazon_*/
+          if-no-files-found: warn

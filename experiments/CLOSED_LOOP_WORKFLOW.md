@@ -147,3 +147,85 @@ true active learning on new unlabeled reviews with refreshed encoder embeddings,
 and a properly nested comparison of selection/calibration/ensemble alternatives
 are next research stages. The review files are not assumed to be verified
 training data merely because they have been generated.
+
+
+## Experiment A — 20-seed acquisition comparison (new)
+
+The repository now supports `hybrid` (65% adjacent-boundary uncertainty,
+35% global entropy, each rank-normalized) and `balanced_hybrid`
+(85% hybrid uncertainty plus 15% expected inverse-frequency class priority).
+The latter uses **only the labels already acquired**, never candidate gold
+labels. Both are hypotheses, not universally better query policies.
+
+Run the same benchmark on the stronger pretrained **BGE-small frozen**
+embeddings with 20 predefined random seeds:
+
+```bash
+python experiments/active_learning_loop.py simulate \
+  --policies random entropy adjacent hybrid balanced_hybrid \
+  --seeds 42 123 2026 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 \
+  --per-class 10 --batch 20 --rounds 8 \
+  --output experiments/results/active_learning_BGE_20seeds
+
+python experiments/report_AB.py \
+  --curves experiments/results/active_learning_BGE_20seeds/curves.csv
+```
+
+Read `summary.csv`, `paired_comparison.csv`, `class_recall.csv`,
+`learning_curve_auc.csv`, and the consolidated report. Use the **paired
+per-seed** gain against random and average macro-F1 across all budgets.
+The normal 95% intervals are approximate and do not cover method-selection
+optimism. Do not use the 341-row test set for method selection.
+
+A separate 20-seed exploratory run using saved **MiniLM** embeddings and
+these policy families achieved the following final (210-label) macro-F1:
+random 0.3138, hybrid 0.3113, adjacent 0.3091,
+balanced hybrid 0.3085, entropy 0.3062. The hybrid minus random
+difference was -0.0025, with a normal approximate 95% interval
+[-0.0237, 0.0186]. It does **not** reproduce the earlier BGE-small
+three-seed gain and is not a matched encoder comparison.
+
+## Experiment B — controlled pretrained-encoder ablations (new)
+
+`minilm_adjacent_v2` is the existing combined adjacent loss.
+The new encoder configurations are:
+
+- `minilm_adjacent_light`: lower objective weights and smaller margins.
+- `minilm_adjacent_strong`: larger weights and margins.
+- `minilm_adjacent_no_triplet`: ablate the triplet loss.
+- `bge_adjacent_v2`: apply the reference adjacent loss to pretrained BGE-small.
+- `bge_ce`: cross-entropy baseline on the same BGE architecture.
+
+Run only on a machine with the locally cached model checkpoints:
+
+```bash
+python experiments/encoder_finetuning.py cv \
+  --configs minilm_adjacent_light,minilm_adjacent_strong,minilm_adjacent_no_triplet,bge_ce,bge_adjacent_v2 \
+  --device mps
+
+python experiments/report_AB.py \
+  --curves experiments/results/active_learning_BGE_20seeds/curves.csv
+```
+
+The existing `minilm_ce`, `minilm_supcon`, `minilm_ordinal`, and
+`minilm_adjacent_v2` summaries are included when available. This is
+**full pretrained encoder fine-tuning**, unlike the frozen-feature student.
+
+The initial 5-fold **frozen MiniLM 384D -> 16D projection** ablation,
+conducted separately without pretrained weights, scored macro-F1:
+CE only 0.2953; light 0.2916; default 0.2944; strong 0.2756.
+It shows that stronger margins alone can hurt generalization, but
+**it cannot establish whether BGE or MiniLM encoder fine-tuning benefits**.
+The source and detailed results of this exploratory projection ablation
+are distributed separately, not represented as finished encoder results.
+
+### Validation and limitations
+
+- All CV runs keep the 341-row held-out test untouched.
+- The user must run MPS fine-tuning on their Mac: no local pretrained model
+  checkpoints or `transformers` are available in this sandbox.
+- The class-balanced query does **not** see candidate gold labels.
+- True augmentation requires a human label-consistency gate and strictly
+  train-fold-local data inclusion; generated queues alone are not proof.
+- Compare both mean macro-F1 and recall for **every class**. Extra losses
+  should be rejected if they improve embeddings visually but hurt macro-F1.

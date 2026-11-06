@@ -1,0 +1,48 @@
+name: Refine five-class sentiment Macro-F1 near 0.50
+on:
+  push:
+    branches: [experiment/target-050-macro-f1]
+    paths:
+      - "experiments/target_050_refine.py"
+      - ".github/workflows/target_050_refine.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        model: [scale_l2, scaled_fine, scaled_balanced_fine]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install libraries
+        run: python -m pip install numpy pandas scikit-learn
+      - name: Retrieve Amazon RoBERTa features and original row IDs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p downloads/amazon
+          gh run download 42236520330 -n amazon-roberta-sentiment-transfer-cv -D downloads/amazon
+          cp downloads/amazon/features/amazon_roberta5_hidden_train.npy experiments/features/
+          python -c 'import pandas as pd; pd.read_csv("train.csv")[["PhraseId"]].to_csv("experiments/features/amazon_roberta5_hidden_train_rows.csv",index=False)'
+      - name: Nested five-fold training evaluation
+        env:
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          python experiments/target_050_refine.py --models ${{ matrix.model }} \
+            --out experiments/results/refine_${{ matrix.model }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: refined-${{ matrix.model }}-training-only
+          path: experiments/results/refine_*/
+          if-no-files-found: warn

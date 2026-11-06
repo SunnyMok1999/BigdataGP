@@ -32,6 +32,7 @@ from sklearn.metrics import (accuracy_score, classification_report, cohen_kappa_
                              silhouette_score)
 from sklearn.model_selection import StratifiedKFold, train_test_split
 from transformers import AutoModel, AutoTokenizer
+from ordinal_losses import adjacent_error_cost, adjacent_triplet_margin, adjacent_prototype_margin
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "experiments/results/encoder"
@@ -51,6 +52,20 @@ CONFIGS = {
     "minilm_hard_negative": dict(model="minilm", last_layers=6, hard_negative=.1),
     "minilm_combined": dict(model="minilm", last_layers=6, supcon=.1,
                             teacher=.2, ordinal=.1, hard_negative=.1),
+    "minilm_adjacent_v2": dict(model="minilm", last_layers=6, adjacent_cost=.15,
+                                adjacent_triplet=.1, adjacent_prototype=.05),
+    # Controlled boundary-loss ablations, evaluated on identical outer folds.
+    "minilm_adjacent_light": dict(model="minilm", last_layers=6, adjacent_cost=.05,
+        adjacent_triplet=.05, adjacent_prototype=.02,
+        boundary_margins=(.12, .10, .10, .12), prototype_margin=.18),
+    "minilm_adjacent_strong": dict(model="minilm", last_layers=6, adjacent_cost=.30,
+        adjacent_triplet=.20, adjacent_prototype=.10,
+        boundary_margins=(.32, .24, .24, .32), prototype_margin=.45),
+    "minilm_adjacent_no_triplet": dict(model="minilm", last_layers=6,
+        adjacent_cost=.15, adjacent_prototype=.05),
+    # BGE-small is the stronger cached frozen encoder in the repo.
+    "bge_adjacent_v2": dict(model="bge_small", last_layers=12, adjacent_cost=.15,
+                            adjacent_triplet=.1, adjacent_prototype=.05),
     "bge_ce": dict(model="bge_small", last_layers=12),
 }
 LABELS = list(range(5))
@@ -190,6 +205,21 @@ def loss_parts(model, logits, embeddings, projected, labels, teacher_features, c
         hard = ordinal_hard_negative(embeddings, labels)
         loss = loss + cfg["hard_negative"] * hard
         parts["hard_negative"] = float(hard.detach())
+    if cfg.get("adjacent_cost", 0):
+        adjacent = adjacent_error_cost(logits, labels)
+        loss = loss + cfg["adjacent_cost"] * adjacent
+        parts["adjacent_cost"] = float(adjacent.detach())
+    if cfg.get("adjacent_triplet", 0):
+        triplet = adjacent_triplet_margin(
+            embeddings, labels,
+            boundary_margins=cfg.get("boundary_margins", (.22, .16, .16, .22)))
+        loss = loss + cfg["adjacent_triplet"] * triplet
+        parts["adjacent_triplet"] = float(triplet.detach())
+    if cfg.get("adjacent_prototype", 0):
+        prototype = adjacent_prototype_margin(
+            embeddings, labels, margin=cfg.get("prototype_margin", .30))
+        loss = loss + cfg["adjacent_prototype"] * prototype
+        parts["adjacent_prototype"] = float(prototype.detach())
     return loss, parts
 
 

@@ -1,0 +1,72 @@
+name: Strong sentiment: combined product+tweet transfer
+on:
+  push:
+    branches: [experiment/target-macro-f1-050]
+    paths:
+      - ".github/workflows/sentiment_multi_transfer.yml"
+  workflow_dispatch:
+jobs:
+  compare_transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install numpy pandas scipy scikit-learn pytest transformers==4.48.3 safetensors
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Extract product-review 5-star logits
+        env:
+          HF_HUB_DISABLE_XET: "1"
+          HF_HUB_DOWNLOAD_TIMEOUT: "120"
+        run: |
+          python experiments/extract_transfer_sentiment.py --model review5 \
+            --output experiments/features/review5_train.npy
+      - name: Extract Twitter 3-class logits
+        env:
+          HF_HUB_DISABLE_XET: "1"
+          HF_HUB_DOWNLOAD_TIMEOUT: "120"
+        run: |
+          python experiments/extract_transfer_sentiment.py --model tweet3 \
+            --output experiments/features/tweet3_train.npy
+      - name: Combine and validate all feature views
+        run: |
+          python experiments/merge_transfer_logits.py \
+            --inputs experiments/features/review5_train.npy experiments/features/tweet3_train.npy \
+            --output experiments/features/review5_tweet3_train.npy
+          python -m pytest -q tests/test_strong_sentiment.py
+      - name: Nested CV: tweet features only
+        env:
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          python experiments/strong_sentiment_cv.py \
+            --transfer experiments/features/tweet3_train.npy \
+            --candidates transfer_only_lr bge_transfer_lr bge_transfer_svm \
+            --output experiments/results/tweet3
+      - name: Nested CV: jointly product and tweet features
+        env:
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          python experiments/strong_sentiment_cv.py \
+            --transfer experiments/features/review5_tweet3_train.npy \
+            --candidates transfer_only_lr bge_transfer_lr bge_transfer_svm \
+            --output experiments/results/review5_tweet3
+      - name: Upload OOF outputs and sentiment vectors
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: strong-sentiment-multimodel-cv
+          path: |
+            experiments/features/review5_train.*
+            experiments/features/tweet3_train.*
+            experiments/features/review5_tweet3_train.*
+            experiments/results/tweet3/
+            experiments/results/review5_tweet3/
+          if-no-files-found: warn

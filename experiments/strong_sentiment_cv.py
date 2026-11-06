@@ -68,8 +68,8 @@ def load_transfer(path: Path, df: pd.DataFrame):
     row_csv = path.with_suffix(".rows.csv")
     metadata = json.loads(path.with_suffix(".metadata.json").read_text())
     rows = pd.read_csv(row_csv)
-    if X.shape[0] != len(df) or X.shape[1] not in (3,5):
-        raise ValueError("Expected N x 3 or N x 5 transfer logits")
+    if X.shape[0] != len(df) or X.shape[1] not in (3,5,8):
+        raise ValueError("Expected N x 3, N x 5, or N x 8 transfer logits")
     if not np.array_equal(df.PhraseId, rows.PhraseId):
         raise ValueError("PhraseId order mismatch for transferred logits")
     h = hashlib.sha256()

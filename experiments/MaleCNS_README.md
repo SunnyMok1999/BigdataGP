@@ -115,3 +115,40 @@ acknowledging that our frozen-epoch configuration and the LR inner-tuning
 protocol are not perfectly matched. If the recurrent model does not improve
 macro-F1 *and* consistently beat rewired controls across seeds, the
 biological graph is not currently helping sentiment classification.
+
+## Comparison to standard RNN and LSTM
+
+`experiments/rnn_lstm_sentiment.py` benchmarks three **token-sequence**
+architectures with the same fixed text hashing, learned 48D word embedding,
+80-unit hidden size, mean-plus-final-state readout, class-weighted CE, folds,
+training epochs, batch size, optimizer and random seeds:
+
+- `malecns`: the original sparse biological recurrent mask.
+- `rnn`: ordinary one-layer unidirectional tanh `nn.RNN`.
+- `lstm`: one-layer unidirectional `nn.LSTM`, with learned input/forget/output gates.
+
+The plain RNN and LSTM have dense hidden connections and **different recurrent
+parameter counts** from MaleCNS, so a performance difference cannot be attributed
+to biological topology alone. The LSTM is also more expressive due to gating.
+The comparison is intended to ask whether the graph-constrained model can be
+competitive with ordinary sequence models under the same training protocol.
+For strict graph-topology comparisons, see the degree-rewired / edge-random
+controls reported above.
+
+Run from the repo root:
+
+```bash
+python -m pytest -q tests/test_malecns.py tests/test_rnn_lstm_sentiment.py
+python experiments/rnn_lstm_sentiment.py \\
+  --models malecns rnn lstm --folds 5 --hidden-size 80 \\
+  --epochs 12 --seeds 42 123 2026 \\
+  --output experiments/results/rnn_lstm_comparison
+```
+
+This only uses `train.csv` (511 labeled movie-review phrases); `test.csv`
+remains untouched. Results include `summary.csv`, `per_seed_metrics.csv`,
+`fold_metrics.csv`, `oof_predictions.csv` and `metadata.json`.
+Cross-model comparisons use **complete OOF macro-F1 per seed** (then average
+across seeds), not pooled predictions across independently trained seeds.
+See the [automated experiment](https://github.com/SunnyMok1999/BigdataGP/actions/workflows/rnn_lstm_sentiment.yml)
+for saved run artifacts.

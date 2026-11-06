@@ -32,6 +32,7 @@ from sklearn.metrics import (accuracy_score, classification_report, cohen_kappa_
                              silhouette_score)
 from sklearn.model_selection import StratifiedKFold, train_test_split
 from transformers import AutoModel, AutoTokenizer
+from ordinal_losses import adjacent_error_cost, adjacent_triplet_margin, adjacent_prototype_margin
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "experiments/results/encoder"
@@ -51,6 +52,8 @@ CONFIGS = {
     "minilm_hard_negative": dict(model="minilm", last_layers=6, hard_negative=.1),
     "minilm_combined": dict(model="minilm", last_layers=6, supcon=.1,
                             teacher=.2, ordinal=.1, hard_negative=.1),
+    "minilm_adjacent_v2": dict(model="minilm", last_layers=6, adjacent_cost=.15,
+                                adjacent_triplet=.1, adjacent_prototype=.05),
     "bge_ce": dict(model="bge_small", last_layers=12),
 }
 LABELS = list(range(5))
@@ -190,6 +193,18 @@ def loss_parts(model, logits, embeddings, projected, labels, teacher_features, c
         hard = ordinal_hard_negative(embeddings, labels)
         loss = loss + cfg["hard_negative"] * hard
         parts["hard_negative"] = float(hard.detach())
+    if cfg.get("adjacent_cost", 0):
+        adjacent = adjacent_error_cost(logits, labels)
+        loss = loss + cfg["adjacent_cost"] * adjacent
+        parts["adjacent_cost"] = float(adjacent.detach())
+    if cfg.get("adjacent_triplet", 0):
+        triplet = adjacent_triplet_margin(embeddings, labels)
+        loss = loss + cfg["adjacent_triplet"] * triplet
+        parts["adjacent_triplet"] = float(triplet.detach())
+    if cfg.get("adjacent_prototype", 0):
+        prototype = adjacent_prototype_margin(embeddings, labels)
+        loss = loss + cfg["adjacent_prototype"] * prototype
+        parts["adjacent_prototype"] = float(prototype.detach())
     return loss, parts
 
 

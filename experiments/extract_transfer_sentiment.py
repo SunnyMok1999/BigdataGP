@@ -41,14 +41,17 @@ def extract(args):
         torch.set_num_threads(min(4, torch.get_num_threads()))
     texts = frame.Phrase.astype(str).tolist()
     outputs = []
+    hidden_outputs = []
     with torch.inference_mode():
         for start in range(0, len(texts), args.batch_size):
             chunk = texts[start:start + args.batch_size]
             batch = tokenizer(chunk, padding=True, truncation=True,
                               max_length=args.max_length, return_tensors="pt")
             batch = {k: v.to(args.device) for k, v in batch.items()}
-            raw = model(**batch).logits
-            outputs.append(raw.float().cpu().numpy())
+            result = model(**batch, output_hidden_states=bool(args.hidden_output))
+            outputs.append(result.logits.float().cpu().numpy())
+            if args.hidden_output:
+                hidden_outputs.append(result.hidden_states[-1][:, 0, :].float().cpu().numpy())
             if (start // args.batch_size + 1) % 10 == 0:
                 print(f"{args.model}: extracted {min(start+args.batch_size,len(texts))}/{len(texts)}", flush=True)
     logits = np.concatenate(outputs).astype(np.float32)
@@ -68,6 +71,19 @@ def extract(args):
         "note": "Fixed pretrained sentiment logits; train.csv text only; external model not tuned on local labels."
     }
     dest.with_suffix(".metadata.json").write_text(json.dumps(metadata, indent=2))
+    if args.hidden_output:
+        vectors = np.concatenate(hidden_outputs).astype(np.float32)
+        norms = np.maximum(1e-8, np.linalg.norm(vectors, axis=1, keepdims=True))
+        vectors = vectors / norms
+        hidden_path = Path(args.hidden_output)
+        hidden_path.parent.mkdir(parents=True, exist_ok=True)
+        np.save(hidden_path, vectors)
+        frame[["PhraseId"]].to_csv(hidden_path.with_name(hidden_path.stem + "_rows.csv"),index=False)
+        hidden_path.with_name(hidden_path.stem + "_metadata.json").write_text(
+            json.dumps({**metadata,"shape":list(vectors.shape),
+                        "feature_type":"last transformer layer CLS, L2-normalized",
+                        "source_logits_path":str(dest)},indent=2))
+        print("saved sentiment hidden vectors",hidden_path, vectors.shape,flush=True)
     print("saved", str(dest), logits.shape, flush=True)
 
 
@@ -79,6 +95,7 @@ def main():
     p.add_argument("--max-length", type=int, default=128)
     p.add_argument("--device", choices=("cpu","cuda","mps"), default="cpu")
     p.add_argument("--output", required=True)
+    p.add_argument("--hidden-output", default=None, help="Save final-layer CLS features for nested CV")
     extract(p.parse_args())
 
 

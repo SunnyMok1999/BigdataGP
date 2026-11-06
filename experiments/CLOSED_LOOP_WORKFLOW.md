@@ -177,13 +177,18 @@ per-seed** gain against random and average macro-F1 across all budgets.
 The normal 95% intervals are approximate and do not cover method-selection
 optimism. Do not use the 341-row test set for method selection.
 
-A separate 20-seed exploratory run using saved **MiniLM** embeddings and
-these policy families achieved the following final (210-label) macro-F1:
-random 0.3138, hybrid 0.3113, adjacent 0.3091,
-balanced hybrid 0.3085, entropy 0.3062. The hybrid minus random
-difference was -0.0025, with a normal approximate 95% interval
-[-0.0237, 0.0186]. It does **not** reproduce the earlier BGE-small
-three-seed gain and is not a matched encoder comparison.
+A separate 20-seed exploratory run using saved **MiniLM** embeddings,
+with the exact seed list shown above, achieved the following final
+(210-label) macro-F1: balanced hybrid **0.3123**, hybrid 0.3114,
+adjacent 0.3046, random 0.3023 and entropy 0.3007. The balanced
+hybrid minus random difference was +0.0100 with an approximate normal
+95% interval [-0.0079, 0.0279]; hybrid minus random was +0.0091
+[-0.0097, 0.0278]. Neither establishes a reliable advantage.
+On mean macro-F1 area under the learning curve, hybrid 0.2933 led
+balanced hybrid 0.2915, entropy 0.2892, adjacent 0.2889 and random
+0.2880. These are **MiniLM** frozen-feature results: the user's
+earlier three-seed finding used BGE-small and requires a directly
+matched 20-seed BGE replication.
 
 ## Experiment B — controlled pretrained-encoder ablations (new)
 

@@ -1,0 +1,35 @@
+name: MaleCNS BGE-vector recurrent benchmark
+on:
+  push:
+    branches: [experiment/malecns-sparse-rnn]
+    paths:
+      - ".github/workflows/malecns_bge.yml"
+      - "experiments/malecns_bge.py"
+      - "tests/test_malecns_bge.py"
+  workflow_dispatch:
+jobs:
+  bge-graph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU dependencies
+        run: |
+          python -m pip install numpy pandas scikit-learn pytest
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Test graph and cached feature alignment
+        run: python -m pytest -q tests/test_malecns.py tests/test_malecns_bge.py
+      - name: BGE 80-node 5-fold 3-seed experiment
+        run: |
+          python experiments/malecns_bge.py --nodes 80 --epochs 30 --steps 6 \
+            --seeds 42 123 2026 --output experiments/results/malecns_bge_80
+      - name: Upload training-only metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: malecns-bge-train-only
+          path: experiments/results/malecns_bge_80/
+          if-no-files-found: warn

@@ -1,0 +1,39 @@
+name: MaleCNS sentiment smoke benchmark
+on:
+  push:
+    branches: [experiment/malecns-sparse-rnn]
+    paths:
+      - "experiments/malecns_sentiment.py"
+      - "experiments/malecns_data/**"
+      - "tests/test_malecns.py"
+      - ".github/workflows/malecns.yml"
+  workflow_dispatch:
+
+jobs:
+  train-only-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy pandas scikit-learn pytest
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Verify real-graph invariants, masking, gradient
+        run: python -m pytest -q tests/test_malecns.py
+      - name: Run initial CPU OOF experiment (3 folds, 4 epochs; exploratory)
+        run: |
+          python experiments/malecns_sentiment.py \
+            --nodes 80 --folds 3 --epochs 4 --seeds 42 \
+            --output experiments/results/malecns_ci
+      - name: Archive smoke metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: malecns-train-only-smoke
+          path: experiments/results/malecns_ci/
+          if-no-files-found: warn

@@ -46,7 +46,9 @@ def encode_training_example(tokenizer, review, label, max_length):
 def pack(batch, pad_id):
     ids = pad_sequence([example[0] for example in batch], batch_first=True, padding_value=pad_id)
     target = pad_sequence([example[1] for example in batch], batch_first=True, padding_value=-100)
-    return {"input_ids": ids, "labels": target, "attention_mask": (target != -100).long() * 0 + (ids != pad_id).long()}
+    lengths = torch.as_tensor([len(example[0]) for example in batch])
+    attention_mask = (torch.arange(ids.shape[1])[None, :] < lengths[:, None]).long()
+    return {"input_ids": ids, "labels": target, "attention_mask": attention_mask}
 
 
 def main():

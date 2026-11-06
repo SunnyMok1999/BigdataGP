@@ -24,6 +24,27 @@ def test_adjacent_loss_gradients_and_constraints():
     assert adjacent_triplet_margin(z[:2], y[:2]).item() == 0.
 
 
+
+def test_triplet_mask_handles_one_invalid_anchor_in_batch_of_24():
+    # Reproduces the MPS crash: 24 margin candidates but only 23 valid triplets.
+    y = torch.tensor([0] * 5 + [1] * 5 + [2] * 5 + [3] * 8 + [4])
+    z = torch.randn(len(y), 16, requires_grad=True)
+    loss = adjacent_triplet_margin(z, y)
+    assert loss.ndim == 0 and torch.isfinite(loss)
+    loss.backward()
+    assert z.grad is not None and torch.isfinite(z.grad).all()
+
+
+def test_triplet_mask_handles_nonadjacent_invalid_class_four():
+    # Class 4 has positives but no class-3 neighbors. The invalid argmax
+    # must never be used to index a 0..3 boundary margin.
+    y = torch.tensor([4, 4, 2, 2, 1, 1])
+    z = torch.randn(len(y), 16, requires_grad=True)
+    loss = adjacent_triplet_margin(z, y)
+    assert torch.isfinite(loss)
+    loss.backward()
+    assert z.grad is not None and torch.isfinite(z.grad).all()
+
 def test_adjacent_boundary_penalty_is_high_for_adjacent_probabilities():
     y = torch.tensor([0])
     near = torch.tensor([[0., 5., -9., -9., -9.]])

@@ -49,7 +49,10 @@ def adjacent_triplet_margin(
     # Farthest positive / closest adjacent negative (cosine similarity).
     pos_similarity = sim.masked_fill(~positive, 2.).min(dim=1).values
     neg_similarity, neg_indices = sim.masked_fill(~adjacent, -2.).max(dim=1)
-    boundary = torch.minimum(targets, targets[neg_indices]).long()
+    # Apply the valid-anchor mask BEFORE looking up boundary margins.
+    # Invalid anchors may have no adjacent-class candidate, making their
+    # argmax fallback an unrelated label (even boundary index 4).
+    boundary = torch.minimum(targets[valid], targets[neg_indices[valid]]).long()
     margins = z.new_tensor(boundary_margins)[boundary]
     return F.relu(margins + neg_similarity[valid] - pos_similarity[valid]).mean()
 

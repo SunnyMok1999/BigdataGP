@@ -1,0 +1,42 @@
+name: MaleCNS train-only full ablation
+on:
+  push:
+    branches: [experiment/malecns-sparse-rnn]
+    paths:
+      - ".github/workflows/malecns_full.yml"
+  workflow_dispatch:
+
+jobs:
+  five-fold-compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU dependencies
+        run: |
+          python -m pip install numpy pandas scikit-learn pytest
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Verify model tests
+        run: python -m pytest -q tests/test_malecns.py
+      - name: Compare 32-node MaleCNS and controls
+        run: |
+          python experiments/malecns_sentiment.py --nodes 32 --folds 5 --epochs 12 \
+            --seeds 42 123 2026 --output experiments/results/malecns_full_32
+      - name: Compare 64-node MaleCNS and controls
+        run: |
+          python experiments/malecns_sentiment.py --nodes 64 --folds 5 --epochs 12 \
+            --seeds 42 123 2026 --output experiments/results/malecns_full_64
+      - name: Compare 80-node MaleCNS and controls
+        run: |
+          python experiments/malecns_sentiment.py --nodes 80 --folds 5 --epochs 12 \
+            --seeds 42 123 2026 --output experiments/results/malecns_full_80
+      - name: Archive training-only outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: malecns-full-training-only-cv
+          path: experiments/results/malecns_full_*/
+          if-no-files-found: warn

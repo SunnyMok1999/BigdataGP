@@ -120,3 +120,27 @@ complete 511-example out-of-fold measurements.
   host, plus a separate set of experiments for epoch selection.
 - Keep the 341-review test untouched until the model/prompt/training
   configuration is locked. An independent test score is not guaranteed.
+
+## Full cross-validation results (completed)
+
+All reported scores use the original 511 `train.csv` rows, five stratified
+outer folds and exactly the specified fixed training/prompt configuration.
+None of the four methods has yet beaten the 0.4971 Macro-F1 reference.
+
+| Method | Train-only OOF accuracy | Macro-F1 | Evaluation |
+|---|---:|---:|---|
+| Frozen Amazon RoBERTa + StandardScaler + RBF SVM | **0.5010** | **0.4971** | Prior nested-CV reference |
+| Amazon RoBERTa LoRA, 1 full epoch/fold | 0.4521 | 0.4217 | [successful five-fold CI](https://github.com/SunnyMok1999/BigdataGP/actions/runs/42244303358) |
+| SetFit BGE-small, 16 training steps/fold | 0.4560 | 0.3587 | [successful five-fold CI](https://github.com/SunnyMok1999/BigdataGP/actions/runs/42243830006) |
+| Qwen2.5-0.5B Zero-shot | 0.3875 | 0.3418 | [full zero/few CI](https://github.com/SunnyMok1999/BigdataGP/actions/runs/42244492503) |
+| Qwen2.5-0.5B Five-shot, one example per class | 0.3914 | 0.3857 | same full CI |
+
+The Qwen zero-shot produced valid JSON for every row; five-shot produced
+one invalid response (counted as wrong). Five-shot improves Macro-F1 by
++0.0440 over zero-shot but is still below the frozen RoBERTa baseline.
+Qwen LoRA SFT has only a one-update, eight-review smoke test so far;
+its 0.10 smoke Macro-F1 is not a full-data benchmark and is deliberately
+excluded from the ranked full-data table.
+
+Additional SetFit 64- and 128-training-step configurations can be inspected
+in [the step-budget workflow](https://github.com/SunnyMok1999/BigdataGP/actions/runs/42245041328).

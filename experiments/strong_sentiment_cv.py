@@ -29,7 +29,8 @@ from sklearn.svm import SVC
 ROOT = Path(__file__).resolve().parents[1]
 F = ROOT / "experiments/features"
 ALL = ["bge_lr", "bge_svm", "bge_linear", "bge_multiview_lr",
-       "transfer_direct", "transfer_only_lr", "bge_transfer_lr", "bge_transfer_svm"]
+       "transfer_direct", "transfer_only_lr", "bge_transfer_lr", "bge_transfer_svm",
+       "sent_hidden_lr", "sent_hidden_svm", "bge_hidden_lr", "bge_hidden_svm"]
 
 
 class BlockScaler(BaseEstimator, TransformerMixin):
@@ -81,7 +82,7 @@ def load_transfer(path: Path, df: pd.DataFrame):
 
 
 def candidate_spec(name: str, bge: np.ndarray, multi: np.ndarray | None,
-                   extra: np.ndarray | None):
+                   extra: np.ndarray | None, hidden: np.ndarray | None = None):
     if name == "bge_lr":
         estimator = Pipeline([("clf", LogisticRegression(max_iter=2500))])
         grid = {"clf__C": [.01,.1,1.,10.,100.], "clf__class_weight":[None,"balanced"]}
@@ -134,6 +135,26 @@ def candidate_spec(name: str, bge: np.ndarray, multi: np.ndarray | None,
                 "clf__C":[.1,1.,10.,100.],
                 "clf__gamma":[.1,.5,1.],
                 "clf__class_weight":[None,"balanced"]}
+    elif name in ("sent_hidden_lr", "sent_hidden_svm", "bge_hidden_lr", "bge_hidden_svm"):
+        if hidden is None:
+            raise ValueError("Missing external sentiment-tuned hidden features")
+        combined = name.startswith("bge_")
+        X = np.hstack((bge,hidden)) if combined else hidden
+        if "lr" in name:
+            clf = LogisticRegression(max_iter=2500)
+            search_grid = {"clf__C":[.01,.1,1.,10.,100.],
+                           "clf__class_weight":[None,"balanced"]}
+        else:
+            clf = SVC(kernel="rbf")
+            search_grid = {"clf__C":[.1,1.,10.,100.],
+                           "clf__gamma":[.1,.5,1.,2.,4.],
+                           "clf__class_weight":[None,"balanced"]}
+        if combined:
+            estimator=Pipeline([("blocks",BlockScaler(width=bge.shape[1])),("clf",clf)])
+            grid={"blocks__extra_weight":[.25,.5,1.,2.,4.],**search_grid}
+        else:
+            estimator=Pipeline([("clf",clf)])
+            grid=search_grid
     else:
         raise ValueError(f"Unknown candidate {name}")
     return X, estimator, grid
@@ -153,6 +174,7 @@ def benchmark(args):
         bt = load_embedding(F/"bert_base_train.npy",df)
         multi = np.hstack((bge, d, bt))
     transfer, provenance = (load_transfer(Path(args.transfer),df) if args.transfer else (None,None))
+    hidden = load_embedding(Path(args.sentiment_embeddings),df) if args.sentiment_embeddings else None
     outer = list(StratifiedKFold(5,shuffle=True,random_state=42).split(bge,y))
     result = []
     oof_rows = []
@@ -160,7 +182,7 @@ def benchmark(args):
     out = Path(args.output)
     out.mkdir(parents=True,exist_ok=True)
     for name in args.candidates:
-        X, classifier, grid = candidate_spec(name,bge,multi,transfer)
+        X, classifier, grid = candidate_spec(name,bge,multi,transfer,hidden)
         pred = np.full(len(y), -1,dtype=int)
         folds = np.full(len(y),-1,dtype=int)
         for fold,(train_ids, val_ids) in enumerate(outer):
@@ -212,6 +234,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--train",default=str(ROOT/"train.csv"))
     p.add_argument("--transfer",default=None,help="Optional precomputed train-only off-domain sentiment logits")
+    p.add_argument("--sentiment-embeddings",default=None,help="Optional off-domain pretrained CLS vector cache; requires _rows.csv")
     p.add_argument("--candidates",nargs="+",choices=ALL,default=["bge_lr","bge_svm","bge_linear","bge_multiview_lr"])
     p.add_argument("--output",default=str(ROOT/"experiments/results/strong_cv"))
     args=p.parse_args()
